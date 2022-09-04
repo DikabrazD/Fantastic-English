@@ -1,5 +1,5 @@
 import { PropsWithChildren } from 'react'
-import { FaEnvelope, FaPhoneAlt } from 'react-icons/fa'
+import { FaCcMastercard, FaCcVisa, FaClock, FaEnvelope, FaLocationArrow, FaPhoneAlt } from 'react-icons/fa'
 import { Link } from 'react-router-dom'
 import './Layout.scss'
 
@@ -49,6 +49,105 @@ function Layout({ children }: PropsWithChildren) {
                 </div>
             </header>
             {children}
+            <footer>
+                <div className='footer-top-bg'>
+                    <div className='container footer-top'>
+                        <div className='footer-top-about'>
+                            <h4>Despre Noi</h4>
+                            <p>
+                                Noi suntem Fantastic English – Școala de Engleză care pune accent pe învățarea limbii
+                                Engleze în cel mai eficient mod posibil.
+                            </p>
+                            <p>
+                                La noi găsești cursuri de Engleză generală, pregătire de examenul internațional – TOEFL
+                                și cursuri Conversaționale. Plus la toate, suntem unica școală din Republica Molodva
+                                care îți oferă garanția satisfacției 110%.
+                            </p>
+                            <p>Din moment ce ajungi la noi, nu vei avea motive să NU însușești aceasă limbă!</p>
+                            <Link to='/about'>Istoria Fantastic English -{'>'}</Link>
+                        </div>
+                        <div className='footer-top-contacts'>
+                            <h4>Te așteptăm cu drag</h4>
+                            <a
+                                className='footer-top-contacts-item'
+                                href='http://maps.google.com/?q=str.Lev Tolstoi 3/1'
+                                rel='noopener noreferrer'
+                                target='_blank'
+                            >
+                                <div className='footer-top-contacts-item-icon'>
+                                    <FaLocationArrow className='image' />
+                                </div>
+                                <span>Online sau str. Lev Tolstoi 3/1</span>
+                            </a>
+                            <a className='footer-top-contacts-item' href='mailto:office@fantastic-english.md'>
+                                <div className='footer-top-contacts-item-icon'>
+                                    <FaEnvelope className='image' />
+                                </div>
+                                <span>office@fantastic-english.md</span>
+                            </a>
+                            <div>
+                                <a href='tel:+37378286262' className='footer-top-contacts-item'>
+                                    <div className='footer-top-contacts-item-icon'>
+                                        <FaPhoneAlt className='image' />
+                                    </div>
+                                    <span>MD: + 373 78 28 62 62</span>
+                                </a>
+                                <a className='footer-top-contacts-item-plus' href='tel:+37322004400'>
+                                    <span>FIX: + 373 22 00 44 00</span>
+                                </a>
+                            </div>
+                            <a className='footer-top-contacts-item' href='tel:+40312296040'>
+                                <div className='footer-top-contacts-item-icon'>
+                                    <FaPhoneAlt className='image' />
+                                </div>
+                                <span>EU: + 40 31 22 960 40</span>
+                            </a>
+                            <div>
+                                <div className='footer-top-contacts-item'>
+                                    <div className='footer-top-contacts-item-icon'>
+                                        <FaClock className='image' />
+                                    </div>
+                                    <span>Luni – Vineri: 09:00 – 19:00</span>
+                                </div>
+                                <span className='footer-top-contacts-item-plus'>Sâmbătă: 10:00 - 17:00</span>
+                            </div>
+                        </div>
+                        <div className='footer-top-social'>
+                            <h4>Facebook</h4>
+                            <iframe
+                                title='Facebook page'
+                                src='https://www.facebook.com/plugins/page.php?href=https%3A%2F%2Fwww.facebook.com%2FFantasticEnglishSchool%2F&tabs&width=340&height=130&small_header=false&adapt_container_width=true&hide_cover=false&show_facepile=false&appId'
+                                width='340'
+                                height='130'
+                                style={{ border: 'none', overflow: 'hidden' }}
+                                scrolling='no'
+                                frameBorder='0'
+                                allowFullScreen
+                                allow='autoplay; clipboard-write; encrypted-media; picture-in-picture; web-share'
+                            />
+                        </div>
+                    </div>
+                </div>
+                <div className='footer-bottom-bg'>
+                    <div className='container footer-bottom'>
+                        <div className='footer-bottom-copyright'>
+                            © 2022 Compania Fantastic English. Toate drepturile rezervate.
+                            <br />
+                            Operator de date cu caracter personal cu numărul de înregistrare 0002856-001 „Fantastic
+                            Group” SRL, str. Suceviţa 22/3 of 23 c/f: 101860048736 Notificare nr. 200210CI144 din
+                            10.02.2020
+                        </div>
+                        <div className='footer-bottom-payments'>
+                            <div className='footer-bottom-payments-item'>
+                                <FaCcVisa className='image' />
+                            </div>
+                            <div className='footer-bottom-payments-item'>
+                                <FaCcMastercard className='image' />
+                            </div>
+                        </div>
+                    </div>
+                </div>
+            </footer>
         </div>
     )
 }
