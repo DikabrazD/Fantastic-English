@@ -1,0 +1,28 @@
+@import '../../assets/styles/variables.scss';
+
+.header-main {
+    position: relative;
+    display: flex;
+    justify-content: center;
+    align-items: center;
+    background: $main-color;
+    h1 {
+        color: white;
+        text-align: center;
+        font-family: 'Core Sans';
+        font-size: 36px;
+    }
+    &-image {
+        height: 450px;
+        width: 450px;
+    }
+    &-form {
+        position: absolute;
+        transform: translateY(-50%);
+        top: 100%;
+        padding: 20px;
+        background-color: white;
+        display: flex;
+        gap: 15px;
+    }
+}

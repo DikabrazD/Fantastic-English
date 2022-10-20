@@ -1,9 +1,10 @@
+import AppRouter from './components/AppRouter'
 import Layout from './components/Layout'
 
 function App() {
     return (
         <Layout>
-            <h1>aasd</h1>
+            <AppRouter />
         </Layout>
     )
 }

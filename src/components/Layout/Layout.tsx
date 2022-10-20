@@ -5,7 +5,7 @@ import './Layout.scss'
 
 function Layout({ children }: PropsWithChildren) {
     return (
-        <div>
+        <>
             <div className='top-bar-bg'>
                 <div className='container top-bar'>
                     <a href='tel:+37378286262'>
@@ -148,7 +148,7 @@ function Layout({ children }: PropsWithChildren) {
                     </div>
                 </div>
             </footer>
-        </div>
+        </>
     )
 }
 

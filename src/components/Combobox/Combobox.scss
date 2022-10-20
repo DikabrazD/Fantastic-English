@@ -1,0 +1,30 @@
+.combobox {
+    position: relative;
+    &-input {
+        height: 100%;
+    }
+    &-list {
+        position: absolute;
+        transform: translateY(100%);
+        bottom: 0;
+        padding: 5px;
+        width: 100%;
+        display: flex;
+        flex-direction: column;
+        background-color: white;
+        list-style: none;
+        -webkit-box-shadow: -1px 8px 23px -3px rgba(66, 57, 66, 1);
+        -moz-box-shadow: -1px 8px 23px -3px rgba(66, 57, 66, 1);
+        box-shadow: -1px 8px 23px -3px rgba(66, 57, 66, 1);
+        & > li {
+            padding: 2px 5px;
+        }
+        &-head {
+            color: rgb(78, 78, 78);
+        }
+        &-item:hover {
+            color: white;
+            background-color: #0075ff;
+        }
+    }
+}
