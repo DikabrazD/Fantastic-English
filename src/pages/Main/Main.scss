@@ -17,12 +17,24 @@
         width: 450px;
     }
     &-form {
+        display: flex;
+        flex-direction: column;
+        gap: 15px;
         position: absolute;
         transform: translateY(-50%);
         top: 100%;
         padding: 20px;
         background-color: white;
-        display: flex;
-        gap: 15px;
+        &-inner {
+            display: flex;
+            gap: 15px;
+        }
+        &-checkbox {
+            align-self: flex-end;
+            display: flex;
+            align-content: center;
+            justify-content: center;
+            gap: 15px;
+        }
     }
 }

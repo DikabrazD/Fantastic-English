@@ -14,10 +14,6 @@ input {
     &::placeholder {
         color: #252525;
     }
-    &::selection {
-        color: white;
-        background-color: $main-color;
-    }
 }
 .number {
     @include font;
