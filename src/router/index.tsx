@@ -1,4 +1,4 @@
-import Main from 'src/pages/Main/Main'
+import Home from 'src/pages/Home/Home'
 
 export enum RouterNames {
     MAIN = '/'
@@ -9,4 +9,4 @@ export interface InterfaceRoute {
     component: React.ReactNode
 }
 
-export const publicRoutes: InterfaceRoute[] = [{ path: RouterNames.MAIN, component: <Main /> }]
+export const publicRoutes: InterfaceRoute[] = [{ path: RouterNames.MAIN, component: <Home /> }]
