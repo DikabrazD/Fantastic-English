@@ -38,3 +38,76 @@
         }
     }
 }
+
+.test-level {
+    display: flex;
+    align-items: center;
+    justify-content: center;
+    background: $main-color;
+    color: white;
+    margin-bottom: 80px;
+    & > * {
+        width: 35%;
+    }
+    &-img {
+        display: flex;
+        img {
+            width: 100%;
+        }
+    }
+    &-main {
+        display: flex;
+        align-items: flex-start;
+        flex-direction: column;
+        &-line {
+            background-color: white;
+            margin-bottom: 20px;
+            height: 3px;
+            width: 40px;
+        }
+        &-header {
+            font-size: 32px;
+            font-family: 'Core Sans';
+            margin-bottom: 20px;
+        }
+        &-description {
+            font-family: 'Ubuntu';
+            margin-bottom: 20px;
+        }
+    }
+}
+
+.teachers {
+    display: flex;
+    align-items: flex-start;
+    flex-direction: column;
+    &-header {
+        font-size: 32px;
+        font-family: 'Core Sans';
+        margin-bottom: 20px;
+    }
+    &-line {
+        background-color: $main-color;
+        margin-bottom: 20px;
+        height: 3px;
+        width: 40px;
+    }
+    &-description {
+        font-family: 'Ubuntu';
+        font-size: 17px;
+        margin-bottom: 22px;
+    }
+    &-list {
+        display: flex;
+        align-items: center;
+        margin-bottom: 60px;
+        &-card {
+            width: 25%;
+            padding: 0 40px;
+        }
+    }
+    &-button {
+        align-self: center;
+        margin-bottom: 60px;
+    }
+}

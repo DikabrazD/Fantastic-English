@@ -9,7 +9,9 @@ const Courses = () => {
     const [category, setCategory] = useState<CategoryInterface[]>([])
     const [courses, setCourses] = useState<CoursInterface[]>([])
     const [isActive, setActive] = useState<number>(0)
+
     const coursesActive = courses.filter((item) => category[isActive].courses.includes(item.id))
+
     const transition = useTransition(coursesActive, {
         from: { transform: 'scale(0)', opacity: 0 },
         enter: { transform: 'scale(1)', opacity: 1 }
@@ -70,19 +72,6 @@ const Courses = () => {
             )}
 
             <div className='courses-list'>
-                {/* <button
-                    onClick={() => {
-                        if (isActi[0]) {
-                            setActi([])
-                        } else {
-                            console.log('1')
-                            setActi([1, 2])
-                        }
-                    }}
-                ></button>
-                {transition((style, item): any =>
-                    isActive === item ? <animated.div style={style}>12s</animated.div> : <div>{item}</div>
-                )} */}
                 {transition((style, item) => (
                     <animated.div key={item.id} style={style} className='courses-list-item'>
                         <div className='courses-list-item-image'>
@@ -102,31 +91,6 @@ const Courses = () => {
                         </div>
                     </animated.div>
                 ))}
-                {/* {courses.length > 0 &&
-                    courses.map((item) => {
-                        if (category[isActive].courses.includes(item.id))
-                            return (
-                                <div key={item.id} className='courses-list-item'>
-                                    <div className='courses-list-item-image'>
-                                        <img src={`${item.img}`} alt='Img of course' />
-                                        <div className='courses-list-item-image-price'>85 MDL / 60 Min</div>
-                                    </div>
-                                    <h3>{item.name}</h3>
-                                    <div className='courses-list-item-description'>
-                                        <p className='courses-list-item-description-hours'>
-                                            <HiOutlineClock className='courses-list-item-description-hours-icon' />
-                                            <span>{item.number_lectures} ore astronomice</span>
-                                        </p>
-                                        <p className='courses-list-item-description-more'>
-                                            <span className='courses-list-item-description-more-text'>
-                                                Vezi Detalii
-                                            </span>
-                                            <HiOutlineArrowNarrowRight className='courses-list-item-description-more-icon' />
-                                        </p>
-                                    </div>
-                                </div>
-                            )
-                    })} */}
             </div>
         </div>
     )

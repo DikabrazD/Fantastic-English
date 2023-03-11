@@ -110,7 +110,7 @@
             color: white;
             transition: 0.2s ease-out;
             &:hover {
-                color: #e6285e;
+                color: $main-color;
             }
         }
         &-item {

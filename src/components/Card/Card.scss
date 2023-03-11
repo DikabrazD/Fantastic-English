@@ -1,0 +1,54 @@
+@import '../../assets//styles/variables.scss';
+
+.card {
+    display: flex;
+    justify-content: flex-start;
+    flex-direction: column;
+    width: 100%;
+    &-image {
+        position: relative;
+        width: 100%;
+        margin-bottom: 20px;
+        &:hover &-main {
+            transform: scale(1.04);
+            opacity: 0;
+        }
+        &:hover &-kid {
+            transform: scale(1.04);
+            opacity: 1;
+        }
+        &-main {
+            width: 100%;
+            object-fit: cover;
+            transition: 0.5s;
+        }
+        &-kid {
+            position: absolute;
+            width: 100%;
+            left: 0;
+            opacity: 0;
+            transition: 0.5s;
+        }
+    }
+    p {
+        color: #444444;
+        font-family: 'Ubuntu';
+        font-size: 15px;
+        margin-bottom: 15px;
+    }
+    h3 {
+        font-size: 20px;
+        font-family: 'Core Sans';
+        margin-bottom: 15px;
+        cursor: pointer;
+        transition: 0.2s ease-out;
+        &:hover {
+            color: $main-color;
+        }
+    }
+    h4 {
+        font-size: 15px;
+        font-family: 'Core Sans';
+        color: #444444;
+    }
+}
