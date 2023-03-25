@@ -1,7 +1,10 @@
 import './Home.scss'
+import axios from 'axios'
+import { SwiperSlide } from 'swiper/react'
 import { ButtonType } from 'src/components/Button/ButtonInterface'
 import { useEffect, useState } from 'react'
-import axios from 'axios'
+import { CardInterface } from 'src/components/Card/CardInterface'
+import { ReviewInterface } from 'src/components/Review/ReviewInterface'
 import Button from 'src/components/Button'
 import Input from 'src/components/Input'
 import PhoneInput from 'react-phone-input-2'
@@ -9,10 +12,12 @@ import Combobox from 'src/components/Combobox'
 import Checkbox from 'src/components/Checkbox'
 import Courses from 'src/components/Courses'
 import Card from 'src/components/Card'
-import { CardInterface } from 'src/components/Card/CardInterface'
+import Slider from 'src/components/Slider'
+import Review from 'src/components/Review'
 
 const Home = () => {
     const [teachers, setTeachers] = useState<CardInterface[]>([])
+    const [reviews, setReviews] = useState<ReviewInterface[]>([])
 
     useEffect(() => {
         const getData = async () => {
@@ -20,6 +25,14 @@ const Home = () => {
                 .get('http://localhost:3000/teachers')
                 .then((res) => {
                     setTeachers(res.data)
+                })
+                .catch((error) => {
+                    console.log(error)
+                })
+            await axios
+                .get('http://localhost:3000/reviews')
+                .then((res) => {
+                    setReviews(res.data)
                 })
                 .catch((error) => {
                     console.log(error)
@@ -112,7 +125,7 @@ const Home = () => {
                 <div className='teachers-list'>
                     {teachers.map((item) => {
                         return (
-                            <div className='teachers-list-card'>
+                            <div key={item.id} className='teachers-list-card'>
                                 <Card card={item} descriptionStatus={false} />
                             </div>
                         )
@@ -121,6 +134,499 @@ const Home = () => {
                 <div className='teachers-button'>
                     <Button type={ButtonType.arrow} text='Vezi toți profesorii de engleză' />
                 </div>
+            </div>
+
+            <div className='garantee'>
+                <div className='garantee-main'>
+                    <h3 className='garantee-main-header'>
+                        Garanție 110% <br /> la cursuri de engleză
+                    </h3>
+                    <div className='garantee-main-description'>
+                        <p>
+                            Pentru noi, satisfacția și rezultatele clienților care trec
+                            <b>cursurile noastre de limbă engleză</b> sunt o prioritate. Dorim ca fiecare persoană și
+                            firmă care contactează cu noi să obțină o experiență plăcută și benefică.
+                        </p>
+                        <p>
+                            Suntem convinși că vei obține doar beneficii studiind la cursurile/lecțiile noastre de
+                            engleză. Deci, îți garantăm 100% că merită! Dacă din diverse motive, consideri că cursurile
+                            de engleză predate de noi, nu au fost utile, atunci noi îți vom rambursa suma plătită în
+                            mărime de 110%!
+                        </p>
+                        <p>
+                            Noi nu îți promitem, îți garantăm! De ce? Pentru că avem încredere în serviciile noastre.
+                            Investești fără nici un risc în a vorbi fluent limba engleză! Nu sunt litere mici, nici
+                            mesaje ascunse.
+                        </p>
+                    </div>
+                </div>
+                <div className='garantee-img'>
+                    <img
+                        src='https://fantastic-english.md/wp-content/uploads/2021/04/Fantastic-English-Garantie-la-Cursuri-de-Engleza.webp'
+                        alt='garantee-img'
+                    />
+                </div>
+            </div>
+
+            <div className='reviews container'>
+                <h3 className='reviews-header'>
+                    Ce spun studenții noștri despre Cursurile de Engleză la Fantastic English:
+                </h3>
+                <Slider
+                    breakpoints={{
+                        640: {
+                            slidesPerView: 1,
+                            spaceBetween: 20
+                        },
+                        768: {
+                            slidesPerView: 2,
+                            spaceBetween: 40
+                        },
+                        1024: {
+                            slidesPerView: 3,
+                            spaceBetween: 50
+                        }
+                    }}
+                >
+                    {reviews.map((item) => {
+                        return (
+                            <SwiperSlide key={item.id}>
+                                <Review item={item} />
+                            </SwiperSlide>
+                        )
+                    })}
+                </Slider>
+                {/* <Swiper
+                    slidesPerView={3}
+                    spaceBetween={15}
+                    pagination={{
+                        dynamicBullets: true
+                    }}
+                    loop={true}
+                    autoHeight={true}
+                    navigation={true}
+                    modules={[Navigation, Pagination]}
+                    className='reviews-slider'
+                >
+                    <SwiperSlide className='reviews-slider-item'>
+                        <div className='reviews-slider-item-main'>
+                            <div className='reviews-slider-item-main-quotes'>
+                                <RiDoubleQuotesL />
+                            </div>
+                            <p className='reviews-slider-item-main-comment'>
+                                Mi-a plăcut mult de tot să să fac parte din această familie minunată, în care m-am
+                                simțit extrem de motivată și satisfăcută de rezultatele pe care le-am obținut. În tot
+                                acest timp mi-am cunoscut colegii de grup, învățătoarea noastră extrem de pozitivă și
+                                capabilă de a ne explica orice temă, orice întrebare( Mrs. Olga, thank you soo much🥰)
+                                și desigur că mi-am mai luat un curs, ca să studiez mai departe această minunată limbă,
+                                care ne este de mare ajutor. Și nu în ultimul rând mulțumesc fondatorilor Fantastic
+                                English. I love you, see you soon. Bye!❤ Mi-a plăcut mult de tot să să fac parte din
+                                această familie minunată, în care m-am simțit extrem de motivată și satisfăcută de
+                                rezultatele pe care le-am obținut. În tot acest timp mi-am cunoscut colegii de grup,
+                                învățătoarea noastră extrem de pozitivă și capabilă de a ne explica orice temă, orice
+                                întrebare( Mrs. Olga, thank you soo much🥰) și desigur că mi-am mai luat un curs, ca să
+                                studiez mai departe această minunată limbă, care ne este de mare ajutor. Și nu în
+                                ultimul rând mulțumesc fondatorilor Fantastic English. I love you, see you soon. Bye!❤
+                                Mi-a plăcut mult de tot să să fac parte din această familie minunată, în care m-am
+                                simțit extrem de motivată și satisfăcută de rezultatele pe care le-am obținut. În tot
+                                acest timp mi-am cunoscut colegii de grup, învățătoarea noastră extrem de pozitivă și
+                                capabilă de a ne explica orice temă, orice întrebare( Mrs. Olga, thank you soo much🥰)
+                                și desigur că mi-am mai luat un curs, ca să studiez mai departe această minunată limbă,
+                                care ne este de mare ajutor. Și nu în ultimul rând mulțumesc fondatorilor Fantastic
+                                English. I love you, see you soon. Bye!❤ Mi-a plăcut mult de tot să să fac parte din
+                                această familie minunată, în care m-am simțit extrem de motivată și satisfăcută de
+                                rezultatele pe care le-am obținut. În tot acest timp mi-am cunoscut colegii de grup,
+                                învățătoarea noastră extrem de pozitivă și capabilă de a ne explica orice temă, orice
+                                întrebare( Mrs. Olga, thank you soo much🥰) și desigur că mi-am mai luat un curs, ca să
+                                studiez mai departe această minunată limbă, care ne este de mare ajutor. Și nu în
+                                ultimul rând mulțumesc fondatorilor Fantastic English. I love you, see you soon. Bye!❤
+                            </p>
+                            <div className='reviews-slider-item-main-social'>
+                                <img
+                                    src='https://fantastic-english.md/wp-content/plugins/wp-facebook-reviews/public/partials/imgs/facebook_small_icon.png'
+                                    alt=''
+                                />
+                            </div>
+                            <div className='reviews-slider-item-main-triangle'></div>
+                        </div>
+                        <div className='reviews-slider-item-author'>
+                            <div className='reviews-slider-item-author-img'>
+                                <img
+                                    src='https://fantastic-english.md/wp-content/uploads/2021/04/Curs-de-Engleza-Beginner-Incepatori-A1_result.webp'
+                                    alt='avatar comentator'
+                                />
+                            </div>
+                            <div className='reviews-slider-item-author-info'>
+                                <h4>Victoria Balagiu</h4>
+                                <h5>28 aprilie 2021</h5>
+                            </div>
+                        </div>
+                    </SwiperSlide>
+                    <SwiperSlide className='reviews-slider-item'>
+                        <div className='reviews-slider-item-main'>
+                            <div className='reviews-slider-item-main-quotes'>
+                                <RiDoubleQuotesL />
+                            </div>
+                            <p className='reviews-slider-item-main-comment'>
+                                Mi-a plăcut mult de tot să să fac parte din această familie minunată, în care m-am
+                                simțit extrem de motivată și satisfăcută de rezultatele pe care le-am obținut. În tot
+                                acest timp mi-am cunoscut colegii de grup, învățătoarea noastră extrem de pozitivă și
+                                capabilă de a ne explica orice temă, orice întrebare( Mrs. Olga, thank you soo much🥰)
+                                și desigur că mi-am mai luat un curs, ca să studiez mai departe această minunată limbă,
+                                care ne este de mare ajutor. Și nu în ultimul rând mulțumesc fondatorilor Fantastic
+                                English. I love you, see you soon. Bye!❤
+                            </p>
+                            <div className='reviews-slider-item-main-social'>
+                                <img
+                                    src='https://fantastic-english.md/wp-content/plugins/wp-facebook-reviews/public/partials/imgs/facebook_small_icon.png'
+                                    alt=''
+                                />
+                            </div>
+                            <div className='reviews-slider-item-main-triangle'></div>
+                        </div>
+                        <div className='reviews-slider-item-author'>
+                            <div className='reviews-slider-item-author-img'>
+                                <img
+                                    src='https://fantastic-english.md/wp-content/uploads/2021/04/Curs-de-Engleza-Beginner-Incepatori-A1_result.webp'
+                                    alt='avatar comentator'
+                                />
+                            </div>
+                            <div className='reviews-slider-item-author-info'>
+                                <h4>Victoria Balagiu</h4>
+                                <h5>28 aprilie 2021</h5>
+                            </div>
+                        </div>
+                    </SwiperSlide>
+                    <SwiperSlide className='reviews-slider-item'>
+                        <div className='reviews-slider-item-main'>
+                            <div className='reviews-slider-item-main-quotes'>
+                                <RiDoubleQuotesL />
+                            </div>
+                            <p className='reviews-slider-item-main-comment'>
+                                Mi-a plăcut mult de tot să să fac parte din această familie minunată, în care m-am
+                                simțit extrem de motivată și satisfăcută de rezultatele pe care le-am obținut. În tot
+                                acest timp mi-am cunoscut colegii de grup, învățătoarea noastră extrem de pozitivă și
+                                capabilă de a ne explica orice temă, orice întrebare( Mrs. Olga, thank you soo much🥰)
+                                și desigur că mi-am mai luat un curs, ca să studiez mai departe această minunată limbă,
+                                care ne este de mare ajutor. Și nu în ultimul rând mulțumesc fondatorilor Fantastic
+                                English. I love you, see you soon. Bye!❤
+                            </p>
+                            <div className='reviews-slider-item-main-social'>
+                                <img
+                                    src='https://fantastic-english.md/wp-content/plugins/wp-facebook-reviews/public/partials/imgs/facebook_small_icon.png'
+                                    alt=''
+                                />
+                            </div>
+                            <div className='reviews-slider-item-main-triangle'></div>
+                        </div>
+                        <div className='reviews-slider-item-author'>
+                            <div className='reviews-slider-item-author-img'>
+                                <img
+                                    src='https://fantastic-english.md/wp-content/uploads/2021/04/Curs-de-Engleza-Beginner-Incepatori-A1_result.webp'
+                                    alt='avatar comentator'
+                                />
+                            </div>
+                            <div className='reviews-slider-item-author-info'>
+                                <h4>Victoria Balagiu</h4>
+                                <h5>28 aprilie 2021</h5>
+                            </div>
+                        </div>
+                    </SwiperSlide>
+                    <SwiperSlide className='reviews-slider-item'>
+                        <div className='reviews-slider-item-main'>
+                            <div className='reviews-slider-item-main-quotes'>
+                                <RiDoubleQuotesL />
+                            </div>
+                            <p className='reviews-slider-item-main-comment'>
+                                Mi-a plăcut mult de tot să să fac parte din această familie minunată, în care m-am
+                                simțit extrem de motivată și satisfăcută de rezultatele pe care le-am obținut. În tot
+                                acest timp mi-am cunoscut colegii de grup, învățătoarea noastră extrem de pozitivă și
+                                capabilă de a ne explica orice temă, orice întrebare( Mrs. Olga, thank you soo much🥰)
+                                și desigur că mi-am mai luat un curs, ca să studiez mai departe această minunată limbă,
+                                care ne este de mare ajutor. Și nu în ultimul rând mulțumesc fondatorilor Fantastic
+                                English. I love you, see you soon. Bye!❤
+                            </p>
+                            <div className='reviews-slider-item-main-social'>
+                                <img
+                                    src='https://fantastic-english.md/wp-content/plugins/wp-facebook-reviews/public/partials/imgs/facebook_small_icon.png'
+                                    alt=''
+                                />
+                            </div>
+                            <div className='reviews-slider-item-main-triangle'></div>
+                        </div>
+                        <div className='reviews-slider-item-author'>
+                            <div className='reviews-slider-item-author-img'>
+                                <img
+                                    src='https://fantastic-english.md/wp-content/uploads/2021/04/Curs-de-Engleza-Beginner-Incepatori-A1_result.webp'
+                                    alt='avatar comentator'
+                                />
+                            </div>
+                            <div className='reviews-slider-item-author-info'>
+                                <h4>Victoria Balagiu</h4>
+                                <h5>28 aprilie 2021</h5>
+                            </div>
+                        </div>
+                    </SwiperSlide>
+                    <SwiperSlide className='reviews-slider-item'>
+                        <div className='reviews-slider-item-main'>
+                            <div className='reviews-slider-item-main-quotes'>
+                                <RiDoubleQuotesL />
+                            </div>
+                            <p className='reviews-slider-item-main-comment'>
+                                Mi-a plăcut mult de tot să să fac parte din această familie minunată, în care m-am
+                                simțit extrem de motivată și satisfăcută de rezultatele pe care le-am obținut. În tot
+                                acest timp mi-am cunoscut colegii de grup, învățătoarea noastră extrem de pozitivă și
+                                capabilă de a ne explica orice temă, orice întrebare( Mrs. Olga, thank you soo much🥰)
+                                și desigur că mi-am mai luat un curs, ca să studiez mai departe această minunată limbă,
+                                care ne este de mare ajutor. Și nu în ultimul rând mulțumesc fondatorilor Fantastic
+                                English. I love you, see you soon. Bye!❤
+                            </p>
+                            <div className='reviews-slider-item-main-social'>
+                                <img
+                                    src='https://fantastic-english.md/wp-content/plugins/wp-facebook-reviews/public/partials/imgs/facebook_small_icon.png'
+                                    alt=''
+                                />
+                            </div>
+                            <div className='reviews-slider-item-main-triangle'></div>
+                        </div>
+                        <div className='reviews-slider-item-author'>
+                            <div className='reviews-slider-item-author-img'>
+                                <img
+                                    src='https://fantastic-english.md/wp-content/uploads/2021/04/Curs-de-Engleza-Beginner-Incepatori-A1_result.webp'
+                                    alt='avatar comentator'
+                                />
+                            </div>
+                            <div className='reviews-slider-item-author-info'>
+                                <h4>Victoria Balagiu</h4>
+                                <h5>28 aprilie 2021</h5>
+                            </div>
+                        </div>
+                    </SwiperSlide>
+                    <SwiperSlide className='reviews-slider-item'>
+                        <div className='reviews-slider-item-main'>
+                            <div className='reviews-slider-item-main-quotes'>
+                                <RiDoubleQuotesL />
+                            </div>
+                            <p className='reviews-slider-item-main-comment'>
+                                Mi-a plăcut mult de tot să să fac parte din această familie minunată, în care m-am
+                                simțit extrem de motivată și satisfăcută de rezultatele pe care le-am obținut. În tot
+                                acest timp mi-am cunoscut colegii de grup, învățătoarea noastră extrem de pozitivă și
+                                capabilă de a ne explica orice temă, orice întrebare( Mrs. Olga, thank you soo much🥰)
+                                și desigur că mi-am mai luat un curs, ca să studiez mai departe această minunată limbă,
+                                care ne este de mare ajutor. Și nu în ultimul rând mulțumesc fondatorilor Fantastic
+                                English. I love you, see you soon. Bye!❤
+                            </p>
+                            <div className='reviews-slider-item-main-social'>
+                                <img
+                                    src='https://fantastic-english.md/wp-content/plugins/wp-facebook-reviews/public/partials/imgs/facebook_small_icon.png'
+                                    alt=''
+                                />
+                            </div>
+                            <div className='reviews-slider-item-main-triangle'></div>
+                        </div>
+                        <div className='reviews-slider-item-author'>
+                            <div className='reviews-slider-item-author-img'>
+                                <img
+                                    src='https://fantastic-english.md/wp-content/uploads/2021/04/Curs-de-Engleza-Beginner-Incepatori-A1_result.webp'
+                                    alt='avatar comentator'
+                                />
+                            </div>
+                            <div className='reviews-slider-item-author-info'>
+                                <h4>Victoria Balagiu</h4>
+                                <h5>28 aprilie 2021</h5>
+                            </div>
+                        </div>
+                    </SwiperSlide>
+                </Swiper> */}
+
+                {/* <div className='reviews-slider'>
+                    <div>round</div>
+                    <div className='reviews-slider-inner'>
+                        <div className='reviews-slider'>
+                            <div className='reviews-slider-item'>
+                                <div className='reviews-slider-item-main'>
+                                    <div className='reviews-slider-item-main-quotes'>
+                                        <RiDoubleQuotesL />
+                                    </div>
+                                    <p className='reviews-slider-item-main-comment'>
+                                        Mi-a plăcut mult de tot să să fac parte din această familie minunată, în care
+                                        m-am simțit extrem de motivată și satisfăcută de rezultatele pe care le-am
+                                        obținut. În tot acest timp mi-am cunoscut colegii de grup, învățătoarea noastră
+                                        extrem de pozitivă și capabilă de a ne explica orice temă, orice întrebare( Mrs.
+                                        Olga, thank you soo much🥰) și desigur că mi-am mai luat un curs, ca să studiez
+                                        mai departe această minunată limbă, care ne este de mare ajutor. Și nu în
+                                        ultimul rând mulțumesc fondatorilor Fantastic English. I love you, see you soon.
+                                        Bye!❤
+                                    </p>
+                                    <div className='reviews-slider-item-main-social'>
+                                        <img
+                                            src='https://fantastic-english.md/wp-content/plugins/wp-facebook-reviews/public/partials/imgs/facebook_small_icon.png'
+                                            alt=''
+                                        />
+                                    </div>
+                                    <div className='reviews-slider-item-main-triangle'></div>
+                                </div>
+                                <div className='reviews-slider-item-author'>
+                                    <div className='reviews-slider-item-author-img'>
+                                        <img
+                                            src='https://fantastic-english.md/wp-content/uploads/2021/04/Curs-de-Engleza-Beginner-Incepatori-A1_result.webp'
+                                            alt='avatar comentator'
+                                        />
+                                    </div>
+                                    <div className='reviews-slider-item-author-info'>
+                                        <h4>Victoria Balagiu</h4>
+                                        <h5>28 aprilie 2021</h5>
+                                    </div>
+                                </div>
+                            </div>
+                            <div className='reviews-slider-item'>
+                                <div className='reviews-slider-item-main'>
+                                    <div className='reviews-slider-item-main-quotes'>
+                                        <RiDoubleQuotesL />
+                                    </div>
+                                    <p className='reviews-slider-item-main-comment'>
+                                        Mi-a plăcut mult de tot să să fac parte din această familie minunată, în care
+                                        m-am simțit extrem de motivată și satisfăcută de rezultatele pe care le-am
+                                        obținut. În tot acest timp mi-am cunoscut colegii de grup, învățătoarea noastră
+                                        extrem de pozitivă și capabilă de a ne explica orice temă, orice întrebare( Mrs.
+                                        Olga, thank you soo much🥰) și desigur că mi-am mai luat un curs, ca să studiez
+                                        mai departe această minunată limbă, care ne este de mare ajutor. Și nu în
+                                        ultimul rând mulțumesc fondatorilor Fantastic English. I love you, see you soon.
+                                        Bye!❤
+                                    </p>
+                                    <div className='reviews-slider-item-main-social'>
+                                        <img
+                                            src='https://fantastic-english.md/wp-content/plugins/wp-facebook-reviews/public/partials/imgs/facebook_small_icon.png'
+                                            alt=''
+                                        />
+                                    </div>
+                                    <div className='reviews-slider-item-main-triangle'></div>
+                                </div>
+                                <div className='reviews-slider-item-author'>
+                                    <div className='reviews-slider-item-author-img'>
+                                        <img
+                                            src='https://fantastic-english.md/wp-content/uploads/2021/04/Curs-de-Engleza-Beginner-Incepatori-A1_result.webp'
+                                            alt='avatar comentator'
+                                        />
+                                    </div>
+                                    <div className='reviews-slider-item-author-info'>
+                                        <h4>Victoria Balagiu</h4>
+                                        <h5>28 aprilie 2021</h5>
+                                    </div>
+                                </div>
+                            </div>
+                            <div className='reviews-slider-item'>
+                                <div className='reviews-slider-item-main'>
+                                    <div className='reviews-slider-item-main-quotes'>
+                                        <RiDoubleQuotesL />
+                                    </div>
+                                    <p className='reviews-slider-item-main-comment'>
+                                        Mi-a plăcut mult de tot să să fac parte din această familie minunată, în care
+                                        m-am simțit extrem de motivată și satisfăcută de rezultatele pe care le-am
+                                        obținut. În tot acest timp mi-am cunoscut colegii de grup, învățătoarea noastră
+                                        extrem de pozitivă și capabilă de a ne explica orice temă, orice întrebare( Mrs.
+                                        Olga, thank you soo much🥰) și desigur că mi-am mai luat un curs, ca să studiez
+                                        mai departe această minunată limbă, care ne este de mare ajutor. Și nu în
+                                        ultimul rând mulțumesc fondatorilor Fantastic English. I love you, see you soon.
+                                        Bye!❤
+                                    </p>
+                                    <div className='reviews-slider-item-main-social'>
+                                        <img
+                                            src='https://fantastic-english.md/wp-content/plugins/wp-facebook-reviews/public/partials/imgs/facebook_small_icon.png'
+                                            alt=''
+                                        />
+                                    </div>
+                                    <div className='reviews-slider-item-main-triangle'></div>
+                                </div>
+                                <div className='reviews-slider-item-author'>
+                                    <div className='reviews-slider-item-author-img'>
+                                        <img
+                                            src='https://fantastic-english.md/wp-content/uploads/2021/04/Curs-de-Engleza-Beginner-Incepatori-A1_result.webp'
+                                            alt='avatar comentator'
+                                        />
+                                    </div>
+                                    <div className='reviews-slider-item-author-info'>
+                                        <h4>Victoria Balagiu</h4>
+                                        <h5>28 aprilie 2021</h5>
+                                    </div>
+                                </div>
+                            </div>
+                            <div className='reviews-slider-item'>
+                                <div className='reviews-slider-item-main'>
+                                    <div className='reviews-slider-item-main-quotes'>
+                                        <RiDoubleQuotesL />
+                                    </div>
+                                    <p className='reviews-slider-item-main-comment'>
+                                        Mi-a plăcut mult de tot să să fac parte din această familie minunată, în care
+                                        m-am simțit extrem de motivată și satisfăcută de rezultatele pe care le-am
+                                        obținut. În tot acest timp mi-am cunoscut colegii de grup, învățătoarea noastră
+                                        extrem de pozitivă și capabilă de a ne explica orice temă, orice întrebare( Mrs.
+                                        Olga, thank you soo much🥰) și desigur că mi-am mai luat un curs, ca să studiez
+                                        mai departe această minunată limbă, care ne este de mare ajutor. Și nu în
+                                        ultimul rând mulțumesc fondatorilor Fantastic English. I love you, see you soon.
+                                        Bye!❤
+                                    </p>
+                                    <div className='reviews-slider-item-main-social'>
+                                        <img
+                                            src='https://fantastic-english.md/wp-content/plugins/wp-facebook-reviews/public/partials/imgs/facebook_small_icon.png'
+                                            alt=''
+                                        />
+                                    </div>
+                                    <div className='reviews-slider-item-main-triangle'></div>
+                                </div>
+                                <div className='reviews-slider-item-author'>
+                                    <div className='reviews-slider-item-author-img'>
+                                        <img
+                                            src='https://fantastic-english.md/wp-content/uploads/2021/04/Curs-de-Engleza-Beginner-Incepatori-A1_result.webp'
+                                            alt='avatar comentator'
+                                        />
+                                    </div>
+                                    <div className='reviews-slider-item-author-info'>
+                                        <h4>Victoria Balagiu</h4>
+                                        <h5>28 aprilie 2021</h5>
+                                    </div>
+                                </div>
+                            </div>
+                            <div className='reviews-slider-item'>
+                                <div className='reviews-slider-item-main'>
+                                    <div className='reviews-slider-item-main-quotes'>
+                                        <RiDoubleQuotesL />
+                                    </div>
+                                    <p className='reviews-slider-item-main-comment'>
+                                        Mi-a plăcut mult de tot să să fac parte din această familie minunată, în care
+                                        m-am simțit extrem de motivată și satisfăcută de rezultatele pe care le-am
+                                        obținut. În tot acest timp mi-am cunoscut colegii de grup, învățătoarea noastră
+                                        extrem de pozitivă și capabilă de a ne explica orice temă, orice întrebare( Mrs.
+                                        Olga, thank you soo much🥰) și desigur că mi-am mai luat un curs, ca să studiez
+                                        mai departe această minunată limbă, care ne este de mare ajutor. Și nu în
+                                        ultimul rând mulțumesc fondatorilor Fantastic English. I love you, see you soon.
+                                        Bye!❤
+                                    </p>
+                                    <div className='reviews-slider-item-main-social'>
+                                        <img
+                                            src='https://fantastic-english.md/wp-content/plugins/wp-facebook-reviews/public/partials/imgs/facebook_small_icon.png'
+                                            alt=''
+                                        />
+                                    </div>
+                                    <div className='reviews-slider-item-main-triangle'></div>
+                                </div>
+                                <div className='reviews-slider-item-author'>
+                                    <div className='reviews-slider-item-author-img'>
+                                        <img
+                                            src='https://fantastic-english.md/wp-content/uploads/2021/04/Curs-de-Engleza-Beginner-Incepatori-A1_result.webp'
+                                            alt='avatar comentator'
+                                        />
+                                    </div>
+                                    <div className='reviews-slider-item-author-info'>
+                                        <h4>Victoria Balagiu</h4>
+                                        <h5>28 aprilie 2021</h5>
+                                    </div>
+                                </div>
+                            </div>
+                        </div>
+                    </div>
+                    <div>round</div>
+                </div> */}
             </div>
         </>
     )

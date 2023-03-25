@@ -112,5 +112,63 @@
             "img1": "https://fantastic-english.md/wp-content/uploads/2021/04/Diana_result-2.webp",
             "img2": "https://fantastic-english.md/wp-content/uploads/2021/04/DianaKID_result_2.webp"
         }
+    ],
+    "reviews": [
+        {
+            "id": 0,
+            "name": "Veronica Ciubotaru",
+            "img": "https://fantastic-english.md/wp-content/uploads/2021/04/Curs-de-Engleza-Beginner-Incepatori-A1_result.webp",
+            "comment": "Be fantastic! My favorite phrase in this school. The teacher always called us to class with good mood and a lot of motivation. That makes me want to learn English even more. The atmosphere is so fine and productive that you don't even notice when the course ends and you want another one. All you have left is the desire to learn. So feel free to sign up for a course. And thank my teacher Olga Leca, one of the best!!!💞🤩",
+            "date": "19.04.2021"
+        },
+        {
+            "id": 1,
+            "name": "Veronica Ciubotaru",
+            "img": "https://fantastic-english.md/wp-content/uploads/2021/04/Curs-de-Engleza-Beginner-Incepatori-A1_result.webp",
+            "comment": "Be fantastic! My favorite phrase in this school. The teacher always called us to class with good mood and a lot of motivation. That makes me want to learn English even more. The atmosphere is so fine and productive that you don't even notice when the course ends and you want another one. All you have left is the desire to learn. So feel free to sign up for a course. And thank my teacher Olga Leca, one of the best!!!💞🤩",
+            "date": "19.04.2021"
+        },
+        {
+            "id": 2,
+            "name": "Veronica Ciubotaru",
+            "img": "https://fantastic-english.md/wp-content/uploads/2021/04/Curs-de-Engleza-Beginner-Incepatori-A1_result.webp",
+            "comment": "Be fantastic! My favorite phrase in this school. The teacher always called us to class with good mood and a lot of motivation. That makes me want to learn English even more. The atmosphere is so fine and productive that you don't even notice when the course ends and you want another one. All you have left is the desire to learn. So feel free to sign up for a course. And thank my teacher Olga Leca, one of the best!!!💞🤩",
+            "date": "19.04.2021"
+        },
+        {
+            "id": 3,
+            "name": "Veronica Ciubotaru",
+            "img": "https://fantastic-english.md/wp-content/uploads/2021/04/Curs-de-Engleza-Beginner-Incepatori-A1_result.webp",
+            "comment": "Be fantastic! My favorite phrase in this school. The teacher always called us to class with good mood and a lot of motivation. That makes me want to learn English even more. The atmosphere is so fine and productive that you don't even notice when the course ends and you want another one. All you have left is the desire to learn. So feel free to sign up for a course. And thank my teacher Olga Leca, one of the best!!!💞🤩",
+            "date": "19.04.2021"
+        },
+        {
+            "id": 4,
+            "name": "Veronica Ciubotaru",
+            "img": "https://fantastic-english.md/wp-content/uploads/2021/04/Curs-de-Engleza-Beginner-Incepatori-A1_result.webp",
+            "comment": "Be fantastic! My favorite phrase in this school. The teacher always called us to class with good mood and a lot of motivation. That makes me want to learn English even more. The atmosphere is so fine and productive that you don't even notice when the course ends and you want another one. All you have left is the desire to learn. So feel free to sign up for a course. And thank my teacher Olga Leca, one of the best!!!💞🤩",
+            "date": "19.04.2021"
+        },
+        {
+            "id": 5,
+            "name": "Veronica Ciubotaru",
+            "img": "https://fantastic-english.md/wp-content/uploads/2021/04/Curs-de-Engleza-Beginner-Incepatori-A1_result.webp",
+            "comment": "Be fantastic! My favorite phrase in this school. The teacher always called us to class with good mood and a lot of motivation. That makes me want to learn English even more. The atmosphere is so fine and productive that you don't even notice when the course ends and you want another one. All you have left is the desire to learn. So feel free to sign up for a course. And thank my teacher Olga Leca, one of the best!!!💞🤩",
+            "date": "19.04.2021"
+        },
+        {
+            "id": 6,
+            "name": "Veronica Ciubotaru",
+            "img": "https://fantastic-english.md/wp-content/uploads/2021/04/Curs-de-Engleza-Beginner-Incepatori-A1_result.webp",
+            "comment": "Be fantastic! My favorite phrase in this school. The teacher always called us to class with good mood and a lot of motivation. That makes me want to learn English even more. The atmosphere is so fine and productive that you don't even notice when the course ends and you want another one. All you have left is the desire to learn. So feel free to sign up for a course. And thank my teacher Olga Leca, one of the best!!!💞🤩",
+            "date": "19.04.2021"
+        },
+        {
+            "id": 7,
+            "name": "Veronica Ciubotaru",
+            "img": "https://fantastic-english.md/wp-content/uploads/2021/04/Curs-de-Engleza-Beginner-Incepatori-A1_result.webp",
+            "comment": "Be fantastic! My favorite phrase in this school. The teacher always called us to class with good mood and a lot of motivation. That makes me want to learn English even more. The atmosphere is so fine and productive that you don't even notice when the course ends and you want another one. All you have left is the desire to learn. So feel free to sign up for a course. And thank my teacher Olga Leca, one of the best!!!💞🤩",
+            "date": "19.04.2021"
+        }
     ]
 }

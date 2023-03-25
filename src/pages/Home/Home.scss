@@ -111,3 +111,53 @@
         margin-bottom: 60px;
     }
 }
+
+.garantee {
+    display: flex;
+    align-items: center;
+    justify-content: center;
+    background: $main-color;
+    color: white;
+    margin-bottom: 80px;
+    padding-top: 20px;
+    & > * {
+        width: 35%;
+    }
+    &-main {
+        display: flex;
+        justify-content: center;
+        flex-direction: column;
+        &-header {
+            text-align: center;
+            font-size: 32px;
+            font-family: 'Core Sans';
+            margin-bottom: 20px;
+        }
+        &-description {
+            text-align: center;
+            font-family: 'Ubuntu';
+            font-size: 18px;
+            p {
+                margin: 10px 0;
+            }
+        }
+    }
+    &-img {
+        display: flex;
+        padding: 0 80px;
+        img {
+            width: 100%;
+        }
+    }
+}
+
+.reviews {
+    display: flex;
+    flex-direction: column;
+    margin-bottom: 60px;
+    &-header {
+        font-size: 32px;
+        font-family: 'Core Sans';
+        margin-bottom: 40px;
+    }
+}

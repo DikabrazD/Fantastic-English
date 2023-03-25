@@ -1,7 +1,7 @@
 import './Card.scss'
 import { CardComponentInterface, CardInterface } from './CardInterface'
 
-const Card = ({ card, descriptionStatus }: CardComponentInterface) => {
+const Card = ({ card, descriptionStatus = false }: CardComponentInterface) => {
     return (
         <div className='card'>
             <div className='card-image'>
