@@ -11,6 +11,8 @@ input {
     border: 1px solid #e1e1e1;
     outline: none;
     padding: 7px 10px;
+    width: 100%;
+    height: 100%;
     &::placeholder {
         color: #252525;
     }

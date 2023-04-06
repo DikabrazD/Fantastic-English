@@ -8,10 +8,23 @@
         width: 20px;
         height: 18px;
     }
-    &-link {
+    &-underline {
+        &:hover {
+            text-decoration: underline;
+        }
+    }
+    &-changeColor {
         transition: 0.2s ease-out;
         &:hover {
             color: #e6285e;
         }
     }
+}
+
+.white {
+    color: white;
+}
+
+.black {
+    color: black;
 }

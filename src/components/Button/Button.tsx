@@ -8,6 +8,10 @@ const Button = ({ type, text }: ButtonInterface) => {
         switch (type) {
             case ButtonType.static:
                 return <button className='static'>{text}</button>
+            case ButtonType.changeToWhite:
+                return <button className='changeToWhite'>{text}</button>
+            case ButtonType.changeToMain:
+                return <button className='changeToMain'>{text}</button>
             case ButtonType.blink:
                 return <button className='blink'>{text}</button>
             case ButtonType.arrow:

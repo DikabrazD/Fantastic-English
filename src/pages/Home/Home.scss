@@ -28,6 +28,9 @@
         &-inner {
             display: flex;
             gap: 15px;
+            &-input {
+                width: auto;
+            }
         }
         &-checkbox {
             align-self: flex-end;
@@ -159,5 +162,114 @@
         font-size: 32px;
         font-family: 'Core Sans';
         margin-bottom: 40px;
+    }
+    &-advantage {
+        &-header {
+            font-size: 32px;
+            font-family: 'Core Sans';
+            margin-top: 40px;
+            margin-bottom: 20px;
+        }
+        &-line {
+            width: 38px;
+            height: 3px;
+            background-color: $main-color;
+            content: ' ';
+            margin-bottom: 20px;
+        }
+        &-list {
+            display: flex;
+            flex-direction: column;
+            &-item {
+                display: flex;
+                align-items: center;
+                margin-bottom: 10px;
+                &-icon {
+                    color: $main-color;
+                    width: 25px;
+                    height: 25px;
+                    margin-right: 15px;
+                    & > * {
+                        width: 100%;
+                        height: 100%;
+                    }
+                }
+            }
+        }
+    }
+}
+
+.advantage {
+    display: flex;
+    justify-content: space-around;
+    background-color: $main-color;
+    padding: 40px 0;
+    &-item {
+        display: flex;
+        align-items: center;
+        flex-direction: column;
+        width: 400px;
+        img {
+            width: 250px;
+            height: 250px;
+        }
+        h3 {
+            font-family: 'Core Sans';
+            font-size: 28px;
+            text-align: center;
+            color: white;
+        }
+    }
+}
+
+.contact-form {
+    width: 100%;
+    padding: 100px 0;
+    display: flex;
+    justify-content: center;
+    align-items: center;
+    &-wrapper {
+        width: 1100px;
+        display: flex;
+        justify-content: center;
+        align-items: stretch;
+        & > * {
+            width: 50%;
+        }
+        &-img {
+            background-position: center;
+            background-size: cover;
+            background-image: url('https://fantastic-english.md/wp-content/uploads/2021/04/Formular_Intrebari-Fantastic-English-1.webp');
+        }
+        &-form {
+            position: relative;
+            display: flex;
+            flex-direction: column;
+            align-items: flex-start;
+            background-color: $main-color;
+            padding: 50px;
+            color: white;
+            &-header {
+                font-family: 'Core Sans';
+                font-size: 28px;
+                margin-bottom: 20px;
+            }
+            &-description {
+                font-family: 'Ubuntu';
+                font-size: 18px;
+                margin-bottom: 20px;
+            }
+            &-triangle {
+                position: absolute;
+                width: 0;
+                height: 0;
+                border-top: 15px solid transparent;
+                border-bottom: 15px solid transparent;
+                border-right: 15px solid $main-color;
+                top: 50%;
+                left: -15px;
+                transform: translateY(-50%);
+            }
+        }
     }
 }
