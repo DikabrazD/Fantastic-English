@@ -9,4 +9,5 @@ export enum ButtonType {
 export interface ButtonInterface {
     type?: string
     text?: string | number
+    isDisabled?: boolean
 }

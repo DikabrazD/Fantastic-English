@@ -18,6 +18,9 @@ button {
     font-size: 17px;
     padding: 15px 30px;
     cursor: pointer;
+    &:disabled {
+        cursor: not-allowed;
+    }
 }
 
 .static {

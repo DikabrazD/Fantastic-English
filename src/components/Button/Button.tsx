@@ -3,20 +3,36 @@ import { ButtonInterface } from './ButtonInterface'
 import { ButtonType } from './ButtonInterface'
 import { FaLongArrowAltRight } from 'react-icons/fa'
 
-const Button = ({ type, text }: ButtonInterface) => {
+const Button = ({ type, text, isDisabled }: ButtonInterface) => {
     const renderButton = () => {
         switch (type) {
             case ButtonType.static:
-                return <button className='static'>{text}</button>
+                return (
+                    <button disabled={isDisabled} className='static'>
+                        {text}
+                    </button>
+                )
             case ButtonType.changeToWhite:
-                return <button className='changeToWhite'>{text}</button>
+                return (
+                    <button disabled={isDisabled} className='changeToWhite'>
+                        {text}
+                    </button>
+                )
             case ButtonType.changeToMain:
-                return <button className='changeToMain'>{text}</button>
+                return (
+                    <button disabled={isDisabled} className='changeToMain'>
+                        {text}
+                    </button>
+                )
             case ButtonType.blink:
-                return <button className='blink'>{text}</button>
+                return (
+                    <button disabled={isDisabled} className='blink'>
+                        {text}
+                    </button>
+                )
             case ButtonType.arrow:
                 return (
-                    <button className='arrow'>
+                    <button disabled={isDisabled} className='arrow'>
                         <div className='arrow-icon'>
                             <FaLongArrowAltRight className='image' />
                         </div>

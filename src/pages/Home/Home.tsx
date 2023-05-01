@@ -20,6 +20,17 @@ import Form from 'src/components/Form'
 const Home = () => {
     const [teachers, setTeachers] = useState<CardInterface[]>([])
     const [reviews, setReviews] = useState<ReviewInterface[]>([])
+    const [privacyCheck, setPrivacyCheck] = useState<boolean>(false)
+    const [smsCheck, setSmsCheck] = useState<boolean>(false)
+
+    const isDisabled = privacyCheck && smsCheck ? false : true
+
+    const changePrivacyCheck = (i: boolean) => {
+        setPrivacyCheck(i)
+    }
+    const changeSmsCheck = (i: boolean) => {
+        setSmsCheck(i)
+    }
 
     useEffect(() => {
         const getData = async () => {
@@ -57,6 +68,7 @@ const Home = () => {
                 <h1>
                     Vorbește Engleza fluent <br /> Deja după 3 nivele,de la zero! <br /> Garantat!
                 </h1>
+
                 <form className='header-home-form' action=''>
                     <div className='header-home-form-inner'>
                         <div className='header-home-form-inner-input'>
@@ -85,11 +97,15 @@ const Home = () => {
                                 }
                             ]}
                         />
-                        <Button type={ButtonType.static} text='Lecția de probă gratuită' />
+                        <Button isDisabled={isDisabled} type={ButtonType.static} text='Lecția de probă gratuită' />
                     </div>
                     <div className='header-home-form-checkbox'>
-                        <Checkbox text='Sunt de acord cu politica de confidențialitate' link='#' />
-                        <Checkbox text='Sunt de acord sa primesc SMS si apeluri' />
+                        <Checkbox
+                            text='Sunt de acord cu politica de confidențialitate'
+                            link='#'
+                            onChecked={changePrivacyCheck}
+                        />
+                        <Checkbox text='Sunt de acord sa primesc SMS si apeluri' onChecked={changeSmsCheck} />
                     </div>
                 </form>
             </div>

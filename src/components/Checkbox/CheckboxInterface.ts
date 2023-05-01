@@ -6,4 +6,5 @@ export interface CheckboxInterface {
     link?: string
     type?: Checkbox
     color?: CheckboxColor
+    onChecked?: (v: boolean) => void
 }
