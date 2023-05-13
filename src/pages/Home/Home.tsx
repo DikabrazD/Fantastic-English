@@ -16,21 +16,11 @@ import Card from 'src/components/Card'
 import Slider from 'src/components/Slider'
 import Review from 'src/components/Review'
 import Form from 'src/components/Form'
+import FormTrial from './Components/FormTrial/FormTrial'
 
 const Home = () => {
     const [teachers, setTeachers] = useState<CardInterface[]>([])
     const [reviews, setReviews] = useState<ReviewInterface[]>([])
-    const [privacyCheck, setPrivacyCheck] = useState<boolean>(false)
-    const [smsCheck, setSmsCheck] = useState<boolean>(false)
-
-    const isDisabled = privacyCheck && smsCheck ? false : true
-
-    const changePrivacyCheck = (i: boolean) => {
-        setPrivacyCheck(i)
-    }
-    const changeSmsCheck = (i: boolean) => {
-        setSmsCheck(i)
-    }
 
     useEffect(() => {
         const getData = async () => {
@@ -38,6 +28,7 @@ const Home = () => {
                 .get('http://localhost:3000/teachers')
                 .then((res) => {
                     setTeachers(res.data)
+                    console.log(1)
                 })
                 .catch((error) => {
                     console.log(error)
@@ -69,45 +60,7 @@ const Home = () => {
                     Vorbește Engleza fluent <br /> Deja după 3 nivele,de la zero! <br /> Garantat!
                 </h1>
 
-                <form className='header-home-form' action=''>
-                    <div className='header-home-form-inner'>
-                        <div className='header-home-form-inner-input'>
-                            <Input placeholder='Nume/Prenume' />
-                        </div>
-                        <div>
-                            <PhoneInput country={'md'} />
-                        </div>
-                        <Combobox
-                            list={[
-                                {
-                                    id: 0,
-                                    name: 'WhatsApp'
-                                },
-                                {
-                                    id: 1,
-                                    name: 'Viber'
-                                },
-                                {
-                                    id: 2,
-                                    name: 'Teleram'
-                                },
-                                {
-                                    id: 3,
-                                    name: 'Apel GSM'
-                                }
-                            ]}
-                        />
-                        <Button isDisabled={isDisabled} type={ButtonType.static} text='Lecția de probă gratuită' />
-                    </div>
-                    <div className='header-home-form-checkbox'>
-                        <Checkbox
-                            text='Sunt de acord cu politica de confidențialitate'
-                            link='#'
-                            onChecked={changePrivacyCheck}
-                        />
-                        <Checkbox text='Sunt de acord sa primesc SMS si apeluri' onChecked={changeSmsCheck} />
-                    </div>
-                </form>
+                <FormTrial />
             </div>
 
             <Courses />

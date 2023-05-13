@@ -1,22 +1,27 @@
 import { PropsWithChildren, useEffect, useState } from 'react'
-import { FaCcMastercard, FaCcVisa, FaClock, FaEnvelope, FaLocationArrow, FaPhoneAlt } from 'react-icons/fa'
+import { FaAngleUp, FaCcMastercard, FaCcVisa, FaClock, FaEnvelope, FaLocationArrow, FaPhoneAlt } from 'react-icons/fa'
 import { Link } from 'react-router-dom'
 import './Layout.scss'
 
 function Layout({ children }: PropsWithChildren) {
     const [prev, setPrev] = useState<number>(0)
     const [showHeader, setShowHeader] = useState<boolean>(false)
+    const [showToTop, setToTop] = useState<boolean>(false)
     const headerClass = showHeader ? 'show-header' : 'hide-header'
+    const toTopClass = showToTop ? 'show-toTop' : 'hide-toTop'
 
     useEffect(() => {
         const handleScroll = () => {
             if (prev < window.scrollY) {
                 setShowHeader(false)
+                setToTop(false)
                 setPrev(window.scrollY)
             } else {
                 if (window.scrollY < 200) {
+                    setToTop(false)
                     setShowHeader(false)
                 } else {
+                    setToTop(true)
                     setShowHeader(true)
                 }
                 setPrev(window.scrollY)
@@ -196,6 +201,11 @@ function Layout({ children }: PropsWithChildren) {
                     </div>
                 </div>
             </footer>
+            <div className={`toTop ${toTopClass}`}>
+                <div className='toTop-icon'>
+                    <FaAngleUp className='image' />
+                </div>
+            </div>
         </div>
     )
 }

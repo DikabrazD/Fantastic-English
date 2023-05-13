@@ -1,10 +1,9 @@
 import { useRef, useEffect, useState } from 'react'
-import { ComboboxInterface, ValueInterface } from './ComboboxInterface'
+import { ComboboxInterface, ComboboxItemInterface } from './ComboboxInterface'
 import './Combobox.scss'
 
-const Combobox = ({ list }: ComboboxInterface) => {
+const Combobox = ({ list, value, onChange }: ComboboxInterface) => {
     const [isOpen, setIsOpen] = useState<boolean>(false)
-    const [value, setValue] = useState<ValueInterface>({ id: 0, name: '' })
     const comboRef: any = useRef()
 
     useEffect(() => {
@@ -23,8 +22,8 @@ const Combobox = ({ list }: ComboboxInterface) => {
         setIsOpen((prevState) => !prevState)
     }
 
-    const changeValue = (item: ValueInterface) => {
-        setValue(item)
+    const changeValue = (item: ComboboxItemInterface) => {
+        onChange(item)
         toggleList()
     }
 

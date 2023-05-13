@@ -23,12 +23,8 @@ function Form({ privacyType, checkboxColor }: FormInterface) {
     return (
         <form className='form'>
             <div className='form-importantInfo'>
-                <div className='form-importantInfo-name'>
-                    <Input placeholder='Nume' />
-                </div>
-                <div className='form-importantInfo-email'>
-                    <Input placeholder='Email' />
-                </div>
+                <div className='form-importantInfo-name'>{/* <Input placeholder='Nume' /> */}</div>
+                <div className='form-importantInfo-email'>{/* <Input placeholder='Email' /> */}</div>
             </div>
             <div className='form-phoneInput'>
                 <PhoneInput country='md' />

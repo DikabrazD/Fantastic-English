@@ -1,38 +1,44 @@
+import React from 'react'
 import './Button.scss'
 import { ButtonInterface } from './ButtonInterface'
 import { ButtonType } from './ButtonInterface'
 import { FaLongArrowAltRight } from 'react-icons/fa'
 
-const Button = ({ type, text, isDisabled }: ButtonInterface) => {
+const Button = ({ type, text, isDisabled, onClick }: ButtonInterface) => {
+    const onCLickButton = (e: React.FormEvent<HTMLButtonElement>) => {
+        e.preventDefault()
+        if (onClick) onClick()
+    }
+
     const renderButton = () => {
         switch (type) {
             case ButtonType.static:
                 return (
-                    <button disabled={isDisabled} className='static'>
+                    <button onClick={onCLickButton} disabled={isDisabled} className='static'>
                         {text}
                     </button>
                 )
             case ButtonType.changeToWhite:
                 return (
-                    <button disabled={isDisabled} className='changeToWhite'>
+                    <button onClick={onCLickButton} disabled={isDisabled} className='changeToWhite'>
                         {text}
                     </button>
                 )
             case ButtonType.changeToMain:
                 return (
-                    <button disabled={isDisabled} className='changeToMain'>
+                    <button onClick={onCLickButton} disabled={isDisabled} className='changeToMain'>
                         {text}
                     </button>
                 )
             case ButtonType.blink:
                 return (
-                    <button disabled={isDisabled} className='blink'>
+                    <button onClick={onCLickButton} disabled={isDisabled} className='blink'>
                         {text}
                     </button>
                 )
             case ButtonType.arrow:
                 return (
-                    <button disabled={isDisabled} className='arrow'>
+                    <button onClick={onCLickButton} disabled={isDisabled} className='arrow'>
                         <div className='arrow-icon'>
                             <FaLongArrowAltRight className='image' />
                         </div>

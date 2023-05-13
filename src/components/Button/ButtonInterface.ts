@@ -10,4 +10,5 @@ export interface ButtonInterface {
     type?: string
     text?: string | number
     isDisabled?: boolean
+    onClick?: () => void
 }

@@ -1,0 +1,25 @@
+.formTrial {
+    background-color: white;
+    display: flex;
+    flex-direction: column;
+    padding: 20px;
+    top: 100%;
+    gap: 15px;
+    position: absolute;
+    transform: translateY(-50%);
+    box-shadow: 0 3px 5px 0 rgba(0, 0, 0, 0.1);
+    &-inner {
+        display: flex;
+        gap: 15px;
+        &-input {
+            width: auto;
+        }
+    }
+    &-checkbox {
+        align-self: flex-end;
+        display: flex;
+        align-content: center;
+        justify-content: center;
+        gap: 15px;
+    }
+}
