@@ -43,12 +43,22 @@ const FormTrial = () => {
     const changeSmsCheck = (i: boolean) => {
         setSmsCheck(i)
     }
+    const changeName = (x: string) => {
+        setName(x)
+    }
+    const changeNumber = (x: string) => {
+        setNumber(x)
+    }
+    const changeSocial = (x: ComboboxItemInterface) => {
+        setSocial(x)
+    }
 
     const postDate = () => {
         axios
             .post('http://localhost:3000/customers', { name, number, social })
             .then(() => {
-                console.log('Data post')
+                setName('')
+                setNumber('')
             })
             .catch(() => {
                 console.log(Error)
@@ -59,12 +69,12 @@ const FormTrial = () => {
         <form className='formTrial'>
             <div className='formTrial-inner'>
                 <div className='formTrial-inner-input'>
-                    <Input placeholder='Nume/Prenume' value={name} onChange={(x) => setName(x)} />
+                    <Input placeholder='Nume/Prenume*' value={name} onChange={changeName} />
                 </div>
                 <div>
-                    <PhoneInput country={'md'} value={number} onChange={(x) => setNumber(x)} />
+                    <PhoneInput country={'md'} value={number} onChange={changeNumber} />
                 </div>
-                <Combobox list={socialList} value={social} onChange={(x) => setSocial(x)} />
+                <Combobox list={socialList} value={social} onChange={changeSocial} />
                 <Button
                     onClick={postDate}
                     isDisabled={isDisabled}

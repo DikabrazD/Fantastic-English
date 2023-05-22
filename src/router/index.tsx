@@ -1,12 +1,17 @@
 import Home from 'src/pages/Home/Home'
-
-export enum RouterNames {
-    MAIN = '/'
-}
+import CoursesPage from 'src/pages/CoursesPage/CoursesPage'
 
 export interface InterfaceRoute {
     path: RouterNames
     component: React.ReactNode
 }
 
-export const publicRoutes: InterfaceRoute[] = [{ path: RouterNames.MAIN, component: <Home /> }]
+export enum RouterNames {
+    HOME = '/',
+    COURSESPAGE = '/cursuri'
+}
+
+export const publicRoutes: InterfaceRoute[] = [
+    { path: RouterNames.HOME, component: <Home /> },
+    { path: RouterNames.COURSESPAGE, component: <CoursesPage /> }
+]

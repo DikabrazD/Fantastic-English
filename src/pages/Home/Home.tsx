@@ -7,10 +7,6 @@ import { CardInterface } from 'src/components/Card/CardInterface'
 import { ReviewInterface } from 'src/components/Review/ReviewInterface'
 import { IoCheckmarkSharp } from 'react-icons/io5'
 import Button from 'src/components/Button'
-import Input from 'src/components/Input'
-import PhoneInput from 'react-phone-input-2'
-import Combobox from 'src/components/Combobox'
-import Checkbox from 'src/components/Checkbox'
 import Courses from 'src/components/Courses'
 import Card from 'src/components/Card'
 import Slider from 'src/components/Slider'
@@ -28,7 +24,6 @@ const Home = () => {
                 .get('http://localhost:3000/teachers')
                 .then((res) => {
                     setTeachers(res.data)
-                    console.log(1)
                 })
                 .catch((error) => {
                     console.log(error)

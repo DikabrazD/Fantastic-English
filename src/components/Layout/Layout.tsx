@@ -1,27 +1,31 @@
 import { PropsWithChildren, useEffect, useState } from 'react'
 import { FaAngleUp, FaCcMastercard, FaCcVisa, FaClock, FaEnvelope, FaLocationArrow, FaPhoneAlt } from 'react-icons/fa'
-import { Link } from 'react-router-dom'
+import { Link, useLocation } from 'react-router-dom'
+import { RouterNames } from 'src/router'
 import './Layout.scss'
 
 function Layout({ children }: PropsWithChildren) {
     const [prev, setPrev] = useState<number>(0)
     const [showHeader, setShowHeader] = useState<boolean>(false)
-    const [showToTop, setToTop] = useState<boolean>(false)
-    const headerClass = showHeader ? 'show-header' : 'hide-header'
+    const [showToTop, setShowToTop] = useState<boolean>(false)
+    const dropHeaderOpacity = showHeader ? 'show-header' : 'hide-header'
     const toTopClass = showToTop ? 'show-toTop' : 'hide-toTop'
+
+    const location = useLocation()
+    const headerClass = location.pathname === RouterNames.HOME ? '' : 'White'
 
     useEffect(() => {
         const handleScroll = () => {
             if (prev < window.scrollY) {
                 setShowHeader(false)
-                setToTop(false)
+                setShowToTop(false)
                 setPrev(window.scrollY)
             } else {
                 if (window.scrollY < 200) {
-                    setToTop(false)
+                    setShowToTop(false)
                     setShowHeader(false)
                 } else {
-                    setToTop(true)
+                    setShowToTop(true)
                     setShowHeader(true)
                 }
                 setPrev(window.scrollY)
@@ -62,13 +66,21 @@ function Layout({ children }: PropsWithChildren) {
                 </div>
             </div>
             <header>
-                <div className='header-bg'>
-                    <div className='container header'>
-                        <Link className='header-icon' to='/'>
-                            <img src='images/logo.png' alt='logo' className='image' />
+                <div className={`header${headerClass}-bg`}>
+                    <div className={`container header${headerClass}`}>
+                        <Link className={`header${headerClass}-icon`} to='/'>
+                            {location.pathname === '/' ? (
+                                <img src='images/logo.png' alt='logo' className='image' />
+                            ) : (
+                                <img
+                                    src='https://fantastic-english.md/wp-content/uploads/2021/06/fantastic-logo_result.webp'
+                                    alt='logo'
+                                    className='image'
+                                />
+                            )}
                         </Link>
-                        <div className='header-links'>
-                            <Link to='/'>Home</Link>
+                        <div className={`header${headerClass}-links`}>
+                            <Link to={RouterNames.HOME}>Home</Link>
                             <Link to='/cursuri'>Cursuri</Link>
                             <Link to='/test'>Teste</Link>
                             <Link to='/video-recenzii'>Video Recenzii</Link>
@@ -79,7 +91,7 @@ function Layout({ children }: PropsWithChildren) {
                     </div>
                 </div>
             </header>
-            <div className={`drop-header ${headerClass}`}>
+            <div className={`drop-header ${dropHeaderOpacity}`}>
                 <div className='drop-header-bg'>
                     <div className='container drop-header-inner'>
                         <Link className='drop-header-inner-icon' to='/'>

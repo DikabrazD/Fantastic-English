@@ -1,0 +1,24 @@
+@import '../../assets/styles/variables.scss';
+.breadcrumbs {
+    width: 100%;
+    padding: 15px 0;
+    color: white;
+    background: $main-color;
+    &-header {
+        font-family: 'Core Sans';
+        font-size: 28px;
+    }
+    &-list {
+        display: flex;
+        gap: 10px;
+        font-family: 'Poppins';
+        font-style: 15px;
+        a {
+            color: white;
+            transition: color 0.2s ease-out;
+            &:hover {
+                color: black;
+            }
+        }
+    }
+}

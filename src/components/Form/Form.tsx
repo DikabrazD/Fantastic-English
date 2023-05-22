@@ -6,12 +6,16 @@ import Input from '../Input'
 import { useState } from 'react'
 import { ButtonType } from '../Button/ButtonInterface'
 import { FormInterface } from './FormInterface'
+import axios from 'axios'
 
 function Form({ privacyType, checkboxColor }: FormInterface) {
+    const [name, setName] = useState<string>('')
+    const [email, setEmail] = useState<string>('')
+    const [number, setNumber] = useState<string>('')
     const [privacyCheck, setPrivacyCheck] = useState<boolean>(false)
     const [smsCheck, setSmsCheck] = useState<boolean>(false)
 
-    const isDisabled = privacyCheck && smsCheck ? false : true
+    const isDisabled = privacyCheck && smsCheck && name && email ? false : true
 
     const changePrivacyCheck = (i: boolean) => {
         setPrivacyCheck(i)
@@ -19,15 +23,41 @@ function Form({ privacyType, checkboxColor }: FormInterface) {
     const changeSmsCheck = (i: boolean) => {
         setSmsCheck(i)
     }
+    const changeName = (x: string) => {
+        setName(x)
+    }
+    const changeEmail = (x: string) => {
+        setEmail(x)
+    }
+    const changeNumber = (x: string) => {
+        setNumber(x)
+    }
+
+    const postDate = () => {
+        axios
+            .post('http://localhost:3000/customers', { name, number, email })
+            .then(() => {
+                setName('')
+                setEmail('')
+                setNumber('')
+            })
+            .catch(() => {
+                console.log(Error)
+            })
+    }
 
     return (
         <form className='form'>
             <div className='form-importantInfo'>
-                <div className='form-importantInfo-name'>{/* <Input placeholder='Nume' /> */}</div>
-                <div className='form-importantInfo-email'>{/* <Input placeholder='Email' /> */}</div>
+                <div className='form-importantInfo-name'>
+                    <Input placeholder='Nume' value={name} onChange={changeName} />
+                </div>
+                <div className='form-importantInfo-email'>
+                    <Input placeholder='Email' value={email} onChange={changeEmail} />
+                </div>
             </div>
             <div className='form-phoneInput'>
-                <PhoneInput country='md' />
+                <PhoneInput country='md' value={number} onChange={changeNumber} />
             </div>
             <textarea placeholder='Mesajul' className='form-textarea'></textarea>
             <div className='form-checkbox'>
@@ -40,7 +70,7 @@ function Form({ privacyType, checkboxColor }: FormInterface) {
                 />
                 <Checkbox text='Sunt de acord sa primesc SMS si apelur' onChecked={changeSmsCheck} />
             </div>
-            <Button isDisabled={isDisabled} type={ButtonType.changeToMain} text='Trimite' />
+            <Button isDisabled={isDisabled} type={ButtonType.changeToMain} text='Trimite' onClick={postDate} />
         </form>
     )
 }
