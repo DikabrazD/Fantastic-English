@@ -4,7 +4,7 @@ export interface CategoryInterface {
     courses: number[]
 }
 
-export interface CoursInterface {
+export interface CourseInterface {
     id: number
     name: string
     price: number

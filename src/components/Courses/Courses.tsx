@@ -1,13 +1,15 @@
 import './Courses.scss'
 import axios from 'axios'
-import { CoursInterface, CategoryInterface } from './CoursesInterface'
+import { CourseInterface, CategoryInterface } from './CoursesInterface'
 import { useEffect, useState } from 'react'
 import { HiOutlineArrowNarrowRight, HiOutlineClock } from 'react-icons/hi'
 import { useTransition, animated } from '@react-spring/web'
+import { Link, generatePath } from 'react-router-dom'
+import { RouterNames } from 'src/router'
 
 const Courses = () => {
     const [category, setCategory] = useState<CategoryInterface[]>([])
-    const [courses, setCourses] = useState<CoursInterface[]>([])
+    const [courses, setCourses] = useState<CourseInterface[]>([])
     const [isActive, setActive] = useState<number>(0)
 
     const coursesActive = courses.filter((item) => category[isActive].courses.includes(item.id))
@@ -28,7 +30,7 @@ const Courses = () => {
                     console.log(error)
                 })
             await axios
-                .get('http://localhost:3000/courses')
+                .get<CourseInterface[]>('http://localhost:3000/courses')
                 .then((res) => {
                     setCourses(res.data)
                 })
@@ -73,23 +75,25 @@ const Courses = () => {
 
             <div className='courses-list'>
                 {transition((style, item) => (
-                    <animated.div key={item.id} style={style} className='courses-list-item'>
-                        <div className='courses-list-item-image'>
-                            <img src={`${item.img}`} alt='Img of course' />
-                            <div className='courses-list-item-image-price'>85 MDL / 60 Min</div>
-                        </div>
-                        <h3>{item.name}</h3>
-                        <div className='courses-list-item-description'>
-                            <p className='courses-list-item-description-hours'>
-                                <HiOutlineClock className='courses-list-item-description-hours-icon' />
-                                <span>{item.number_lectures} ore astronomice</span>
-                            </p>
-                            <p className='courses-list-item-description-more'>
-                                <span className='courses-list-item-description-more-text'>Vezi Detalii</span>
-                                <HiOutlineArrowNarrowRight className='courses-list-item-description-more-icon' />
-                            </p>
-                        </div>
-                    </animated.div>
+                    <Link to={generatePath(RouterNames.COURSE, { id: `${item.id}` })}>
+                        <animated.div key={item.id} style={style} className='courses-list-item'>
+                            <div className='courses-list-item-image'>
+                                <img src={`${item.img}`} alt='Img of course' />
+                                <div className='courses-list-item-image-price'>85 MDL / 60 Min</div>
+                            </div>
+                            <h3>{item.name}</h3>
+                            <div className='courses-list-item-description'>
+                                <p className='courses-list-item-description-hours'>
+                                    <HiOutlineClock className='courses-list-item-description-hours-icon' />
+                                    <span>{item.number_lectures} ore astronomice</span>
+                                </p>
+                                <p className='courses-list-item-description-more'>
+                                    <span className='courses-list-item-description-more-text'>Vezi Detalii</span>
+                                    <HiOutlineArrowNarrowRight className='courses-list-item-description-more-icon' />
+                                </p>
+                            </div>
+                        </animated.div>
+                    </Link>
                 ))}
             </div>
         </div>

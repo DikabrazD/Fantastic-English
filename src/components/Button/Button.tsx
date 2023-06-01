@@ -36,6 +36,15 @@ const Button = ({ type, text, isDisabled, onClick }: ButtonInterface) => {
                         {text}
                     </button>
                 )
+            case ButtonType.arrowInMain:
+                return (
+                    <button onClick={onCLickButton} disabled={isDisabled} className='arrowInMain'>
+                        <div className='arrowInMain-icon'>
+                            <FaLongArrowAltRight className='image' />
+                        </div>
+                        <span className='arrowInMain-text'>{text}</span>
+                    </button>
+                )
             case ButtonType.arrow:
                 return (
                     <button onClick={onCLickButton} disabled={isDisabled} className='arrow'>
@@ -46,7 +55,7 @@ const Button = ({ type, text, isDisabled, onClick }: ButtonInterface) => {
                     </button>
                 )
             default:
-                return <div>12</div>
+                return <div>Chooice The Button</div>
         }
     }
 

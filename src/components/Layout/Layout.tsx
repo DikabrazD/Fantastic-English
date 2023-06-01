@@ -12,7 +12,8 @@ function Layout({ children }: PropsWithChildren) {
     const toTopClass = showToTop ? 'show-toTop' : 'hide-toTop'
 
     const location = useLocation()
-    const headerClass = location.pathname === RouterNames.HOME ? '' : 'White'
+    const headerIsPink = location.pathname === RouterNames.HOME || RouterNames.COURSE
+    const headerClass = headerIsPink ? '' : 'White'
 
     useEffect(() => {
         const handleScroll = () => {
@@ -69,8 +70,12 @@ function Layout({ children }: PropsWithChildren) {
                 <div className={`header${headerClass}-bg`}>
                     <div className={`container header${headerClass}`}>
                         <Link className={`header${headerClass}-icon`} to='/'>
-                            {location.pathname === '/' ? (
-                                <img src='images/logo.png' alt='logo' className='image' />
+                            {headerIsPink ? (
+                                <img
+                                    src='https://fantastic-english.md/wp-content/uploads/2021/06/Logo-White-Homepage-desktop-e1607166771985_result.webp'
+                                    alt='logo'
+                                    className='image'
+                                />
                             ) : (
                                 <img
                                     src='https://fantastic-english.md/wp-content/uploads/2021/06/fantastic-logo_result.webp'
@@ -81,9 +86,9 @@ function Layout({ children }: PropsWithChildren) {
                         </Link>
                         <div className={`header${headerClass}-links`}>
                             <Link to={RouterNames.HOME}>Home</Link>
-                            <Link to='/cursuri'>Cursuri</Link>
+                            <Link to={RouterNames.ALLCOURSES}>Cursuri</Link>
                             <Link to='/test'>Teste</Link>
-                            <Link to='/video-recenzii'>Video Recenzii</Link>
+                            <Link to={RouterNames.REVIEW}>Video Recenzii</Link>
                             <Link to='/echipa'>Echipa</Link>
                             <Link to='/cariera'>Carieră</Link>
                             <Link to='/contacte'>Contacte</Link>
@@ -102,10 +107,10 @@ function Layout({ children }: PropsWithChildren) {
                             />
                         </Link>
                         <div className='drop-header-inner-links'>
-                            <Link to='/'>Home</Link>
-                            <Link to='/cursuri'>Cursuri</Link>
+                            <Link to={RouterNames.HOME}>Home</Link>
+                            <Link to={RouterNames.ALLCOURSES}>Cursuri</Link>
                             <Link to='/test'>Teste</Link>
-                            <Link to='/video-recenzii'>Video Recenzii</Link>
+                            <Link to={RouterNames.REVIEW}>Video Recenzii</Link>
                             <Link to='/echipa'>Echipa</Link>
                             <Link to='/cariera'>Carieră</Link>
                             <Link to='/contacte'>Contacte</Link>

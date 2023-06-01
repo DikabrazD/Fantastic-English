@@ -13,6 +13,13 @@
 }
 
 @font-face {
+    font-family: 'Poppins';
+    src: url('../fonts/Poppins-Medium.woff') format('woff');
+    font-weight: 400;
+    font-style: normal;
+}
+
+@font-face {
     font-family: 'Core Sans';
     src: url('../fonts/Core\ Sans\ N\ SC\ W01\ 97\ Cn\ Black.woff2') format('woff2'),
         url('../fonts/Core\ Sans\ N\ SC\ W01\ 97\ Cn\ Black.woff') format('woff');
@@ -23,4 +30,10 @@
     font-family: 'Ubuntu';
     src: url('../fonts/Ubuntu-Light.woff') format('woff');
     font-weight: 300;
+}
+
+@font-face {
+    font-family: 'Ubuntu';
+    src: url('../fonts/Ubuntu-Medium.woff') format('woff');
+    font-weight: 500;
 }

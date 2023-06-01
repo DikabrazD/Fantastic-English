@@ -1,228 +1,516 @@
 {
-  "courses_category": [
-    {
-      "id": 0,
-      "name": "Toate",
-      "courses": [
-        0,
-        1,
-        3,
-        4,
-        5,
-        6,
-        7
-      ]
-    },
-    {
-      "id": 1,
-      "name": "Engleză conversațională adulți",
-      "courses": [
-        0,
-        1,
-        3,
-        4,
-        5,
-        6
-      ]
-    },
-    {
-      "id": 2,
-      "name": "Pregătire BAC",
-      "courses": [
-        2
-      ]
-    },
-    {
-      "id": 3,
-      "name": "Adolescenți",
-      "courses": [
-        4
-      ]
-    }
-  ],
-  "courses": [
-    {
-      "id": 0,
-      "name": "Curs de Engleză: Beginner (A1)",
-      "price": "85",
-      "number_lectures": 48,
-      "img": "https://fantastic-english.md/wp-content/uploads/2021/04/Curs-de-Engleza-Beginner-Incepatori-A1_result.webp"
-    },
-    {
-      "id": 1,
-      "name": "Curs de Engleză: Elementary (A2)",
-      "price": "85",
-      "number_lectures": 48,
-      "img": "https://fantastic-english.md/wp-content/uploads/2021/04/Curs-de-Engleza-Elementary-A2_result.webp"
-    },
-    {
-      "id": 2,
-      "name": "Curs de Engleză: Pre-Intermediate (B1)",
-      "price": "85",
-      "number_lectures": 54,
-      "img": "https://fantastic-english.md/wp-content/uploads/2021/04/Curs-de-Engleza-Pre-Intermediate-B1_result.webp"
-    },
-    {
-      "id": 3,
-      "name": "Curs de Engleză: Intermediate (B1-B2)",
-      "price": "85",
-      "number_lectures": 54,
-      "img": "https://fantastic-english.md/wp-content/uploads/2021/04/Curs-de-Engleza-Intermediate-B1-B2_result.webp"
-    },
-    {
-      "id": 4,
-      "name": "Curs de Engleză: Intermediate Plus",
-      "price": "85",
-      "number_lectures": 60,
-      "img": "https://fantastic-english.md/wp-content/uploads/2021/04/Curs-de-Engleza-Intermediate-Plus_result.webp"
-    },
-    {
-      "id": 5,
-      "name": "Curs de Engleză: Upper Intermediate (B2)",
-      "price": "85",
-      "number_lectures": 60,
-      "img": "https://fantastic-english.md/wp-content/uploads/2021/04/Curs-de-Engleza-Upper-Intermediate-B2_result.webp"
-    },
-    {
-      "id": 6,
-      "name": "Curs de Engleză: Advanced (C1)",
-      "price": "85",
-      "number_lectures": 60,
-      "img": "https://fantastic-english.md/wp-content/uploads/2021/04/Curs-de-Engleza-Advanced-C1_result.webp"
-    },
-    {
-      "id": 7,
-      "name": "Pregătire pentru BAC la Engleză",
-      "price": "85",
-      "number_lectures": 48,
-      "img": "https://fantastic-english.md/wp-content/uploads/2021/04/Curs-de-engleza-pentru-Adolescenti_result.webp"
-    }
-  ],
-  "teachers": [
-    {
-      "id": 0,
-      "name": "Elena",
-      "position": "Profesor",
-      "description": "Licențiată în științe ale Educației, Limba și Literatura Engleză & Limba Franceză. Profesor cu o experiență de predare la peste 300 de studenți de diferite vârste.",
-      "img1": "https://fantastic-english.md/wp-content/uploads/2021/04/Eliza_result-2.webp",
-      "img2": "https://fantastic-english.md/wp-content/uploads/2021/04/Eliza-KID_result-2.webp"
-    },
-    {
-      "id": 1,
-      "name": "Natalia",
-      "position": "Profesor",
-      "description": "Master în Leadership și educație, licențiat în Geografie și Filologie engleză. Profesor, instructor TOEFL și HT, are grijă ca corpul didactic din școală să aibă o dezvoltare personală și profesională.",
-      "img1": "https://fantastic-english.md/wp-content/uploads/2021/02/Elena_result_2.webp",
-      "img2": "https://fantastic-english.md/wp-content/uploads/2021/02/Elena_kid_2.webp"
-    },
-    {
-      "id": 2,
-      "name": "Diana",
-      "position": "Profesor",
-      "description": "Deținătoare al certificatului CELTA (Certificat în predarea limbii engleze pentru adulți), acreditat de către Cambridge Language Assessment din cadrul Universității Cambridge.",
-      "img1": "https://fantastic-english.md/wp-content/uploads/2021/02/Margarita_result_2.webp",
-      "img2": "https://fantastic-english.md/wp-content/uploads/2021/02/Margarita-KID_result_2.webp"
-    },
-    {
-      "id": 3,
-      "name": "Eliza",
-      "position": "Profesor",
-      "description": "Pe parcursul studiilor, a observat că este extrem de important să îmbrățișezi profesia care îți aduce satisfacție și bucurie enormă. Este licențiată în Științe ale Educației, Lismba și Literatura Engleză & Limba Franceză.",
-      "img1": "https://fantastic-english.md/wp-content/uploads/2021/04/Diana_result-2.webp",
-      "img2": "https://fantastic-english.md/wp-content/uploads/2021/04/DianaKID_result_2.webp"
-    }
-  ],
-  "reviews": [
-    {
-      "id": 0,
-      "name": "Veronica Ciubotaru",
-      "img": "https://fantastic-english.md/wp-content/uploads/2021/04/Curs-de-Engleza-Beginner-Incepatori-A1_result.webp",
-      "comment": "Be fantastic! My favorite phrase in this school. The teacher always called us to class with good mood and a lot of motivation. That makes me want to learn English even more. The atmosphere is so fine and productive that you don't even notice when the course ends and you want another one. All you have left is the desire to learn. So feel free to sign up for a course. And thank my teacher Olga Leca, one of the best!!!💞🤩",
-      "date": "19.04.2021"
-    },
-    {
-      "id": 1,
-      "name": "Veronica Ciubotaru",
-      "img": "https://fantastic-english.md/wp-content/uploads/2021/04/Curs-de-Engleza-Beginner-Incepatori-A1_result.webp",
-      "comment": "Be fantastic! My favorite phrase in this school. The teacher always called us to class with good mood and a lot of motivation. That makes me want to learn English even more. The atmosphere is so fine and productive that you don't even notice when the course ends and you want another one. All you have left is the desire to learn. So feel free to sign up for a course. And thank my teacher Olga Leca, one of the best!!!💞🤩",
-      "date": "19.04.2021"
-    },
-    {
-      "id": 2,
-      "name": "Veronica Ciubotaru",
-      "img": "https://fantastic-english.md/wp-content/uploads/2021/04/Curs-de-Engleza-Beginner-Incepatori-A1_result.webp",
-      "comment": "Be fantastic! My favorite phrase in this school. The teacher always called us to class with good mood and a lot of motivation. That makes me want to learn English even more. The atmosphere is so fine and productive that you don't even notice when the course ends and you want another one. All you have left is the desire to learn. So feel free to sign up for a course. And thank my teacher Olga Leca, one of the best!!!💞🤩",
-      "date": "19.04.2021"
-    },
-    {
-      "id": 3,
-      "name": "Veronica Ciubotaru",
-      "img": "https://fantastic-english.md/wp-content/uploads/2021/04/Curs-de-Engleza-Beginner-Incepatori-A1_result.webp",
-      "comment": "Be fantastic! My favorite phrase in this school. The teacher always called us to class with good mood and a lot of motivation. That makes me want to learn English even more. The atmosphere is so fine and productive that you don't even notice when the course ends and you want another one. All you have left is the desire to learn. So feel free to sign up for a course. And thank my teacher Olga Leca, one of the best!!!💞🤩",
-      "date": "19.04.2021"
-    },
-    {
-      "id": 4,
-      "name": "Veronica Ciubotaru",
-      "img": "https://fantastic-english.md/wp-content/uploads/2021/04/Curs-de-Engleza-Beginner-Incepatori-A1_result.webp",
-      "comment": "Be fantastic! My favorite phrase in this school. The teacher always called us to class with good mood and a lot of motivation. That makes me want to learn English even more. The atmosphere is so fine and productive that you don't even notice when the course ends and you want another one. All you have left is the desire to learn. So feel free to sign up for a course. And thank my teacher Olga Leca, one of the best!!!💞🤩",
-      "date": "19.04.2021"
-    },
-    {
-      "id": 5,
-      "name": "Veronica Ciubotaru",
-      "img": "https://fantastic-english.md/wp-content/uploads/2021/04/Curs-de-Engleza-Beginner-Incepatori-A1_result.webp",
-      "comment": "Be fantastic! My favorite phrase in this school. The teacher always called us to class with good mood and a lot of motivation. That makes me want to learn English even more. The atmosphere is so fine and productive that you don't even notice when the course ends and you want another one. All you have left is the desire to learn. So feel free to sign up for a course. And thank my teacher Olga Leca, one of the best!!!💞🤩",
-      "date": "19.04.2021"
-    },
-    {
-      "id": 6,
-      "name": "Veronica Ciubotaru",
-      "img": "https://fantastic-english.md/wp-content/uploads/2021/04/Curs-de-Engleza-Beginner-Incepatori-A1_result.webp",
-      "comment": "Be fantastic! My favorite phrase in this school. The teacher always called us to class with good mood and a lot of motivation. That makes me want to learn English even more. The atmosphere is so fine and productive that you don't even notice when the course ends and you want another one. All you have left is the desire to learn. So feel free to sign up for a course. And thank my teacher Olga Leca, one of the best!!!💞🤩",
-      "date": "19.04.2021"
-    },
-    {
-      "id": 7,
-      "name": "Veronica Ciubotaru",
-      "img": "https://fantastic-english.md/wp-content/uploads/2021/04/Curs-de-Engleza-Beginner-Incepatori-A1_result.webp",
-      "comment": "Be fantastic! My favorite phrase in this school. The teacher always called us to class with good mood and a lot of motivation. That makes me want to learn English even more. The atmosphere is so fine and productive that you don't even notice when the course ends and you want another one. All you have left is the desire to learn. So feel free to sign up for a course. And thank my teacher Olga Leca, one of the best!!!💞🤩",
-      "date": "19.04.2021"
-    }
-  ],
-  "customers": [
-    {
-      "name": "ADsfd",
-      "number": "3732",
-      "social": {
-        "id": 0,
-        "name": "WhatsApp"
-      },
-      "id": 1
-    },
-    {
-      "name": "a",
-      "number": "373111",
-      "email": "a",
-      "id": 2
-    },
-    {
-      "name": "a",
-      "number": "373111",
-      "email": "a",
-      "id": 3
-    },
-    {
-      "name": "a",
-      "number": "373111",
-      "email": "a",
-      "id": 4
-    },
-    {
-      "name": "a",
-      "number": "37312",
-      "email": "a",
-      "id": 5
-    }
-  ]
+    "courses_category": [
+        {
+            "id": 0,
+            "name": "Toate",
+            "courses": [0, 1, 3, 4, 5, 6, 7]
+        },
+        {
+            "id": 1,
+            "name": "Engleză conversațională adulți",
+            "courses": [0, 1, 3, 4, 5, 6]
+        },
+        {
+            "id": 2,
+            "name": "Pregătire BAC",
+            "courses": [2]
+        },
+        {
+            "id": 3,
+            "name": "Adolescenți",
+            "courses": [4]
+        }
+    ],
+    "courses": [
+        {
+            "id": 0,
+            "name": "Curs de Engleză: Beginner (A1)",
+            "price": "85",
+            "number_lectures": 48,
+            "img": "https://fantastic-english.md/wp-content/uploads/2021/04/Curs-de-Engleza-Beginner-Incepatori-A1_result.webp"
+        },
+        {
+            "id": 1,
+            "name": "Curs de Engleză: Elementary (A2)",
+            "price": "85",
+            "number_lectures": 48,
+            "img": "https://fantastic-english.md/wp-content/uploads/2021/04/Curs-de-Engleza-Elementary-A2_result.webp"
+        },
+        {
+            "id": 2,
+            "name": "Curs de Engleză: Pre-Intermediate (B1)",
+            "price": "85",
+            "number_lectures": 54,
+            "img": "https://fantastic-english.md/wp-content/uploads/2021/04/Curs-de-Engleza-Pre-Intermediate-B1_result.webp"
+        },
+        {
+            "id": 3,
+            "name": "Curs de Engleză: Intermediate (B1-B2)",
+            "price": "85",
+            "number_lectures": 54,
+            "img": "https://fantastic-english.md/wp-content/uploads/2021/04/Curs-de-Engleza-Intermediate-B1-B2_result.webp"
+        },
+        {
+            "id": 4,
+            "name": "Curs de Engleză: Intermediate Plus",
+            "price": "85",
+            "number_lectures": 60,
+            "img": "https://fantastic-english.md/wp-content/uploads/2021/04/Curs-de-Engleza-Intermediate-Plus_result.webp"
+        },
+        {
+            "id": 5,
+            "name": "Curs de Engleză: Upper Intermediate (B2)",
+            "price": "85",
+            "number_lectures": 60,
+            "img": "https://fantastic-english.md/wp-content/uploads/2021/04/Curs-de-Engleza-Upper-Intermediate-B2_result.webp"
+        },
+        {
+            "id": 6,
+            "name": "Curs de Engleză: Advanced (C1)",
+            "price": "85",
+            "number_lectures": 60,
+            "img": "https://fantastic-english.md/wp-content/uploads/2021/04/Curs-de-Engleza-Advanced-C1_result.webp"
+        },
+        {
+            "id": 7,
+            "name": "Pregătire pentru BAC la Engleză",
+            "price": "85",
+            "number_lectures": 48,
+            "img": "https://fantastic-english.md/wp-content/uploads/2021/04/Curs-de-engleza-pentru-Adolescenti_result.webp"
+        }
+    ],
+    "course_detail": [
+        {
+            "id": 0,
+            "name": "Curs de Engleză: Beginner (A1)",
+            "price": 85,
+            "teachers": [0, 1, 2, 3, 4],
+            "number_lectures": 48,
+            "img": "https://fantastic-english.md/wp-content/uploads/2021/04/Curs-de-Engleza-Beginner-Incepatori-A1_result.webp"
+        },
+        {
+            "id": 1,
+            "name": "Curs de Engleză: Elementary (A2)",
+            "price": 85,
+            "teachers": [0, 1, 2, 3, 4],
+            "number_lectures": 48,
+            "img": "https://fantastic-english.md/wp-content/uploads/2021/04/Curs-de-Engleza-Elementary-A2_result.webp"
+        },
+        {
+            "id": 2,
+            "name": "Curs de Engleză: Pre-Intermediate (B1)",
+            "price": 85,
+            "teachers": [0, 1, 2, 3, 4],
+            "number_lectures": 54,
+            "img": "https://fantastic-english.md/wp-content/uploads/2021/04/Curs-de-Engleza-Pre-Intermediate-B1_result.webp"
+        },
+        {
+            "id": 3,
+            "name": "Curs de Engleză: Intermediate (B1-B2)",
+            "price": 85,
+            "teachers": [0, 1, 2, 3, 4],
+            "number_lectures": 54,
+            "img": "https://fantastic-english.md/wp-content/uploads/2021/04/Curs-de-Engleza-Intermediate-B1-B2_result.webp"
+        },
+        {
+            "id": 4,
+            "name": "Curs de Engleză: Intermediate Plus",
+            "price": 85,
+            "teachers": [0, 1, 2, 3, 4],
+            "number_lectures": 60,
+            "img": "https://fantastic-english.md/wp-content/uploads/2021/04/Curs-de-Engleza-Intermediate-Plus_result.webp"
+        },
+        {
+            "id": 5,
+            "name": "Curs de Engleză: Upper Intermediate (B2)",
+            "price": 85,
+            "teachers": [0, 1, 2, 3, 4],
+            "number_lectures": 60,
+            "img": "https://fantastic-english.md/wp-content/uploads/2021/04/Curs-de-Engleza-Upper-Intermediate-B2_result.webp"
+        },
+        {
+            "id": 6,
+            "name": "Curs de Engleză: Advanced (C1)",
+            "price": 85,
+            "teachers": [0, 1, 2, 3, 4],
+            "number_lectures": 60,
+            "img": "https://fantastic-english.md/wp-content/uploads/2021/04/Curs-de-Engleza-Advanced-C1_result.webp"
+        },
+        {
+            "id": 7,
+            "name": "Pregătire pentru BAC la Engleză",
+            "price": 85,
+            "teachers": [0, 1, 2, 3, 4],
+            "number_lectures": 48,
+            "img": "https://fantastic-english.md/wp-content/uploads/2021/04/Curs-de-engleza-pentru-Adolescenti_result.webp"
+        }
+    ],
+    "teachers": [
+        {
+            "id": 0,
+            "name": "Elena",
+            "position": "Profesor",
+            "courses": [0, 1, 2],
+            "description": "Licențiată în științe ale Educației, Limba și Literatura Engleză & Limba Franceză. Profesor cu o experiență de predare la peste 300 de studenți de diferite vârste.",
+            "img": "https://fantastic-english.md/wp-content/uploads/2021/04/Eliza_result-2.webp",
+            "imgKid": "https://fantastic-english.md/wp-content/uploads/2021/04/Eliza-KID_result-2.webp"
+        },
+        {
+            "id": 1,
+            "name": "Natalia",
+            "courses": [0, 1, 2],
+            "position": "Profesor",
+            "description": "Master în Leadership și educație, licențiat în Geografie și Filologie engleză. Profesor, instructor TOEFL și HT, are grijă ca corpul didactic din școală să aibă o dezvoltare personală și profesională.",
+            "img": "https://fantastic-english.md/wp-content/uploads/2021/02/Elena_result_2.webp",
+            "imgKid": "https://fantastic-english.md/wp-content/uploads/2021/02/Elena_kid_2.webp"
+        },
+        {
+            "id": 2,
+            "name": "Diana",
+            "courses": [0, 1, 2],
+            "position": "Profesor",
+            "description": "Deținătoare al certificatului CELTA (Certificat în predarea limbii engleze pentru adulți), acreditat de către Cambridge Language Assessment din cadrul Universității Cambridge.",
+            "img": "https://fantastic-english.md/wp-content/uploads/2021/02/Margarita_result_2.webp",
+            "imgKid": "https://fantastic-english.md/wp-content/uploads/2021/02/Margarita-KID_result_2.webp"
+        },
+        {
+            "id": 3,
+            "name": "Eliza",
+            "courses": [1, 2],
+            "position": "Profesor",
+            "description": "Pe parcursul studiilor, a observat că este extrem de important să îmbrățișezi profesia care îți aduce satisfacție și bucurie enormă. Este licențiată în Științe ale Educației, Lismba și Literatura Engleză & Limba Franceză.",
+            "img": "https://fantastic-english.md/wp-content/uploads/2021/04/Diana_result-2.webp",
+            "imgKid": "https://fantastic-english.md/wp-content/uploads/2021/04/DianaKID_result_2.webp"
+        }
+    ],
+    "reviews": [
+        {
+            "id": 0,
+            "name": "Veronica Ciubotaru",
+            "img": "https://fantastic-english.md/wp-content/uploads/2021/04/Curs-de-Engleza-Beginner-Incepatori-A1_result.webp",
+            "comment": "Be fantastic! My favorite phrase in this school. The teacher always called us to class with good mood and a lot of motivation. That makes me want to learn English even more. The atmosphere is so fine and productive that you don't even notice when the course ends and you want another one. All you have left is the desire to learn. So feel free to sign up for a course. And thank my teacher Olga Leca, one of the best!!!💞🤩",
+            "date": "19.04.2021"
+        },
+        {
+            "id": 1,
+            "name": "Veronica Ciubotaru",
+            "img": "https://fantastic-english.md/wp-content/uploads/2021/04/Curs-de-Engleza-Beginner-Incepatori-A1_result.webp",
+            "comment": "Be fantastic! My favorite phrase in this school. The teacher always called us to class with good mood and a lot of motivation. That makes me want to learn English even more. The atmosphere is so fine and productive that you don't even notice when the course ends and you want another one. All you have left is the desire to learn. So feel free to sign up for a course. And thank my teacher Olga Leca, one of the best!!!💞🤩",
+            "date": "19.04.2021"
+        },
+        {
+            "id": 2,
+            "name": "Veronica Ciubotaru",
+            "img": "https://fantastic-english.md/wp-content/uploads/2021/04/Curs-de-Engleza-Beginner-Incepatori-A1_result.webp",
+            "comment": "Be fantastic! My favorite phrase in this school. The teacher always called us to class with good mood and a lot of motivation. That makes me want to learn English even more. The atmosphere is so fine and productive that you don't even notice when the course ends and you want another one. All you have left is the desire to learn. So feel free to sign up for a course. And thank my teacher Olga Leca, one of the best!!!💞🤩",
+            "date": "19.04.2021"
+        },
+        {
+            "id": 3,
+            "name": "Veronica Ciubotaru",
+            "img": "https://fantastic-english.md/wp-content/uploads/2021/04/Curs-de-Engleza-Beginner-Incepatori-A1_result.webp",
+            "comment": "Be fantastic! My favorite phrase in this school. The teacher always called us to class with good mood and a lot of motivation. That makes me want to learn English even more. The atmosphere is so fine and productive that you don't even notice when the course ends and you want another one. All you have left is the desire to learn. So feel free to sign up for a course. And thank my teacher Olga Leca, one of the best!!!💞🤩",
+            "date": "19.04.2021"
+        },
+        {
+            "id": 4,
+            "name": "Veronica Ciubotaru",
+            "img": "https://fantastic-english.md/wp-content/uploads/2021/04/Curs-de-Engleza-Beginner-Incepatori-A1_result.webp",
+            "comment": "Be fantastic! My favorite phrase in this school. The teacher always called us to class with good mood and a lot of motivation. That makes me want to learn English even more. The atmosphere is so fine and productive that you don't even notice when the course ends and you want another one. All you have left is the desire to learn. So feel free to sign up for a course. And thank my teacher Olga Leca, one of the best!!!💞🤩",
+            "date": "19.04.2021"
+        },
+        {
+            "id": 5,
+            "name": "Veronica Ciubotaru",
+            "img": "https://fantastic-english.md/wp-content/uploads/2021/04/Curs-de-Engleza-Beginner-Incepatori-A1_result.webp",
+            "comment": "Be fantastic! My favorite phrase in this school. The teacher always called us to class with good mood and a lot of motivation. That makes me want to learn English even more. The atmosphere is so fine and productive that you don't even notice when the course ends and you want another one. All you have left is the desire to learn. So feel free to sign up for a course. And thank my teacher Olga Leca, one of the best!!!💞🤩",
+            "date": "19.04.2021"
+        },
+        {
+            "id": 6,
+            "name": "Veronica Ciubotaru",
+            "img": "https://fantastic-english.md/wp-content/uploads/2021/04/Curs-de-Engleza-Beginner-Incepatori-A1_result.webp",
+            "comment": "Be fantastic! My favorite phrase in this school. The teacher always called us to class with good mood and a lot of motivation. That makes me want to learn English even more. The atmosphere is so fine and productive that you don't even notice when the course ends and you want another one. All you have left is the desire to learn. So feel free to sign up for a course. And thank my teacher Olga Leca, one of the best!!!💞🤩",
+            "date": "19.04.2021"
+        },
+        {
+            "id": 7,
+            "name": "Veronica Ciubotaru",
+            "img": "https://fantastic-english.md/wp-content/uploads/2021/04/Curs-de-Engleza-Beginner-Incepatori-A1_result.webp",
+            "comment": "Be fantastic! My favorite phrase in this school. The teacher always called us to class with good mood and a lot of motivation. That makes me want to learn English even more. The atmosphere is so fine and productive that you don't even notice when the course ends and you want another one. All you have left is the desire to learn. So feel free to sign up for a course. And thank my teacher Olga Leca, one of the best!!!💞🤩",
+            "date": "19.04.2021"
+        }
+    ],
+    "customers": [
+        {
+            "name": "ADsfd",
+            "number": "3732",
+            "social": {
+                "id": 0,
+                "name": "WhatsApp"
+            },
+            "id": 1
+        },
+        {
+            "name": "a",
+            "number": "373111",
+            "email": "a",
+            "id": 2
+        },
+        {
+            "name": "a",
+            "number": "373111",
+            "email": "a",
+            "id": 3
+        },
+        {
+            "name": "a",
+            "number": "373111",
+            "email": "a",
+            "id": 4
+        },
+        {
+            "name": "a",
+            "number": "37312",
+            "email": "a",
+            "id": 5
+        }
+    ],
+    "video_reviews": [
+        {
+            "id": 0,
+            "alt": "De ce am ales Fantastic English I Popov Dragoș-Mihai",
+            "src": "https://www.youtube.com/embed/W3U9W5NgH6U"
+        },
+        {
+            "id": 1,
+            "alt": "De ce am ales Fantastic English I Popov Dragoș-Mihai",
+            "src": "https://www.youtube.com/embed/W3U9W5NgH6U"
+        },
+        {
+            "id": 2,
+            "alt": "De ce am ales Fantastic English I Popov Dragoș-Mihai",
+            "src": "https://www.youtube.com/embed/W3U9W5NgH6U"
+        },
+        {
+            "id": 3,
+            "alt": "De ce am ales Fantastic English I Popov Dragoș-Mihai",
+            "src": "https://www.youtube.com/embed/W3U9W5NgH6U"
+        },
+        {
+            "id": 4,
+            "alt": "De ce am ales Fantastic English I Popov Dragoș-Mihai",
+            "src": "https://www.youtube.com/embed/W3U9W5NgH6U"
+        },
+        {
+            "id": 5,
+            "alt": "De ce am ales Fantastic English I Popov Dragoș-Mihai",
+            "src": "https://www.youtube.com/embed/W3U9W5NgH6U"
+        },
+        {
+            "id": 6,
+            "alt": "De ce am ales Fantastic English I Popov Dragoș-Mihai",
+            "src": "https://www.youtube.com/embed/W3U9W5NgH6U"
+        },
+        {
+            "id": 7,
+            "alt": "De ce am ales Fantastic English I Popov Dragoș-Mihai",
+            "src": "https://www.youtube.com/embed/W3U9W5NgH6U"
+        },
+        {
+            "id": 8,
+            "alt": "De ce am ales Fantastic English I Popov Dragoș-Mihai",
+            "src": "https://www.youtube.com/embed/W3U9W5NgH6U"
+        },
+        {
+            "id": 9,
+            "alt": "De ce am ales Fantastic English I Popov Dragoș-Mihai",
+            "src": "https://www.youtube.com/embed/W3U9W5NgH6U"
+        },
+        {
+            "id": 10,
+            "alt": "De ce am ales Fantastic English I Popov Dragoș-Mihai",
+            "src": "https://www.youtube.com/embed/W3U9W5NgH6U"
+        },
+        {
+            "id": 11,
+            "alt": "De ce am ales Fantastic English I Popov Dragoș-Mihai",
+            "src": "https://www.youtube.com/embed/W3U9W5NgH6U"
+        },
+        {
+            "id": 12,
+            "alt": "De ce am ales Fantastic English I Popov Dragoș-Mihai",
+            "src": "https://www.youtube.com/embed/W3U9W5NgH6U"
+        },
+        {
+            "id": 13,
+            "alt": "De ce am ales Fantastic English I Popov Dragoș-Mihai",
+            "src": "https://www.youtube.com/embed/W3U9W5NgH6U"
+        },
+        {
+            "id": 14,
+            "alt": "De ce am ales Fantastic English I Popov Dragoș-Mihai",
+            "src": "https://www.youtube.com/embed/W3U9W5NgH6U"
+        },
+        {
+            "id": 15,
+            "alt": "De ce am ales Fantastic English I Popov Dragoș-Mihai",
+            "src": "https://www.youtube.com/embed/W3U9W5NgH6U"
+        },
+        {
+            "id": 16,
+            "alt": "De ce am ales Fantastic English I Popov Dragoș-Mihai",
+            "src": "https://www.youtube.com/embed/W3U9W5NgH6U"
+        },
+        {
+            "id": 17,
+            "alt": "De ce am ales Fantastic English I Popov Dragoș-Mihai",
+            "src": "https://www.youtube.com/embed/W3U9W5NgH6U"
+        },
+        {
+            "id": 18,
+            "alt": "De ce am ales Fantastic English I Popov Dragoș-Mihai",
+            "src": "https://www.youtube.com/embed/W3U9W5NgH6U"
+        },
+        {
+            "id": 19,
+            "alt": "De ce am ales Fantastic English I Popov Dragoș-Mihai",
+            "src": "https://www.youtube.com/embed/W3U9W5NgH6U"
+        },
+        {
+            "id": 20,
+            "alt": "De ce am ales Fantastic English I Popov Dragoș-Mihai",
+            "src": "https://www.youtube.com/embed/W3U9W5NgH6U"
+        },
+        {
+            "id": 21,
+            "alt": "De ce am ales Fantastic English I Popov Dragoș-Mihai",
+            "src": "https://www.youtube.com/embed/W3U9W5NgH6U"
+        },
+        {
+            "id": 22,
+            "alt": "De ce am ales Fantastic English I Popov Dragoș-Mihai",
+            "src": "https://www.youtube.com/embed/W3U9W5NgH6U"
+        },
+        {
+            "id": 23,
+            "alt": "De ce am ales Fantastic English I Popov Dragoș-Mihai",
+            "src": "https://www.youtube.com/embed/W3U9W5NgH6U"
+        },
+        {
+            "id": 24,
+            "alt": "De ce am ales Fantastic English I Popov Dragoș-Mihai",
+            "src": "https://www.youtube.com/embed/W3U9W5NgH6U"
+        },
+        {
+            "id": 25,
+            "alt": "De ce am ales Fantastic English I Popov Dragoș-Mihai",
+            "src": "https://www.youtube.com/embed/W3U9W5NgH6U"
+        },
+        {
+            "id": 26,
+            "alt": "De ce am ales Fantastic English I Popov Dragoș-Mihai",
+            "src": "https://www.youtube.com/embed/W3U9W5NgH6U"
+        },
+        {
+            "id": 27,
+            "alt": "De ce am ales Fantastic English I Popov Dragoș-Mihai",
+            "src": "https://www.youtube.com/embed/W3U9W5NgH6U"
+        },
+        {
+            "id": 28,
+            "alt": "De ce am ales Fantastic English I Popov Dragoș-Mihai",
+            "src": "https://www.youtube.com/embed/W3U9W5NgH6U"
+        },
+        {
+            "id": 29,
+            "alt": "De ce am ales Fantastic English I Popov Dragoș-Mihai",
+            "src": "https://www.youtube.com/embed/W3U9W5NgH6U"
+        },
+        {
+            "id": 30,
+            "alt": "De ce am ales Fantastic English I Popov Dragoș-Mihai",
+            "src": "https://www.youtube.com/embed/W3U9W5NgH6U"
+        },
+        {
+            "id": 31,
+            "alt": "De ce am ales Fantastic English I Popov Dragoș-Mihai",
+            "src": "https://www.youtube.com/embed/W3U9W5NgH6U"
+        },
+        {
+            "id": 32,
+            "alt": "De ce am ales Fantastic English I Popov Dragoș-Mihai",
+            "src": "https://www.youtube.com/embed/W3U9W5NgH6U"
+        },
+        {
+            "id": 33,
+            "alt": "De ce am ales Fantastic English I Popov Dragoș-Mihai",
+            "src": "https://www.youtube.com/embed/W3U9W5NgH6U"
+        },
+        {
+            "id": 34,
+            "alt": "De ce am ales Fantastic English I Popov Dragoș-Mihai",
+            "src": "https://www.youtube.com/embed/W3U9W5NgH6U"
+        },
+        {
+            "id": 35,
+            "alt": "De ce am ales Fantastic English I Popov Dragoș-Mihai",
+            "src": "https://www.youtube.com/embed/W3U9W5NgH6U"
+        },
+        {
+            "id": 36,
+            "alt": "De ce am ales Fantastic English I Popov Dragoș-Mihai",
+            "src": "https://www.youtube.com/embed/W3U9W5NgH6U"
+        },
+        {
+            "id": 37,
+            "alt": "De ce am ales Fantastic English I Popov Dragoș-Mihai",
+            "src": "https://www.youtube.com/embed/W3U9W5NgH6U"
+        },
+        {
+            "id": 38,
+            "alt": "De ce am ales Fantastic English I Popov Dragoș-Mihai",
+            "src": "https://www.youtube.com/embed/W3U9W5NgH6U"
+        },
+        {
+            "id": 39,
+            "alt": "De ce am ales Fantastic English I Popov Dragoș-Mihai",
+            "src": "https://www.youtube.com/embed/W3U9W5NgH6U"
+        },
+        {
+            "id": 40,
+            "alt": "De ce am ales Fantastic English I Popov Dragoș-Mihai",
+            "src": "https://www.youtube.com/embed/W3U9W5NgH6U"
+        },
+        {
+            "id": 41,
+            "alt": "De ce am ales Fantastic English I Popov Dragoș-Mihai",
+            "src": "https://www.youtube.com/embed/W3U9W5NgH6U"
+        },
+        {
+            "id": 42,
+            "alt": "De ce am ales Fantastic English I Popov Dragoș-Mihai",
+            "src": "https://www.youtube.com/embed/W3U9W5NgH6U"
+        },
+        {
+            "id": 43,
+            "alt": "De ce am ales Fantastic English I Popov Dragoș-Mihai",
+            "src": "https://www.youtube.com/embed/W3U9W5NgH6U"
+        },
+        {
+            "id": 44,
+            "alt": "De ce am ales Fantastic English I Popov Dragoș-Mihai",
+            "src": "https://www.youtube.com/embed/W3U9W5NgH6U"
+        },
+        {
+            "id": 45,
+            "alt": "De ce am ales Fantastic English I Popov Dragoș-Mihai",
+            "src": "https://www.youtube.com/embed/W3U9W5NgH6U"
+        },
+        {
+            "id": 46,
+            "alt": "De ce am ales Fantastic English I Popov Dragoș-Mihai",
+            "src": "https://www.youtube.com/embed/W3U9W5NgH6U"
+        }
+    ]
 }

@@ -3,8 +3,8 @@ export interface CardInterface {
     name: string
     position: string
     description?: string
-    img1: string
-    img2: string
+    img: string
+    imgKid: string
 }
 
 export interface CardComponentInterface {

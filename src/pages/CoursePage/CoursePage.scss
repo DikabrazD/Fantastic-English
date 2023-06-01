@@ -1,0 +1,181 @@
+@import '../../assets/styles/variables.scss';
+
+$aside-bg: #f9f9f9;
+
+@mixin titleCard {
+    font-family: 'Core Sans';
+    font-size: 18px;
+    font-weight: 700;
+    margin-bottom: 20px;
+}
+
+.course {
+    display: flex;
+    padding: 40px 0;
+    &-main {
+        width: 67%;
+        &-header {
+            display: flex;
+            align-items: center;
+            margin-bottom: 20px;
+            &-name {
+                font-family: 'Core Sans';
+                font-size: 32px;
+                margin-right: 25px;
+            }
+            &-price {
+                font-family: 'Poppins';
+                font-size: 22px;
+                font-weight: 400;
+                color: $main-color;
+            }
+        }
+        &-quickLinks {
+            display: flex;
+            align-items: center;
+            font-family: 'Ubuntu';
+            font-weight: 500;
+            font-size: 15px;
+            color: $main-color;
+            margin-bottom: 20px;
+            & > a {
+                color: $main-color;
+            }
+            &-divider {
+                margin: 0 5px;
+            }
+            &-reviews {
+                display: flex;
+                align-items: center;
+                &-image {
+                    margin-right: 5px;
+                    width: 20px;
+                    height: 20px;
+                }
+            }
+        }
+        &-basicInfo {
+            display: flex;
+            align-items: center;
+            justify-content: space-between;
+            margin-bottom: 20px;
+            &-numberLectures {
+                font-family: 'Ubuntu';
+                display: flex;
+                flex-direction: column;
+                &-title {
+                    font-size: 17px;
+                    font-weight: 500;
+                }
+                &-info {
+                    font-weight: 300;
+                }
+            }
+            &-duration {
+                font-family: 'Ubuntu';
+                display: flex;
+                flex-direction: column;
+                &-title {
+                    font-size: 17px;
+                    font-weight: 500;
+                }
+                &-info {
+                    font-weight: 300;
+                }
+            }
+        }
+        &-image {
+            width: 100%;
+        }
+    }
+    &-aside {
+        padding: 0 15px;
+        width: 33%;
+        & > div {
+            padding: 40px 20px;
+            background-color: $aside-bg;
+            margin-bottom: 30px;
+        }
+        &-info {
+            &-title {
+                @include titleCard;
+            }
+            &-list {
+                display: flex;
+                flex-direction: column;
+                gap: 10px;
+                &-item {
+                    font-family: 'Poppins';
+                    font-size: 15px;
+                    &-name {
+                        font-weight: 600;
+                    }
+                    &-feature {
+                        color: $main-color;
+                        font-weight: 300;
+                    }
+                }
+            }
+        }
+        &-teachers {
+            &-title {
+                @include titleCard;
+            }
+            &-list {
+                display: flex;
+                flex-direction: column;
+                gap: 20px;
+                &-item {
+                    display: flex;
+                    justify-content: flex-start;
+                    align-items: center;
+                    flex-direction: row;
+                    gap: 30px;
+                    &-image {
+                        width: 90px;
+                    }
+                    &-info {
+                        display: flex;
+                        flex-direction: column;
+                        gap: 10px;
+                        & > h3 {
+                            font-family: 'Poppins';
+                            font-weight: 700;
+                            font-size: 16px;
+                        }
+                        & > h4 {
+                            font-family: 'Poppins';
+                            font-weight: 400;
+                            font-size: 14px;
+                        }
+                    }
+                }
+            }
+        }
+
+        &-course {
+            &-title {
+                @include titleCard;
+            }
+            &-list {
+                display: flex;
+                flex-direction: column;
+                gap: 20px;
+                &-item {
+                    display: flex;
+                    flex-direction: row;
+                    align-items: center;
+                    gap: 30px;
+                    &-image {
+                        width: 85px;
+                    }
+                    & > h3 {
+                        font-family: 'Poppins';
+                        font-weight: 400;
+                        font-size: 14px;
+                    }
+                }
+            }
+        }
+    }
+}

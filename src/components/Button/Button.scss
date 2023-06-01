@@ -101,3 +101,36 @@ button {
         left: 9px;
     }
 }
+
+.arrowInMain {
+    position: relative;
+    display: flex;
+    align-items: center;
+    color: $main-color;
+    background-color: white;
+    border: 0;
+    &-icon {
+        position: absolute;
+        left: 9px;
+        display: flex;
+        align-items: center;
+        width: 0px;
+        height: 0px;
+        transition: 0.3s;
+    }
+    &-text {
+        position: relative;
+        left: 0;
+        transition: 0.3s;
+    }
+    &:hover {
+        color: black;
+    }
+    &:hover > &-icon {
+        width: 34px;
+        height: 20px;
+    }
+    &:hover > &-text {
+        left: 9px;
+    }
+}

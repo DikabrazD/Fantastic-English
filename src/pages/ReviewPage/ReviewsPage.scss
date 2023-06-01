@@ -1,0 +1,11 @@
+.reviewsList {
+    display: flex;
+    justify-content: center;
+    align-items: center;
+    flex-wrap: wrap;
+    &-item {
+        padding: 30px;
+        width: 33%;
+        height: 300px;
+    }
+}

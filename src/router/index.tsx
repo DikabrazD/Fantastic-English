@@ -1,5 +1,7 @@
-import Home from 'src/pages/Home/Home'
-import CoursesPage from 'src/pages/CoursesPage/CoursesPage'
+import Home from 'src/pages/Home'
+import AllCoursesPage from 'src/pages/AllCoursesPage'
+import ReviewPage from 'src/pages/ReviewPage'
+import CoursePage from 'src/pages/CoursePage/CoursePage'
 
 export interface InterfaceRoute {
     path: RouterNames
@@ -7,11 +9,17 @@ export interface InterfaceRoute {
 }
 
 export enum RouterNames {
+    DEFAULT = '*',
     HOME = '/',
-    COURSESPAGE = '/cursuri'
+    ALLCOURSES = '/cursuri',
+    COURSE = '/cursuri/:id',
+    REVIEW = '/video-recenzii'
 }
 
 export const publicRoutes: InterfaceRoute[] = [
+    { path: RouterNames.DEFAULT, component: <Home /> },
     { path: RouterNames.HOME, component: <Home /> },
-    { path: RouterNames.COURSESPAGE, component: <CoursesPage /> }
+    { path: RouterNames.ALLCOURSES, component: <AllCoursesPage /> },
+    { path: RouterNames.COURSE, component: <CoursePage /> },
+    { path: RouterNames.REVIEW, component: <ReviewPage /> }
 ]
