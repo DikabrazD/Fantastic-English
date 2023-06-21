@@ -1,0 +1,34 @@
+@import '/src/assets/styles/variables.scss';
+
+.item {
+    display: flex;
+    flex-direction: column;
+    &-title {
+        position: relative;
+        display: flex;
+        padding-left: 27px;
+        align-items: center;
+        font-family: 'Poppins';
+        font-weight: 600;
+        font-size: 17px;
+        cursor: pointer;
+        &-icon {
+            position: absolute;
+            left: 0;
+            width: 27px;
+            height: 30px;
+            color: $main-color;
+            transition: all 0.2s ease-in-out;
+        }
+        &-icon-toBottom {
+            transform: rotate(90deg);
+        }
+    }
+    &-text {
+        font-family: 'Ubuntu';
+        font-weight: 300;
+        font-size: 15px;
+        padding-top: 10px;
+        padding-left: 27px;
+    }
+}

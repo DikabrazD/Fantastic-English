@@ -9,7 +9,6 @@ import { SliderInterface } from './SliderInterface'
 function Slider({ breakpoints, children }: SliderInterface) {
     return (
         <Swiper
-            slidesPerView={3}
             spaceBetween={15}
             pagination={{
                 dynamicBullets: true
@@ -19,6 +18,7 @@ function Slider({ breakpoints, children }: SliderInterface) {
             autoHeight={true}
             navigation={true}
             modules={[Navigation, Pagination]}
+            centeredSlides={true}
         >
             {children}
         </Swiper>

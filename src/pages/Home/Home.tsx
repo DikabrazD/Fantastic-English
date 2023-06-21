@@ -99,7 +99,7 @@ const Home = () => {
                     {teachers.map((item) => {
                         return (
                             <div key={item.id} className='teachers-list-card'>
-                                <Card card={item} descriptionStatus={false} />
+                                <Card data={item} descriptionStatus={false} />
                             </div>
                         )
                     })}

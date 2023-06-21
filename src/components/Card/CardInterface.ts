@@ -8,6 +8,6 @@ export interface CardInterface {
 }
 
 export interface CardComponentInterface {
-    card: CardInterface
+    data: CardInterface
     descriptionStatus: boolean
 }

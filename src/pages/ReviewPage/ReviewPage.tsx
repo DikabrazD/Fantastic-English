@@ -22,6 +22,7 @@ const ReviewPage = () => {
                 })
                 .finally(() => setFetching(false))
         }
+        // eslint-disable-next-line react-hooks/exhaustive-deps
     }, [fetching])
 
     useEffect(() => {
@@ -30,6 +31,7 @@ const ReviewPage = () => {
         return () => {
             document.removeEventListener('scroll', scrollHandler)
         }
+        // eslint-disable-next-line react-hooks/exhaustive-deps
     }, [fetching])
 
     const scrollHandler = () => {
