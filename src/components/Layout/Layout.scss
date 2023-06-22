@@ -1,5 +1,7 @@
 @import '../../assets//styles/variables.scss';
 
+//Folosit mixină "headerTheme" pentru a forma diferite teme.
+
 @mixin headerTheme($headerBg, $textColor, $beforColor) {
     padding: 10px 0;
     display: flex;
@@ -66,8 +68,6 @@
         }
     }
 }
-
-//Folosit mixină "headerTheme" pentru a forma diferite teme.
 
 .header {
     @include headerTheme($main-color, white, white);

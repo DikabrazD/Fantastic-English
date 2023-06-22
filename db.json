@@ -100,7 +100,7 @@
                             {
                                 "id": 0,
                                 "type": "text",
-                                "text": "Pentru început, ținem să menționăm că vei învăța lucrurile pe care toți și le asociază cu nivelul Începător:"
+                                "text": "_Pentru început, ținem să menționăm_ că vei învăța lucrurile pe care toți și le asociază cu nivelul Începător:"
                             },
                             {
                                 "id": 1,
@@ -127,7 +127,7 @@
                             {
                                 "id": 0,
                                 "type": "text",
-                                "text": "Programa cursului de engleză Beginner A1 (Începător) pe care o folosim noi (English File, Beginner, third edition) conține cinci module dedicate Englezei practice. Aceasta înseamnă că vei învăța cum să te descurci în diferite situații gen: cum faci cunoștință cu cineva în Engleză, cum comanzi ceva în restaurant, cum vorbești cu recepționistul de la hotel, cum spui ce oră este, cum vorbești despre orașul tău, etc. Toate aceste le înveți folosind materialele video și audio filmate la Londra și New York cu persoanje de naționalitate engleză și americană."
+                                "text": "_Programa cursului de engleză Beginner A1 (Începător)_  pe care o folosim noi (English File, Beginner, third edition) conține cinci module dedicate Englezei practice. Aceasta înseamnă că vei învăța cum să te descurci în diferite situații gen: cum faci cunoștință cu cineva în Engleză, cum comanzi ceva în restaurant, cum vorbești cu recepționistul de la hotel, cum spui ce oră este, cum vorbești despre orașul tău, etc. Toate aceste le înveți folosind materialele video și audio filmate la Londra și New York cu persoanje de naționalitate engleză și americană."
                             }
                         ]
                     }
@@ -591,6 +591,24 @@
             "id": 46,
             "alt": "De ce am ales Fantastic English I Popov Dragoș-Mihai",
             "src": "https://www.youtube.com/embed/W3U9W5NgH6U"
+        }
+    ],
+    "faq": [
+        {
+            "title": "Ce înseamnă ”o oră astronomică”?",
+            "text": "O oră astronomică reprezintă o unitate de timp folosită pentru a măsura durata unei lecții. Ora astronomică are 60 de minute. Acest curs de engleză are o durată totală de 42 de ore astronomice, ceea ce înseamnă că acesta va dura în total 42 de ore. Acest timp permite studenților să aprofundeze subiectele într-un ritm mai lejer și să-și întărească cunoștințele, fără a simți presiunea timpului."
+        },
+        {
+            "title": "Când au loc lecțiile, în ce zile, la ce ore?",
+            "text": "Lecțiile pot avea loc fie Luni-Miercuri-Vineri fie Marți-Joi-Sâmbătă Orele la care se pot desfășura lecțiile sunt: 09:00, 11:10, 14:20, 16:30 sau 18:40 Lecțiile de sâmbătă se fac în prima parte a zilei, la 09:00 sau 11:10."
+        },
+        {
+            "title": "Care este graficul de lucru a școlii?",
+            "text": "Școala activează de Luni-Vineri de la 10:00 până la 19:00. Sâmbăta au loc doar lecții, din administrație nu este nimeni."
+        },
+        {
+            "title": "Cum se face rezervarea unui loc in grupă?",
+            "text": "Persoana care dorește să-și rezerveze un loc în grupă, trebuie să semneze un contract de prestări servicii, iar pentru aceasta este nevoie să aibă cu sine buletinul de identitate și 500 lei pentru achitarea primei rate."
         }
     ]
 }

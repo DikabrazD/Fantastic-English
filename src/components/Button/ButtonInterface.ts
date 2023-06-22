@@ -4,7 +4,7 @@ export enum ButtonType {
     changeToMain = 'changeToMain',
     blink = 'blink',
     arrow = 'arrow',
-    arrowInMain = 'arrowInMain'
+    arrowOutlineInMain = 'arrowOutlineInMain'
 }
 
 export interface ButtonInterface {

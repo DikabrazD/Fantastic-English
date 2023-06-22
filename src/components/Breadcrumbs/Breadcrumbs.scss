@@ -1,4 +1,5 @@
 @import '../../assets/styles/variables.scss';
+
 .breadcrumbs {
     width: 100%;
     padding: 15px 0;
@@ -7,6 +8,7 @@
     background: $main-color;
     &-header {
         font-family: 'Core Sans';
+        font-weight: bold;
         font-size: 28px;
     }
     &-list {

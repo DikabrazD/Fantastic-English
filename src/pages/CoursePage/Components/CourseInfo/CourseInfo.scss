@@ -1,0 +1,122 @@
+@import '../../../../assets/styles/variables.scss';
+
+.info {
+    line-height: 24px;
+    margin-bottom: 30px;
+    &-header {
+        font-family: 'Core Sans';
+        font-weight: 700;
+        font-size: 26px;
+        position: relative;
+        margin-bottom: 25px;
+        padding-bottom: 15px;
+        border-bottom: 2px solid $main-color;
+    }
+    &-main {
+        font-family: 'Ubuntu';
+        font-weight: 300;
+        font-size: 15px;
+        margin-bottom: 30px;
+        &-text {
+            margin-bottom: 20px;
+        }
+        &-skills {
+            display: flex;
+            flex-wrap: wrap;
+            &-item {
+                display: flex;
+                align-items: center;
+                width: 50%;
+                margin-bottom: 10px;
+                &-icon {
+                    color: $main-color;
+                    width: 15px;
+                    height: 15px;
+                    margin-right: 10px;
+                }
+            }
+        }
+    }
+    &-showDetails {
+        display: flex;
+        align-items: center;
+        position: relative;
+        overflow: hidden;
+        padding-bottom: 20px;
+        margin-bottom: 30px;
+        border-bottom: 2px dotted #e1e1e1;
+        cursor: pointer;
+        font-family: 'Poppins';
+        font-size: 17px;
+        font-weight: 600;
+        &-icon {
+            position: absolute;
+            color: $main-color;
+            width: 20px;
+            height: 30px;
+            transition: 0.3s;
+            left: -20px;
+        }
+        &-text {
+            margin-left: 0px;
+            transition: 0.3s;
+        }
+        &:hover > &-icon {
+            left: 0;
+        }
+        &:hover > &-text {
+            margin-left: 30px;
+        }
+    }
+    &-details {
+        display: flex;
+        flex-direction: column;
+        overflow: hidden;
+        padding-bottom: 15px;
+        border-bottom: 2px dotted #e1e1e1;
+        margin-bottom: 30px;
+        &-item {
+            display: flex;
+            flex-direction: column;
+            &-name {
+                font-family: 'Core Sans';
+                font-weight: 700;
+                font-size: 20px;
+                color: $main-color;
+                margin-bottom: 30px;
+            }
+            &-wrapper {
+                margin-bottom: 20px;
+                &-text {
+                    font-family: 'Ubuntu';
+                    font-weight: 300;
+                    font-size: 15px;
+                    margin-bottom: 20px;
+                    &:last-child {
+                        margin-bottom: 0;
+                    }
+                }
+                &-skills {
+                    display: flex;
+                    flex-wrap: wrap;
+                    margin-bottom: 20px;
+                    &:last-child {
+                        margin-bottom: 0;
+                    }
+                    &-item {
+                        display: flex;
+                        align-items: center;
+                        width: 50%;
+                        margin-bottom: 10px;
+                        &-icon {
+                            color: $main-color;
+                            width: 15px;
+                            height: 15px;
+                            margin-right: 10px;
+                        }
+                    }
+                }
+            }
+        }
+    }
+}

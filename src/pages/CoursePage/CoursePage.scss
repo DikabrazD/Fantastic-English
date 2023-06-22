@@ -1,14 +1,5 @@
 @import '../../assets/styles/variables.scss';
 
-$aside-bg: #f9f9f9;
-
-@mixin titleAsideInfo {
-    font-family: 'Core Sans';
-    font-size: 18px;
-    font-weight: 700;
-    margin-bottom: 20px;
-}
-
 @mixin titleMainInfo {
     font-family: 'Core Sans';
     font-weight: 700;
@@ -21,7 +12,7 @@ $aside-bg: #f9f9f9;
 .course {
     display: flex;
     padding: 40px 0;
-    &-main {
+    &-content {
         width: 67%;
         &-header {
             display: flex;
@@ -97,124 +88,6 @@ $aside-bg: #f9f9f9;
             width: 100%;
             margin-bottom: 40px;
         }
-        &-info {
-            line-height: 24px;
-            &-header {
-                font-family: 'Core Sans';
-                font-weight: 700;
-                font-size: 26px;
-                position: relative;
-                margin-bottom: 25px;
-                padding-bottom: 15px;
-                border-bottom: 2px solid $main-color;
-            }
-            &-main {
-                font-family: 'Ubuntu';
-                font-weight: 300;
-                font-size: 15px;
-                margin-bottom: 30px;
-                &-text {
-                    margin-bottom: 20px;
-                }
-                &-skills {
-                    display: flex;
-                    flex-wrap: wrap;
-                    &-item {
-                        display: flex;
-                        align-items: center;
-                        width: 50%;
-                        margin-bottom: 10px;
-                        &-icon {
-                            color: $main-color;
-                            width: 15px;
-                            height: 15px;
-                            margin-right: 10px;
-                        }
-                    }
-                }
-            }
-            &-showDetails {
-                display: flex;
-                align-items: center;
-                position: relative;
-                overflow: hidden;
-                padding-bottom: 20px;
-                margin-bottom: 30px;
-                border-bottom: 2px dotted #e1e1e1;
-                cursor: pointer;
-                font-family: 'Poppins';
-                font-size: 17px;
-                font-weight: 600;
-                &-icon {
-                    position: absolute;
-                    color: $main-color;
-                    width: 20px;
-                    height: 30px;
-                    transition: 0.3s;
-                    left: -20px;
-                }
-                &-text {
-                    margin-left: 0px;
-                    transition: 0.3s;
-                }
-                &:hover > &-icon {
-                    left: 0;
-                }
-                &:hover > &-text {
-                    margin-left: 30px;
-                }
-            }
-            &-details {
-                display: flex;
-                flex-direction: column;
-                overflow: hidden;
-                padding-bottom: 15px;
-                border-bottom: 2px dotted #e1e1e1;
-                &-item {
-                    display: flex;
-                    flex-direction: column;
-                    &-name {
-                        font-family: 'Core Sans';
-                        font-weight: 700;
-                        font-size: 20px;
-                        color: $main-color;
-                        margin-bottom: 30px;
-                    }
-                    &-wrapper {
-                        margin-bottom: 20px;
-                        &-text {
-                            font-family: 'Ubuntu';
-                            font-weight: 300;
-                            font-size: 15px;
-                            margin-bottom: 20px;
-                            &:last-child {
-                                margin-bottom: 0;
-                            }
-                        }
-                        &-skills {
-                            display: flex;
-                            flex-wrap: wrap;
-                            margin-bottom: 20px;
-                            &:last-child {
-                                margin-bottom: 0;
-                            }
-                            &-item {
-                                display: flex;
-                                align-items: center;
-                                width: 50%;
-                                margin-bottom: 10px;
-                                &-icon {
-                                    color: $main-color;
-                                    width: 15px;
-                                    height: 15px;
-                                    margin-right: 10px;
-                                }
-                            }
-                        }
-                    }
-                }
-            }
-        }
         &-reviews {
             &-title {
                 @include titleMainInfo;
@@ -235,96 +108,6 @@ $aside-bg: #f9f9f9;
                 display: flex;
                 flex-direction: column;
                 gap: 15px;
-            }
-        }
-    }
-    &-aside {
-        padding: 0 15px;
-        width: 33%;
-        & > div {
-            padding: 40px 20px;
-            background-color: $aside-bg;
-            margin-bottom: 30px;
-        }
-        &-info {
-            &-title {
-                @include titleAsideInfo;
-            }
-            &-list {
-                display: flex;
-                flex-direction: column;
-                gap: 10px;
-                &-item {
-                    font-family: 'Poppins';
-                    font-size: 15px;
-                    &-name {
-                        font-weight: 600;
-                    }
-                    &-feature {
-                        color: $main-color;
-                        font-weight: 300;
-                    }
-                }
-            }
-        }
-        &-teachers {
-            &-title {
-                @include titleAsideInfo;
-            }
-            &-list {
-                display: flex;
-                flex-direction: column;
-                gap: 20px;
-                &-item {
-                    display: flex;
-                    justify-content: flex-start;
-                    align-items: center;
-                    flex-direction: row;
-                    gap: 30px;
-                    &-image {
-                        width: 90px;
-                    }
-                    &-info {
-                        display: flex;
-                        flex-direction: column;
-                        gap: 10px;
-                        & > h3 {
-                            font-family: 'Poppins';
-                            font-weight: 700;
-                            font-size: 16px;
-                        }
-                        & > h4 {
-                            font-family: 'Poppins';
-                            font-weight: 400;
-                            font-size: 14px;
-                        }
-                    }
-                }
-            }
-        }
-
-        &-course {
-            &-title {
-                @include titleAsideInfo;
-            }
-            &-list {
-                display: flex;
-                flex-direction: column;
-                gap: 20px;
-                &-item {
-                    display: flex;
-                    flex-direction: row;
-                    align-items: center;
-                    gap: 30px;
-                    &-image {
-                        width: 85px;
-                    }
-                    & > h3 {
-                        font-family: 'Poppins';
-                        font-weight: 400;
-                        font-size: 14px;
-                    }
-                }
             }
         }
     }

@@ -75,7 +75,7 @@ const Courses = () => {
 
             <div className='courses-list'>
                 {transition((style, item) => (
-                    <Link to={generatePath(RouterNames.COURSE, { id: `${item.id}` })}>
+                    <Link to={generatePath(RouterNames.COURSE, { id: String(item.id) })}>
                         <animated.div key={item.id} style={style} className='courses-list-item'>
                             <div className='courses-list-item-image'>
                                 <img src={`${item.img}`} alt='Img of course' />

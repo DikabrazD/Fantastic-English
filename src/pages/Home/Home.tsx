@@ -52,7 +52,7 @@ const Home = () => {
                     />
                 </div>
                 <h1>
-                    Vorbește Engleza fluent <br /> Deja după 3 nivele,de la zero! <br /> Garantat!
+                    VORBEȘTE ENGLEZA FLUENT <br /> DEJA DUPĂ 3 NIVELE,DE LA ZERO! <br /> GARANTAT!
                 </h1>
 
                 <FormTrial />

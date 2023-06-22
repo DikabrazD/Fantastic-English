@@ -1,0 +1,120 @@
+@import '../../../../assets/styles/variables.scss';
+$aside-bg: #f9f9f9;
+
+@mixin titleAsideInfo {
+    font-family: 'Core Sans';
+    font-size: 18px;
+    font-weight: 700;
+    margin-bottom: 20px;
+}
+
+.course-aside {
+    padding: 0 15px;
+    width: 33%;
+    & > div {
+        padding: 40px 20px;
+        background-color: $aside-bg;
+        margin-bottom: 30px;
+    }
+    &-info {
+        &-title {
+            @include titleAsideInfo;
+        }
+        &-list {
+            display: flex;
+            flex-direction: column;
+            gap: 10px;
+            &-item {
+                font-family: 'Poppins';
+                font-size: 15px;
+                &-name {
+                    font-weight: 600;
+                }
+                &-feature {
+                    color: $main-color;
+                    font-weight: 300;
+                }
+            }
+        }
+    }
+    &-teachers {
+        &-title {
+            @include titleAsideInfo;
+        }
+        &-list {
+            display: flex;
+            flex-direction: column;
+            gap: 20px;
+            &-item {
+                display: flex;
+                justify-content: flex-start;
+                align-items: center;
+                flex-direction: row;
+                gap: 30px;
+                &-image {
+                    width: 90px;
+                }
+                &-info {
+                    display: flex;
+                    flex-direction: column;
+                    gap: 10px;
+                    & > h3 {
+                        font-family: 'Poppins';
+                        font-weight: 700;
+                        font-size: 16px;
+                    }
+                    & > h4 {
+                        font-family: 'Poppins';
+                        font-weight: 400;
+                        font-size: 14px;
+                    }
+                }
+            }
+        }
+        &-link {
+            display: flex;
+            align-items: center;
+            gap: 5px;
+            color: $main-color;
+            &-text {
+                font-family: 'Ubuntu';
+                font-size: 15px;
+                font-weight: 400;
+                color: $main-color;
+                border-bottom: solid 1px white;
+                &:hover {
+                    border-bottom: solid 1px $main-color;
+                }
+            }
+            &-icon {
+                width: 20px;
+                height: 24px;
+            }
+        }
+    }
+
+    &-course {
+        &-title {
+            @include titleAsideInfo;
+        }
+        &-list {
+            display: flex;
+            flex-direction: column;
+            gap: 20px;
+            &-item {
+                display: flex;
+                flex-direction: row;
+                align-items: center;
+                gap: 30px;
+                &-image {
+                    width: 85px;
+                }
+                & > h3 {
+                    font-family: 'Poppins';
+                    font-weight: 400;
+                    font-size: 14px;
+                }
+            }
+        }
+    }
+}

@@ -8,7 +8,7 @@ function Layout({ children }: PropsWithChildren) {
     const [prev, setPrev] = useState<number>(0)
     const [showHeader, setShowHeader] = useState<boolean>(false)
     const [showToTop, setShowToTop] = useState<boolean>(false)
-    const dropHeaderOpacity = showHeader ? 'show-header' : 'hide-header'
+    const dropHeaderClass = showHeader ? 'show-header' : 'hide-header'
     const toTopClass = showToTop ? 'show-toTop' : 'hide-toTop'
 
     const location = useLocation()
@@ -96,7 +96,7 @@ function Layout({ children }: PropsWithChildren) {
                     </div>
                 </div>
             </header>
-            <div className={`drop-header ${dropHeaderOpacity}`}>
+            <div className={`drop-header ${dropHeaderClass}`}>
                 <div className='drop-header-bg'>
                     <div className='container drop-header-inner'>
                         <Link className='drop-header-inner-icon' to='/'>

@@ -2,7 +2,7 @@ import React from 'react'
 import './Button.scss'
 import { ButtonInterface } from './ButtonInterface'
 import { ButtonType } from './ButtonInterface'
-import { FaLongArrowAltRight } from 'react-icons/fa'
+import { HiOutlineArrowNarrowRight } from 'react-icons/hi'
 
 const Button = ({ type, text, isDisabled, onClick }: ButtonInterface) => {
     const onCLickButton = (e: React.FormEvent<HTMLButtonElement>) => {
@@ -36,11 +36,11 @@ const Button = ({ type, text, isDisabled, onClick }: ButtonInterface) => {
                         {text}
                     </button>
                 )
-            case ButtonType.arrowInMain:
+            case ButtonType.arrowOutlineInMain:
                 return (
                     <button onClick={onCLickButton} disabled={isDisabled} className='arrowInMain'>
                         <div className='arrowInMain-icon'>
-                            <FaLongArrowAltRight className='image' />
+                            <HiOutlineArrowNarrowRight className='image' />
                         </div>
                         <span className='arrowInMain-text'>{text}</span>
                     </button>
@@ -49,7 +49,7 @@ const Button = ({ type, text, isDisabled, onClick }: ButtonInterface) => {
                 return (
                     <button onClick={onCLickButton} disabled={isDisabled} className='arrow'>
                         <div className='arrow-icon'>
-                            <FaLongArrowAltRight className='image' />
+                            <HiOutlineArrowNarrowRight className='image' />
                         </div>
                         <span className='arrow-text'>{text}</span>
                     </button>

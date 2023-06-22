@@ -1,0 +1,44 @@
+@import '../../../../assets/styles/variables.scss';
+
+.bar {
+    position: fixed;
+    bottom: 0;
+    left: 0;
+    z-index: 9999;
+    width: 100%;
+    background: white;
+    border-top: 1px solid #f4f4f4;
+    padding: 15px 0;
+    transition: transform 1s ease-in-out;
+    &-wrapper {
+        display: flex;
+        align-items: center;
+        justify-content: space-between;
+        &-info {
+            display: flex;
+            flex-direction: column;
+            font-family: 'Ubuntu';
+            &-name {
+                font-size: 20px;
+                font-weight: 500;
+                margin-bottom: 15px;
+            }
+            &-price {
+                font-size: 18px;
+                font-weight: 500;
+                color: $main-color;
+            }
+        }
+        &-actions {
+            display: flex;
+        }
+    }
+}
+
+.show-bar {
+    transform: translateY(0);
+}
+
+.hide-bar {
+    transform: translateY(100px);
+}

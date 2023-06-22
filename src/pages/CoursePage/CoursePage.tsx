@@ -1,62 +1,62 @@
 import { useEffect, useState } from 'react'
 import { useParams } from 'react-router-dom'
-import { FaCheck } from 'react-icons/fa'
-import { HiOutlineArrowNarrowRight } from 'react-icons/hi'
-import { CourseDetailInterface, CourseItemParam } from './CoursePageInterface'
+import { CourseDetailInterface, CourseItemParam, FaqInterface } from './CoursePageInterface'
 import { ButtonType } from 'src/components/Button/ButtonInterface'
 import { TeacherInterface } from 'src/utils/teachers'
 import { CourseInterface } from 'src/components/Courses/CoursesInterface'
 import { ReviewInterface } from 'src/components/Review/ReviewInterface'
-import { useSpring, animated } from '@react-spring/web'
-import { useMeasure } from 'src/hooks/useMeasure'
 import { SwiperSlide } from 'swiper/react'
 
-import Button from 'src/components/Button/Button'
-import axios from 'axios'
-
-import './CoursePage.scss'
 import FaqItem from './Components/FaqItem/FaqItem'
 import Slider from 'src/components/Slider/Slider'
 import Review from 'src/components/Review/Review'
 import Card from 'src/components/Card/Card'
+import CourseAside from './Components/CourseAside/CourseAside'
+import CourseInfo from './Components/CourseInfo/CourseInfo'
+import Button from 'src/components/Button/Button'
+
+import axios from 'axios'
+
+import './CoursePage.scss'
+import InfoBar from './Components/InforBar/InfoBar'
 
 const CoursePage = () => {
     const [course, setCourse] = useState<CourseDetailInterface>()
-    const [allCourse, setAllCourse] = useState<CourseInterface[]>([])
+    const [allCourses, setAllCourse] = useState<CourseInterface[]>([])
     const [reviews, setReviews] = useState<ReviewInterface[]>([])
     const [teachers, setTeachers] = useState<TeacherInterface[]>([])
-    const [showDetails, setShowDetails] = useState<boolean>(false)
-    const [heightDetailsRef, heightDetails] = useMeasure()
-    const styleDetails = useSpring({
-        opacity: showDetails ? 1 : 0,
-        height: showDetails ? heightDetails : 0,
-        overflow: 'hidden'
-    })
+    const [faq, setFaq] = useState<FaqInterface[]>([])
     const [activeIndexs, setActiveIndexs] = useState<number[]>([])
 
     const params = useParams<CourseItemParam>()
 
-    const FAQ = [
-        {
-            title: 'Ce înseamnă ”o oră astronomică”?',
-            text: 'O oră astronomică reprezintă o unitate de timp folosită pentru a măsura durata unei lecții. Ora astronomică are 60 de minute. Acest curs de engleză are o durată totală de 42 de ore astronomice, ceea ce înseamnă că acesta va dura în total 42 de ore. Acest timp permite studenților să aprofundeze subiectele într-un ritm mai lejer și să-și întărească cunoștințele, fără a simți presiunea timpului.'
+    const breakpointsReview = {
+        640: {
+            slidesPerView: 1,
+            spaceBetween: 20
         },
-        {
-            title: 'Ce înseamnă ”o oră astronomică”?',
-            text: 'O oră astronomică reprezintă o unitate de timp folosită pentru a măsura durata unei lecții. Ora astronomică are 60 de minute. Acest curs de engleză are o durată totală de 42 de ore astronomice, ceea ce înseamnă că acesta va dura în total 42 de ore. Acest timp permite studenților să aprofundeze subiectele într-un ritm mai lejer și să-și întărească cunoștințele, fără a simți presiunea timpului.'
+        768: {
+            slidesPerView: 2,
+            spaceBetween: 40
         },
-        {
-            title: 'Ce înseamnă ”o oră astronomică”?',
-            text: 'O oră astronomică reprezintă o unitate de timp folosită pentru a măsura durata unei lecții. Ora astronomică are 60 de minute. Acest curs de engleză are o durată totală de 42 de ore astronomice, ceea ce înseamnă că acesta va dura în total 42 de ore. Acest timp permite studenților să aprofundeze subiectele într-un ritm mai lejer și să-și întărească cunoștințele, fără a simți presiunea timpului.'
-        },
-        {
-            title: 'Ce înseamnă ”o oră astronomică”?',
-            text: 'O oră astronomică reprezintă o unitate de timp folosită pentru a măsura durata unei lecții. Ora astronomică are 60 de minute. Acest curs de engleză are o durată totală de 42 de ore astronomice, ceea ce înseamnă că acesta va dura în total 42 de ore. Acest timp permite studenților să aprofundeze subiectele într-un ritm mai lejer și să-și întărească cunoștințele, fără a simți presiunea timpului.'
+        1024: {
+            slidesPerView: 2,
+            spaceBetween: 50
         }
-    ]
-
-    const toggleDetails = () => {
-        setShowDetails(!showDetails)
+    }
+    const breakpointsTeachers = {
+        640: {
+            slidesPerView: 1,
+            spaceBetween: 20
+        },
+        768: {
+            slidesPerView: 2,
+            spaceBetween: 40
+        },
+        1024: {
+            slidesPerView: 3,
+            spaceBetween: 50
+        }
     }
 
     const toggleActiveIndex = (index: number) => {
@@ -96,9 +96,18 @@ const CoursePage = () => {
                 })
 
             await axios
-                .get('http://localhost:3000/reviews')
+                .get<ReviewInterface[]>('http://localhost:3000/reviews')
                 .then((res) => {
                     setReviews(res.data)
+                })
+                .catch((error) => {
+                    console.log(error)
+                })
+
+            await axios
+                .get<FaqInterface[]>('http://localhost:3000/faq')
+                .then((res) => {
+                    setFaq(res.data)
                 })
                 .catch((error) => {
                     console.log(error)
@@ -106,19 +115,18 @@ const CoursePage = () => {
         }
 
         fetchData()
-        // eslint-disable-next-line react-hooks/exhaustive-deps
-    }, [])
+    }, [params])
 
     return (
         <div className='course container'>
-            <div className='course-main'>
-                <div className='course-main-header'>
-                    <h2 className='course-main-header-name'>{course?.name}</h2>
-                    <div className='course-main-header-price'>{course?.price} MDL / 60 min</div>
+            <div className='course-content'>
+                <div className='course-content-header'>
+                    <h2 className='course-content-header-name'>{course?.name}</h2>
+                    <div className='course-content-header-price'>{course?.price} MDL / 60 min</div>
                 </div>
-                <div className='course-main-quickLinks'>
-                    <a href='/#' className='course-main-quickLinks-reviews'>
-                        <div className='course-main-quickLinks-reviews-image'>
+                <div className='course-content-quickLinks'>
+                    <a href='/#' className='course-content-quickLinks-reviews'>
+                        <div className='course-content-quickLinks-reviews-image'>
                             <img
                                 className='image'
                                 src='https://fantastic-english.md/wp-content/uploads/2021/03/star.png'
@@ -127,116 +135,32 @@ const CoursePage = () => {
                         </div>
                         <span>5/5 Recenzii</span>
                     </a>
-                    <span className='course-main-quickLinks-divider'> | </span>
-                    <a href='/#' className='course-main-quickLinks-faq'>
+                    <span className='course-content-quickLinks-divider'> | </span>
+                    <a href='/#' className='course-content-quickLinks-faq'>
                         13 Întrebări/Răspunsuri
                     </a>
                 </div>
-                <div className='course-main-basicInfo'>
-                    <div className='course-main-basicInfo-numberLectures'>
-                        <span className='course-main-basicInfo-numberLectures-title'>Lecții cu profesorul:</span>
-                        <span className='course-main-basicInfo-numberLectures-info'>
+                <div className='course-content-basicInfo'>
+                    <div className='course-content-basicInfo-numberLectures'>
+                        <span className='course-content-basicInfo-numberLectures-title'>Lecții cu profesorul:</span>
+                        <span className='course-content-basicInfo-numberLectures-info'>
                             {course?.number_lectures} ore astronomice
                         </span>
                     </div>
-                    <div className='course-main-basicInfo-duration'>
-                        <span className='course-main-basicInfo-duration-title'>Durata lecție:</span>
-                        <span className='course-main-basicInfo-duration-info'>60 minute</span>
+                    <div className='course-content-basicInfo-duration'>
+                        <span className='course-content-basicInfo-duration-title'>Durata lecție:</span>
+                        <span className='course-content-basicInfo-duration-info'>60 minute</span>
                     </div>
-                    <Button text='Rezervă un loc (300MDL)' type={ButtonType.arrowInMain} />
+                    <Button text='Rezervă un loc (300MDL)' type={ButtonType.arrowOutlineInMain} />
                     <Button text='Vreau La Curs' type={ButtonType.changeToWhite} />
                 </div>
-                <div className='course-main-image'>
+                <div className='course-content-image'>
                     <img src={course?.img} alt='Course' className='image' />
                 </div>
-                <div className='course-main-info'>
-                    <h2 className='course-main-info-header'>CE VEI ÎNVĂȚA LA ACEST CURS</h2>
-                    <div className='course-main-info-main'>
-                        <p className='course-main-info-main-text'>{course?.info.main.text}</p>
-                        <ul className='course-main-info-main-skills'>
-                            {course?.info.main.skills?.map((item, index) => {
-                                return (
-                                    <li className='course-main-info-main-skills-item' key={index}>
-                                        <div className='course-main-info-main-skills-item-icon'>
-                                            <FaCheck className='image' />
-                                        </div>
-                                        {item}
-                                    </li>
-                                )
-                            })}
-                        </ul>
-                    </div>
-                    <div className='course-main-info-showDetails' onClick={toggleDetails}>
-                        <div className='course-main-info-showDetails-icon'>
-                            <HiOutlineArrowNarrowRight className='image' />
-                        </div>
-                        <p className='course-main-info-showDetails-text'>Vezi mai multe detaii...</p>
-                    </div>
-                    <animated.div style={styleDetails}>
-                        <div ref={heightDetailsRef} className='course-main-info-details'>
-                            {course?.info.details.map((item) => {
-                                return (
-                                    <div key={item.id} className='course-main-info-details-item'>
-                                        <h3 className='course-main-info-details-item-name'>{item.name}</h3>
-                                        <div className='course-main-info-details-item-wrapper'>
-                                            {item.section.map((item) => {
-                                                if (item.type === 'text')
-                                                    return (
-                                                        <p
-                                                            className='course-main-info-details-item-wrapper-text'
-                                                            key={item.id}
-                                                        >
-                                                            {item.text}
-                                                        </p>
-                                                    )
-                                                else {
-                                                    return (
-                                                        <ul
-                                                            className='course-main-info-details-item-wrapper-skills'
-                                                            key={item.id}
-                                                        >
-                                                            {item.skills.map((item, index) => {
-                                                                return (
-                                                                    <li
-                                                                        key={index}
-                                                                        className='course-main-info-details-item-wrapper-skills-item'
-                                                                    >
-                                                                        <div className='course-main-info-details-item-wrapper-skills-item-icon'>
-                                                                            <FaCheck className='image' />
-                                                                        </div>
-                                                                        {item}
-                                                                    </li>
-                                                                )
-                                                            })}
-                                                        </ul>
-                                                    )
-                                                }
-                                            })}
-                                        </div>
-                                    </div>
-                                )
-                            })}
-                        </div>
-                    </animated.div>
-                </div>
-                <div className='course-main-reviews'>
-                    <h3 className='course-main-reviews-title'>Vezi părerile studenților noștri</h3>
-                    <Slider
-                        breakpoints={{
-                            640: {
-                                slidesPerView: 1,
-                                spaceBetween: 20
-                            },
-                            768: {
-                                slidesPerView: 2,
-                                spaceBetween: 40
-                            },
-                            1024: {
-                                slidesPerView: 2,
-                                spaceBetween: 50
-                            }
-                        }}
-                    >
+                {course && <CourseInfo data={course} />}
+                <div className='course-content-reviews'>
+                    <h3 className='course-content-reviews-title'>Vezi părerile studenților noștri</h3>
+                    <Slider breakpoints={breakpointsReview}>
                         {reviews.map((item) => {
                             return (
                                 <SwiperSlide key={item.id}>
@@ -246,24 +170,9 @@ const CoursePage = () => {
                         })}
                     </Slider>
                 </div>
-                <div className='course-main-teachers'>
-                    <h3 className='course-main-teachers-title'>Cine ar putea fi profesorul tău</h3>
-                    <Slider
-                        breakpoints={{
-                            640: {
-                                slidesPerView: 1,
-                                spaceBetween: 20
-                            },
-                            768: {
-                                slidesPerView: 2,
-                                spaceBetween: 40
-                            },
-                            1024: {
-                                slidesPerView: 3,
-                                spaceBetween: 50
-                            }
-                        }}
-                    >
+                <div className='course-content-teachers' id='course-teachers'>
+                    <h3 className='course-content-teachers-title'>Cine ar putea fi profesorul tău</h3>
+                    <Slider breakpoints={breakpointsTeachers}>
                         {teachers.map((item) => {
                             return (
                                 <SwiperSlide key={item.id}>
@@ -273,10 +182,10 @@ const CoursePage = () => {
                         })}
                     </Slider>
                 </div>
-                <div className='course-main-faq'>
-                    <h3 className='course-main-faq-title'>Întrebări și Răspunsuri</h3>
-                    <ul className='course-main-faq-list'>
-                        {FAQ.map((item, index) => {
+                <div className='course-content-faq'>
+                    <h3 className='course-content-faq-title'>Întrebări și Răspunsuri</h3>
+                    <ul className='course-content-faq-list'>
+                        {faq.map((item, index) => {
                             return (
                                 <FaqItem
                                     key={index}
@@ -289,73 +198,8 @@ const CoursePage = () => {
                     </ul>
                 </div>
             </div>
-            <aside className='course-aside'>
-                <div className='course-aside-info'>
-                    <h3 className='course-aside-info-title'>CURSUL INCLUDE</h3>
-                    <ul className='course-aside-info-list'>
-                        <li className='course-aside-info-list-item'>
-                            <span className='course-aside-info-list-item-name'>Lecții</span>{' '}
-                            <span className='course-aside-info-list-item-feature'>/ Fizice sau Online</span>
-                        </li>
-                        <li className='course-aside-info-list-item'>
-                            <span className='course-aside-info-list-item-name'>După absolvire</span>{' '}
-                            <span className='course-aside-info-list-item-feature'>/ Certificat</span>
-                        </li>
-                        <li className='course-aside-info-list-item'>
-                            <span className='course-aside-info-list-item-name'>Manual</span>{' '}
-                            <span className='course-aside-info-list-item-feature'>/ Format Digital</span>
-                        </li>
-                        <li className='course-aside-info-list-item'>
-                            <span className='course-aside-info-list-item-name'>Studenți</span>
-                            <span className='course-aside-info-list-item-feature'> / = 10</span>
-                        </li>
-                        <li className='course-aside-info-list-item'>
-                            <span className='course-aside-info-list-item-name'>Garanție</span>{' '}
-                            <span className='course-aside-info-list-item-feature'>/ 110%</span>
-                        </li>
-                    </ul>
-                </div>
-                <div className='course-aside-teachers'>
-                    <h3 className='course-aside-teachers-title'>PROFESORI</h3>
-                    <ul className='course-aside-teachers-list'>
-                        {teachers
-                            ?.filter((item) => (course ? item.courses.includes(course.id) : false))
-                            .map((item, index) => {
-                                if (index < 2)
-                                    return (
-                                        <li key={item.id} className='course-aside-teachers-list-item'>
-                                            <div className='course-aside-teachers-list-item-image'>
-                                                <img src={item.img} alt='Teacher' className='image' />
-                                            </div>
-                                            <div className='course-aside-teachers-list-item-info'>
-                                                <h3>{item.name}</h3>
-                                                <h4>{item.position}</h4>
-                                            </div>
-                                        </li>
-                                    )
-                                else return null
-                            })}
-                    </ul>
-                </div>
-
-                <div className='course-aside-course'>
-                    <h3 className='course-aside-course-title'>STUDENȚII AU MAI CUMPĂRAT</h3>
-                    <ul className='course-aside-course-list'>
-                        {allCourse?.map((item, index) => {
-                            if (index < 3)
-                                return (
-                                    <li key={item.id} className='course-aside-course-list-item'>
-                                        <div className='course-aside-course-list-item-image'>
-                                            <img src={item.img} alt='Courses' className='image' />
-                                        </div>
-                                        <h3 className='course-aside-course-list-item-name'>{item.name}</h3>
-                                    </li>
-                                )
-                            else return null
-                        })}
-                    </ul>
-                </div>
-            </aside>
+            {course && <CourseAside courseID={course.id} teachers={teachers} allCourses={allCourses} />}
+            {course && <InfoBar name={course.name} price={course.price} />}
         </div>
     )
 }
