@@ -1,0 +1,63 @@
+@import '../../assets/styles/variables.scss';
+
+@mixin blockText {
+    &-text {
+        display: flex;
+        flex-direction: column;
+        width: 50%;
+        &-title {
+            font-family: 'Core Sans';
+            font-size: 28px;
+            text-transform: uppercase;
+            margin-bottom: 40px;
+        }
+        &-list {
+            display: flex;
+            flex-direction: column;
+            gap: 20px;
+            margin-bottom: 30px;
+            &-item {
+                font-family: 'Ubuntu';
+                font-weight: 300;
+                font-size: 15px;
+                line-height: 24px;
+            }
+        }
+        &-quiz > button {
+            color: white;
+            background: $main-color;
+            text-transform: uppercase;
+        }
+    }
+}
+
+.tests {
+    &-wrapper {
+        display: flex;
+        flex-direction: column;
+        margin-top: 170px;
+        &-video {
+            display: flex;
+            align-items: stretch;
+            position: relative;
+            gap: 50px;
+            margin-bottom: 100px;
+            &-iframe {
+                width: 50%;
+            }
+            @include blockText;
+        }
+        &-book {
+            display: flex;
+            align-items: center;
+            position: relative;
+            gap: 50px;
+            margin-bottom: 50px;
+            @include blockText;
+            &-image {
+                width: 450px;
+                height: 450px;
+            }
+        }
+    }
+}

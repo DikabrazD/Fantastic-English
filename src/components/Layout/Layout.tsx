@@ -12,7 +12,7 @@ function Layout({ children }: PropsWithChildren) {
     const toTopClass = showToTop ? 'show-toTop' : 'hide-toTop'
 
     const location = useLocation()
-    const headerIsPink = location.pathname === RouterNames.HOME || RouterNames.COURSE
+    const headerIsPink = location.pathname === (RouterNames.HOME || RouterNames.COURSE || RouterNames.TESTS)
     const headerClass = headerIsPink ? '' : 'White'
 
     useEffect(() => {
@@ -109,7 +109,7 @@ function Layout({ children }: PropsWithChildren) {
                         <div className='drop-header-inner-links'>
                             <Link to={RouterNames.HOME}>Home</Link>
                             <Link to={RouterNames.ALLCOURSES}>Cursuri</Link>
-                            <Link to='/test'>Teste</Link>
+                            <Link to={RouterNames.TESTS}>Teste</Link>
                             <Link to={RouterNames.REVIEW}>Video Recenzii</Link>
                             <Link to='/echipa'>Echipa</Link>
                             <Link to='/cariera'>Carieră</Link>
