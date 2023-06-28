@@ -35,7 +35,9 @@ const InfoBar = ({ name, price }: InfoBarInterface) => {
                     <p className='bar-wrapper-info-price'>{price} MDL / 60 min</p>
                 </div>
                 <div className='bar-wrapper-actions'>
-                    <Button type={ButtonType.arrowOutlineInMain} text='Rezervă un loc (300 MDL)' />
+                    <div className='bar-wrapper-actions-arrow'>
+                        <Button type={ButtonType.arrow} text='Rezervă un loc (300 MDL)' />
+                    </div>
                     <Button type={ButtonType.changeToWhite} text='Vreau La Curs' />
                 </div>
             </div>

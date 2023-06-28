@@ -83,6 +83,10 @@
                     font-weight: 300;
                 }
             }
+            &-arrow > button {
+                border-width: 0px;
+                color: $main-color;
+            }
         }
         &-image {
             width: 100%;

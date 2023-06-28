@@ -36,15 +36,6 @@ const Button = ({ type, text, isDisabled, onClick }: ButtonInterface) => {
                         {text}
                     </button>
                 )
-            case ButtonType.arrowOutlineInMain:
-                return (
-                    <button onClick={onCLickButton} disabled={isDisabled} className='arrowInMain'>
-                        <div className='arrowInMain-icon'>
-                            <HiOutlineArrowNarrowRight className='image' />
-                        </div>
-                        <span className='arrowInMain-text'>{text}</span>
-                    </button>
-                )
             case ButtonType.arrow:
                 return (
                     <button onClick={onCLickButton} disabled={isDisabled} className='arrow'>

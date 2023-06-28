@@ -3,8 +3,7 @@ export enum ButtonType {
     changeToWhite = 'changeToWhite',
     changeToMain = 'changeToMain',
     blink = 'blink',
-    arrow = 'arrow',
-    arrowOutlineInMain = 'arrowOutlineInMain'
+    arrow = 'arrow'
 }
 
 export interface ButtonInterface {

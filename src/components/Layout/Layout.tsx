@@ -12,7 +12,8 @@ function Layout({ children }: PropsWithChildren) {
     const toTopClass = showToTop ? 'show-toTop' : 'hide-toTop'
 
     const location = useLocation()
-    const headerIsPink = location.pathname === (RouterNames.HOME || RouterNames.COURSE || RouterNames.TESTS)
+
+    const headerIsPink = location.pathname === (RouterNames.HOME || RouterNames.TESTS)
     const headerClass = headerIsPink ? '' : 'White'
 
     useEffect(() => {

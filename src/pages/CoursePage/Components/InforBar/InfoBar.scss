@@ -31,6 +31,10 @@
         }
         &-actions {
             display: flex;
+            &-arrow > button {
+                border-width: 0px;
+                color: $main-color;
+            }
         }
     }
 }

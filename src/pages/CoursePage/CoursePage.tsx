@@ -151,7 +151,9 @@ const CoursePage = () => {
                         <span className='course-content-basicInfo-duration-title'>Durata lecție:</span>
                         <span className='course-content-basicInfo-duration-info'>60 minute</span>
                     </div>
-                    <Button text='Rezervă un loc (300MDL)' type={ButtonType.arrowOutlineInMain} />
+                    <div className='course-content-basicInfo-arrow'>
+                        <Button text='Rezervă un loc (300MDL)' type={ButtonType.arrow} />
+                    </div>
                     <Button text='Vreau La Curs' type={ButtonType.changeToWhite} />
                 </div>
                 <div className='course-content-image'>
