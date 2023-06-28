@@ -10,4 +10,5 @@ export interface CardInterface {
 export interface CardComponentInterface {
     data: CardInterface
     descriptionStatus: boolean
+    positionStatus?: boolean
 }

@@ -68,7 +68,7 @@ function Layout({ children }: PropsWithChildren) {
             </div>
             <header>
                 <div className={`header${headerClass}-bg`}>
-                    <div className={`container header${headerClass}`}>
+                    <nav className={`container header${headerClass}`}>
                         <Link className={`header${headerClass}-icon`} to='/'>
                             {headerIsPink ? (
                                 <img
@@ -87,18 +87,18 @@ function Layout({ children }: PropsWithChildren) {
                         <div className={`header${headerClass}-links`}>
                             <Link to={RouterNames.HOME}>Home</Link>
                             <Link to={RouterNames.ALLCOURSES}>Cursuri</Link>
-                            <Link to='/test'>Teste</Link>
+                            <Link to={RouterNames.TESTS}>Teste</Link>
                             <Link to={RouterNames.REVIEW}>Video Recenzii</Link>
-                            <Link to='/echipa'>Echipa</Link>
+                            <Link to={RouterNames.TEAM}>Echipa</Link>
                             <Link to='/cariera'>Carieră</Link>
                             <Link to='/contacte'>Contacte</Link>
                         </div>
-                    </div>
+                    </nav>
                 </div>
             </header>
             <div className={`drop-header ${dropHeaderClass}`}>
                 <div className='drop-header-bg'>
-                    <div className='container drop-header-inner'>
+                    <nav className='container drop-header-inner'>
                         <Link className='drop-header-inner-icon' to='/'>
                             <img
                                 src='https://fantastic-english.md/wp-content/uploads/2021/06/fantastic-logo_result.webp'
@@ -111,11 +111,11 @@ function Layout({ children }: PropsWithChildren) {
                             <Link to={RouterNames.ALLCOURSES}>Cursuri</Link>
                             <Link to={RouterNames.TESTS}>Teste</Link>
                             <Link to={RouterNames.REVIEW}>Video Recenzii</Link>
-                            <Link to='/echipa'>Echipa</Link>
+                            <Link to={RouterNames.TEAM}>Echipa</Link>
                             <Link to='/cariera'>Carieră</Link>
                             <Link to='/contacte'>Contacte</Link>
                         </div>
-                    </div>
+                    </nav>
                 </div>
             </div>
             {children}

@@ -1,0 +1,113 @@
+@import '../../assets/styles/variables.scss';
+
+.team {
+    &-wrapper {
+        display: flex;
+        &-nav {
+            z-index: 1;
+            width: 25%;
+            &-list {
+                position: fixed;
+                display: flex;
+                flex-direction: column;
+                &-item {
+                    position: relative;
+                    display: flex;
+                    align-items: center;
+                    padding: 20px;
+                    margin-bottom: 20px;
+                    color: white;
+                    background-color: $main-color;
+                    &:hover > &-icon {
+                        width: 20px;
+                    }
+                    &:hover > &-text {
+                        left: 10px;
+                    }
+                    &-icon {
+                        position: absolute;
+                        width: 0px;
+                        height: 30px;
+                        transition: 0.3s;
+                        left: 5px;
+                    }
+                    &-text {
+                        position: relative;
+                        font-family: 'Poppins';
+                        font-weight: 600;
+                        font-size: 17px;
+                        transition: 0.3s;
+                        left: 0;
+                    }
+                }
+            }
+        }
+        &-main {
+            display: flex;
+            flex-direction: column;
+            width: 75%;
+            &-workexperience {
+                display: flex;
+                flex-direction: column;
+                margin-bottom: 50px;
+                &-header {
+                    font-family: 'Core Sans';
+                    font-size: 24px;
+                    text-transform: uppercase;
+                    color: white;
+                    padding: 25px 20px;
+                    margin-bottom: 70px;
+                    background-color: $main-color;
+                }
+                &-list {
+                    display: flex;
+                    flex-direction: row;
+                    flex-wrap: wrap;
+                    gap: 30px;
+                    &-item {
+                        padding-right: 30px;
+                        width: calc(33% - 30px);
+                        height: 300px;
+                    }
+                }
+            }
+            &-work {
+                display: flex;
+                align-items: center;
+                justify-content: space-between;
+                background-color: $main-color;
+                padding: 20px;
+                width: 100%;
+                &-info {
+                    display: flex;
+                    flex-direction: column;
+                    color: white;
+                    &-header {
+                        font-family: 'Core Sans';
+                        font-weight: 24px;
+                        text-transform: uppercase;
+                        margin-bottom: 20px;
+                    }
+                    &-text {
+                        font-family: 'Ubuntu';
+                        font-weight: 14px;
+                        font-weight: 300;
+                    }
+                }
+
+                &-button > button {
+                    color: white;
+                    border-color: white;
+                    background-color: $main-color;
+                }
+            }
+        }
+    }
+
+    .divider {
+        position: relative;
+        z-index: 100;
+        height: 100px;
+        background-color: white;
+    }
+}

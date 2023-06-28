@@ -263,6 +263,32 @@
             "imgKid": "https://fantastic-english.md/wp-content/uploads/2021/04/DianaKID_result_2.webp"
         }
     ],
+    "managers": [
+        {
+            "id": 0,
+            "name": "Eugeniu",
+            "position": "Manager",
+            "description": "A absolvit Academia de Studii Economice la specialitatea - Reclamă și Relațiile cu publicul (Ciclul II, Master). Implementează strategii de marketing și promovare a școlii Fantastic English.",
+            "img": "https://fantastic-english.md/wp-content/uploads/2021/04/Eugen_result-2.webp",
+            "imgKid": "https://fantastic-english.md/wp-content/uploads/2021/04/Eugen-Ganta-KID_result-1.webp"
+        },
+        {
+            "id": 1,
+            "name": "Constantin",
+            "position": "Manager",
+            "description": "Constantin face parte din echipa Fantastic English din 2015, aproape chiar de la fondare. S-a alăturat ca s-o ajute pe Margarita, fondatoarea școlii, pe aspectele de care ea nu reușea să se ocupe. Astfel, a început să se ocupe de partea juridică, contabilă, vînzări și tehnologii.",
+            "img": "https://fantastic-english.md/wp-content/uploads/2021/04/Constantin_result-2.webp",
+            "imgKid": "https://fantastic-english.md/wp-content/uploads/2021/04/Constantin-KID02_result.webp"
+        },
+        {
+            "id": 2,
+            "name": "Timofei",
+            "position": "Manager",
+            "description": "Absolvent al facultății de drept în 2014 și cu o experiență vastă în domeniul organizatoric și de coordonare al activităților. S-a alăturat echipei la începutul anului 2018, cînd făcea vînzări de tip B2B și B2C. Coordoneaza, îndruma și dezvoltă modul de organizare și desfasurare al activitatii managerilor în relațiile cu clienții.",
+            "img": "https://fantastic-english.md/wp-content/uploads/2021/04/Timofei_result-1-1-1.webp",
+            "imgKid": "https://fantastic-english.md/wp-content/uploads/2021/04/Timofei_result-1-1-1.webp"
+        }
+    ],
     "reviews": [
         {
             "id": 0,
@@ -591,6 +617,33 @@
             "id": 46,
             "alt": "De ce am ales Fantastic English I Popov Dragoș-Mihai",
             "src": "https://www.youtube.com/embed/W3U9W5NgH6U"
+        }
+    ],
+    "work_experience": [
+        {
+            "id": 0,
+            "title": "Cum e să lucrezi la Fantastic English School I Anastasia Brânză",
+            "src": "https://www.youtube.com/embed/cJ3NzL6jAGk"
+        },
+        {
+            "id": 1,
+            "title": "Cum e să lucrezi la Fantastic English School I Anastasia Brânză",
+            "src": "https://www.youtube.com/embed/cJ3NzL6jAGk"
+        },
+        {
+            "id": 2,
+            "title": "Cum e să lucrezi la Fantastic English School I Anastasia Brânză",
+            "src": "https://www.youtube.com/embed/cJ3NzL6jAGk"
+        },
+        {
+            "id": 3,
+            "title": "Cum e să lucrezi la Fantastic English School I Anastasia Brânză",
+            "src": "https://www.youtube.com/embed/cJ3NzL6jAGk"
+        },
+        {
+            "id": 4,
+            "title": "Cum e să lucrezi la Fantastic English School I Anastasia Brânză",
+            "src": "https://www.youtube.com/embed/cJ3NzL6jAGk"
         }
     ],
     "faq": [

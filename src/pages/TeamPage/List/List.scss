@@ -1,0 +1,27 @@
+@import '../../../assets/styles/variables.scss';
+
+.list {
+    display: flex;
+    flex-direction: column;
+    margin-bottom: 50px;
+    &-header {
+        font-family: 'Core Sans';
+        font-size: 24px;
+        text-transform: uppercase;
+        color: white;
+        padding: 25px 20px;
+        margin-bottom: 70px;
+        background-color: $main-color;
+    }
+    &-wrapper {
+        display: flex;
+        flex-direction: row;
+        flex-wrap: wrap;
+        gap: 30px;
+        &-item {
+            padding-right: 30px;
+            width: calc(33% - 30px);
+            max-height: 700px;
+        }
+    }
+}

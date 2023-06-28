@@ -1,8 +1,9 @@
 import Home from 'src/pages/Home'
 import AllCoursesPage from 'src/pages/AllCoursesPage'
 import ReviewPage from 'src/pages/ReviewPage'
-import CoursePage from 'src/pages/CoursePage/CoursePage'
-import TestsPage from 'src/pages/TestsPage/TestsPage'
+import CoursePage from 'src/pages/CoursePage'
+import TestsPage from 'src/pages/TestsPage'
+import TeamPage from 'src/pages/TeamPage'
 
 export interface InterfaceRoute {
     path: RouterNames
@@ -15,7 +16,8 @@ export enum RouterNames {
     ALLCOURSES = '/cursuri',
     COURSE = '/cursuri/:id',
     TESTS = '/test',
-    REVIEW = '/video-recenzii'
+    REVIEW = '/video-recenzii',
+    TEAM = '/team'
 }
 
 export const publicRoutes: InterfaceRoute[] = [
@@ -24,5 +26,6 @@ export const publicRoutes: InterfaceRoute[] = [
     { path: RouterNames.ALLCOURSES, component: <AllCoursesPage /> },
     { path: RouterNames.COURSE, component: <CoursePage /> },
     { path: RouterNames.TESTS, component: <TestsPage /> },
-    { path: RouterNames.REVIEW, component: <ReviewPage /> }
+    { path: RouterNames.REVIEW, component: <ReviewPage /> },
+    { path: RouterNames.TEAM, component: <TeamPage /> }
 ]

@@ -1,5 +1,5 @@
 import { CourseInterface } from 'src/components/Courses/CoursesInterface'
-import { TeacherInterface } from 'src/utils/teachers'
+import { TeacherInterface } from 'src/ts/TeacherInterface'
 
 export interface CourseAsideInterface {
     courseID: number
