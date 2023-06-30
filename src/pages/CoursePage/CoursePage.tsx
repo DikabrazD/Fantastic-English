@@ -125,7 +125,7 @@ const CoursePage = () => {
                     <div className='course-content-header-price'>{course?.price} MDL / 60 min</div>
                 </div>
                 <div className='course-content-quickLinks'>
-                    <a href='/#' className='course-content-quickLinks-reviews'>
+                    <a href='#reviews' className='course-content-quickLinks-reviews'>
                         <div className='course-content-quickLinks-reviews-image'>
                             <img
                                 className='image'
@@ -136,7 +136,7 @@ const CoursePage = () => {
                         <span>5/5 Recenzii</span>
                     </a>
                     <span className='course-content-quickLinks-divider'> | </span>
-                    <a href='/#' className='course-content-quickLinks-faq'>
+                    <a href='#faq' className='course-content-quickLinks-faq'>
                         13 Întrebări/Răspunsuri
                     </a>
                 </div>
@@ -160,7 +160,7 @@ const CoursePage = () => {
                     <img src={course?.img} alt='Course' className='image' />
                 </div>
                 {course && <CourseInfo data={course} />}
-                <div className='course-content-reviews'>
+                <div className='course-content-reviews' id='reviews'>
                     <h3 className='course-content-reviews-title'>Vezi părerile studenților noștri</h3>
                     <Slider breakpoints={breakpointsReview}>
                         {reviews.map((item) => {
@@ -184,7 +184,7 @@ const CoursePage = () => {
                         })}
                     </Slider>
                 </div>
-                <div className='course-content-faq'>
+                <div className='course-content-faq' id='faq'>
                     <h3 className='course-content-faq-title'>Întrebări și Răspunsuri</h3>
                     <ul className='course-content-faq-list'>
                         {faq.map((item, index) => {

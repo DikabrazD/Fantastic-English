@@ -3,74 +3,11 @@
 .team {
     &-wrapper {
         display: flex;
-        &-nav {
-            z-index: 1;
-            width: 25%;
-            &-list {
-                position: fixed;
-                display: flex;
-                flex-direction: column;
-                &-item {
-                    position: relative;
-                    display: flex;
-                    align-items: center;
-                    padding: 20px;
-                    margin-bottom: 20px;
-                    color: white;
-                    background-color: $main-color;
-                    &:hover > &-icon {
-                        width: 20px;
-                    }
-                    &:hover > &-text {
-                        left: 10px;
-                    }
-                    &-icon {
-                        position: absolute;
-                        width: 0px;
-                        height: 30px;
-                        transition: 0.3s;
-                        left: 5px;
-                    }
-                    &-text {
-                        position: relative;
-                        font-family: 'Poppins';
-                        font-weight: 600;
-                        font-size: 17px;
-                        transition: 0.3s;
-                        left: 0;
-                    }
-                }
-            }
-        }
+        gap: 50px;
         &-main {
             display: flex;
             flex-direction: column;
-            width: 75%;
-            &-workexperience {
-                display: flex;
-                flex-direction: column;
-                margin-bottom: 50px;
-                &-header {
-                    font-family: 'Core Sans';
-                    font-size: 24px;
-                    text-transform: uppercase;
-                    color: white;
-                    padding: 25px 20px;
-                    margin-bottom: 70px;
-                    background-color: $main-color;
-                }
-                &-list {
-                    display: flex;
-                    flex-direction: row;
-                    flex-wrap: wrap;
-                    gap: 30px;
-                    &-item {
-                        padding-right: 30px;
-                        width: calc(33% - 30px);
-                        height: 300px;
-                    }
-                }
-            }
+            width: 80%;
             &-work {
                 display: flex;
                 align-items: center;

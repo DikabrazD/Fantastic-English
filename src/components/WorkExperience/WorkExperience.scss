@@ -1,6 +1,6 @@
-@import '../../../assets/styles/variables.scss';
+@import '../../assets/styles/variables.scss';
 
-.list {
+.workexperience {
     display: flex;
     flex-direction: column;
     margin-bottom: 50px;
@@ -13,7 +13,7 @@
         margin-bottom: 70px;
         background-color: $main-color;
     }
-    &-wrapper {
+    &-list {
         display: flex;
         flex-direction: row;
         flex-wrap: wrap;
@@ -21,7 +21,7 @@
         &-item {
             padding-right: 30px;
             width: calc(33% - 30px);
-            max-height: 700px;
+            height: 300px;
         }
     }
 }

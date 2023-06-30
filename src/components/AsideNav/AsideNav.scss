@@ -1,0 +1,42 @@
+@import '../../assets/styles/variables.scss';
+
+.nav {
+    z-index: 1;
+    width: 20%;
+    &-list {
+        width: 20%;
+        position: fixed;
+        display: flex;
+        flex-direction: column;
+        &-item {
+            position: relative;
+            display: flex;
+            align-items: center;
+            padding: 20px;
+            margin-bottom: 20px;
+            color: white;
+            background-color: $main-color;
+            &:hover > &-icon {
+                width: 20px;
+            }
+            &:hover > &-text {
+                left: 10px;
+            }
+            &-icon {
+                position: absolute;
+                width: 0px;
+                height: 30px;
+                transition: 0.3s;
+                left: 5px;
+            }
+            &-text {
+                position: relative;
+                font-family: 'Poppins';
+                font-weight: 600;
+                font-size: 17px;
+                transition: 0.3s;
+                left: 0;
+            }
+        }
+    }
+}

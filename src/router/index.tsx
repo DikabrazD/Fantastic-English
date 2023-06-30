@@ -4,6 +4,7 @@ import ReviewPage from 'src/pages/ReviewPage'
 import CoursePage from 'src/pages/CoursePage'
 import TestsPage from 'src/pages/TestsPage'
 import TeamPage from 'src/pages/TeamPage'
+import CareerPage from 'src/pages/CareerPage'
 
 export interface InterfaceRoute {
     path: RouterNames
@@ -17,7 +18,8 @@ export enum RouterNames {
     COURSE = '/cursuri/:id',
     TESTS = '/test',
     REVIEW = '/video-recenzii',
-    TEAM = '/team'
+    TEAM = '/team',
+    CAREER = '/cariera'
 }
 
 export const publicRoutes: InterfaceRoute[] = [
@@ -27,5 +29,6 @@ export const publicRoutes: InterfaceRoute[] = [
     { path: RouterNames.COURSE, component: <CoursePage /> },
     { path: RouterNames.TESTS, component: <TestsPage /> },
     { path: RouterNames.REVIEW, component: <ReviewPage /> },
-    { path: RouterNames.TEAM, component: <TeamPage /> }
+    { path: RouterNames.TEAM, component: <TeamPage /> },
+    { path: RouterNames.CAREER, component: <CareerPage /> }
 ]

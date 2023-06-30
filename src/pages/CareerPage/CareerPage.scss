@@ -1,0 +1,78 @@
+@import '../../assets/styles/variables.scss';
+
+@mixin sectionHeader {
+    font-family: 'Core Sans';
+    font-size: 24px;
+    text-transform: uppercase;
+    color: white;
+    padding: 25px 20px;
+    margin-bottom: 70px;
+    background-color: $main-color;
+}
+
+.career {
+    &-wrapper {
+        display: flex;
+        gap: 50px;
+        &-main {
+            display: flex;
+            flex-direction: column;
+            width: 80%;
+            &-about {
+                display: flex;
+                flex-direction: column;
+                margin-bottom: 70px;
+                &-header {
+                    @include sectionHeader;
+                }
+                &-list {
+                    display: flex;
+                    flex-wrap: wrap;
+                    gap: 50px;
+                    &-item {
+                        display: flex;
+                        flex-direction: column;
+                        width: calc(50% - 50px);
+                        &-image {
+                            width: 100px;
+                            height: 100px;
+                            margin-bottom: 20px;
+                        }
+                        &-text {
+                            font-family: 'Ubuntu';
+                            font-weight: 300;
+                            font-size: 17px;
+                        }
+                    }
+                }
+            }
+            &-benefits {
+                display: flex;
+                flex-direction: column;
+                margin-bottom: 70px;
+                &-header {
+                    @include sectionHeader;
+                }
+                &-list {
+                    display: flex;
+                    flex-wrap: wrap;
+                    gap: 20px;
+                    &-item {
+                        display: flex;
+                        gap: 5px;
+                        width: calc(50% - 50px);
+                        &-image {
+                            width: 25px;
+                            height: 25px;
+                        }
+                        &-text {
+                            font-family: 'Ubuntu';
+                            font-size: 17px;
+                            font-weight: 300;
+                        }
+                    }
+                }
+            }
+        }
+    }
+}
