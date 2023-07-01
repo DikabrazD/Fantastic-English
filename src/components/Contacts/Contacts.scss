@@ -1,0 +1,31 @@
+@import '../../assets/styles/variables.scss';
+
+.contacts {
+    display: flex;
+    flex-direction: column;
+    gap: 20px;
+    a {
+        font-family: 'Poppins', sans-serif;
+        font-weight: 300;
+        font-size: 16px;
+        color: white;
+        transition: 0.2s ease-out;
+        &:hover {
+            color: $main-color;
+        }
+    }
+    &-item {
+        display: flex;
+        gap: 10px;
+        align-items: center;
+        &-icon {
+            display: flex;
+            align-items: center;
+            width: 16px;
+            height: 16px;
+        }
+        &-plus {
+            padding-left: 26px;
+        }
+    }
+}

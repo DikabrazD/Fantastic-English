@@ -1,105 +1,62 @@
 @import '../../assets//styles/variables.scss';
 
-//Folosit mixină "headerTheme" pentru a forma diferite teme.
-
-@mixin headerTheme($headerBg, $textColor, $beforColor) {
-    padding: 10px 0;
-    display: flex;
-    justify-content: space-between;
-    &-bg {
-        background: $headerBg;
-    }
-    &-icon {
-        width: 115px;
-        height: 65;
-    }
-    &-links {
-        width: 62%;
-        display: flex;
-        justify-content: space-between;
-        align-items: center;
-        font-family: 'Poppins', sans-serif;
-        font-size: 18px;
-        font-weight: 600;
-        line-height: 23px;
-        a {
-            position: relative;
-            color: $textColor;
-            &.active::before {
-                content: '';
-                position: absolute;
-                z-index: 10;
-                width: 100%;
-                height: 2px;
-                bottom: 0;
-                background-color: $beforColor;
-            }
-            &::before {
-                content: '';
-                position: absolute;
-                z-index: 10;
-                bottom: 0%;
-                height: 2px;
-                width: 0%;
-                background-color: $beforColor;
-                transition: 0.3s;
-            }
-            &:hover::before {
-                width: 100%;
-            }
-        }
-    }
-}
-
-.layout {
-    position: relative;
-}
-.top-bar-bg {
-    background: #1d1d1d;
-}
-.top-bar {
-    padding: 12px 0;
-    display: flex;
-    align-items: center;
-    gap: 25px;
-    a {
-        color: #cecece;
-        display: flex;
-        justify-content: center;
-        align-items: center;
-        .top-bar-country {
-            font-weight: 700;
-        }
-        .top-bar-icon {
-            width: 16px;
-            height: 16px;
-            margin-right: 6px;
-        }
-    }
-}
-
-.header {
-    @include headerTheme($main-color, white, white);
-}
-.headerWhite {
-    @include headerTheme(white, black, $main-color);
-}
-
-.drop-header {
+.dropHeader {
     position: fixed;
     width: 100%;
     height: 90px;
+    background-color: white;
     left: 0;
     top: -90px;
     z-index: 1000;
     box-shadow: 0 4px 8px 0 rgba(0, 0, 0, 0.13);
     transition: transform 1s ease-in-out;
-    &-bg {
-        height: 100%;
-        background-color: white;
-    }
-    &-inner {
-        @include headerTheme(white, black, $main-color);
+    &-wrapper {
+        padding: 10px 0;
+        display: flex;
+        justify-content: space-between;
+        &-bg {
+            background: white;
+        }
+        &-icon {
+            width: 115px;
+            height: 65;
+        }
+        &-links {
+            width: 62%;
+            display: flex;
+            justify-content: space-between;
+            align-items: center;
+            font-family: 'Poppins', sans-serif;
+            font-size: 18px;
+            font-weight: 600;
+            line-height: 23px;
+            a {
+                position: relative;
+                color: black;
+                &.active::before {
+                    content: '';
+                    position: absolute;
+                    z-index: 10;
+                    width: 100%;
+                    height: 2px;
+                    bottom: 0;
+                    background-color: $main-color;
+                }
+                &::before {
+                    content: '';
+                    position: absolute;
+                    z-index: 10;
+                    bottom: 0%;
+                    height: 2px;
+                    width: 0%;
+                    background-color: $main-color;
+                    transition: 0.3s;
+                }
+                &:hover::before {
+                    width: 100%;
+                }
+            }
+        }
     }
 }
 
@@ -109,108 +66,6 @@
 
 .hide-header {
     transform: translateY(-90px);
-}
-
-footer {
-    position: relative;
-    z-index: 100;
-}
-
-.footer-top {
-    display: flex;
-    justify-content: space-between;
-    gap: 100px;
-    padding: 25px 0;
-    color: white;
-    h4 {
-        font-size: 20px;
-        font-family: 'Core Sans';
-    }
-    &-bg {
-        background-color: #252525;
-    }
-    &-about {
-        display: flex;
-        flex-direction: column;
-        gap: 20px;
-        width: 33%;
-        a {
-            align-self: flex-start;
-            position: relative;
-            color: white;
-            padding-bottom: 3px;
-            &::before {
-                content: '';
-                position: absolute;
-                z-index: 20;
-                bottom: 0%;
-                height: 1px;
-                width: 100%;
-                background-color: white;
-            }
-        }
-    }
-    &-contacts {
-        display: flex;
-        flex-direction: column;
-        gap: 20px;
-        width: 33%;
-        a {
-            font-family: 'Poppins', sans-serif;
-            font-weight: 300;
-            font-size: 16px;
-            color: white;
-            transition: 0.2s ease-out;
-            &:hover {
-                color: $main-color;
-            }
-        }
-        &-item {
-            display: flex;
-            gap: 10px;
-            align-items: center;
-            &-icon {
-                display: flex;
-                align-items: center;
-                width: 16px;
-                height: 16px;
-            }
-            &-plus {
-                padding-left: 26px;
-            }
-        }
-    }
-    &-social {
-        display: flex;
-        flex-direction: column;
-        gap: 20px;
-        width: 33%;
-    }
-}
-
-.footer-bottom {
-    color: #e1e1e1;
-    text-align: center;
-    padding: 20px 15px;
-    font-family: 'Poppins', sans-serif;
-    font-size: 14px;
-    line-height: 24px;
-    &-bg {
-        background: #1d1d1d;
-    }
-    &-copyright {
-        margin-bottom: 10px;
-    }
-    &-payments {
-        display: flex;
-        align-items: center;
-        justify-content: center;
-        gap: 10px;
-        &-item {
-            height: 22px;
-            width: 22px;
-        }
-    }
 }
 
 .toTop {
