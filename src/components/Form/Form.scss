@@ -6,10 +6,15 @@
     flex-direction: column;
     &-importantInfo {
         display: flex;
+        width: 100%;
         height: 50px;
         margin-bottom: 15px;
         &-name {
-            margin-right: 30px;
+            width: 50%;
+            padding-right: 30px;
+        }
+        &-email {
+            width: 50%;
         }
     }
     &-phoneInput {
@@ -21,7 +26,7 @@
         outline: none;
         padding: 7px 10px;
         width: 100%;
-        height: 100%;
+        height: 100px;
         resize: vertical;
         margin-bottom: 15px;
         &::placeholder {
@@ -30,7 +35,9 @@
     }
     &-checkbox {
         display: flex;
+        align-items: center;
         flex-wrap: wrap;
+        gap: 10px;
         & > * {
             margin-bottom: 15px;
         }

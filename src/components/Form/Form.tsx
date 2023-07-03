@@ -1,14 +1,16 @@
-import './Form.scss'
+import { useState } from 'react'
+import { ButtonType } from '../Button/ButtonInterface'
+import { FormInterface } from './FormInterface'
+
 import PhoneInput from 'react-phone-input-2'
 import Button from '../Button'
 import Checkbox from '../Checkbox'
 import Input from '../Input'
-import { useState } from 'react'
-import { ButtonType } from '../Button/ButtonInterface'
-import { FormInterface } from './FormInterface'
 import axios from 'axios'
 
-function Form({ privacyType, checkboxColor }: FormInterface) {
+import './Form.scss'
+
+function Form({ privacyType, checkboxColor, buttonType = ButtonType.changeToMain }: FormInterface) {
     const [name, setName] = useState<string>('')
     const [email, setEmail] = useState<string>('')
     const [number, setNumber] = useState<string>('')
@@ -68,9 +70,9 @@ function Form({ privacyType, checkboxColor }: FormInterface) {
                     color={checkboxColor}
                     onChecked={changePrivacyCheck}
                 />
-                <Checkbox text='Sunt de acord sa primesc SMS si apelur' onChecked={changeSmsCheck} />
+                <Checkbox text='Sunt de acord sa primesc SMS si apeluri' onChecked={changeSmsCheck} />
             </div>
-            <Button isDisabled={isDisabled} type={ButtonType.changeToMain} text='Trimite' onClick={postDate} />
+            <Button isDisabled={isDisabled} type={buttonType} text='Trimite' onClick={postDate} />
         </form>
     )
 }

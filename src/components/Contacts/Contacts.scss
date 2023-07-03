@@ -3,16 +3,12 @@
 .contacts {
     display: flex;
     flex-direction: column;
-    gap: 20px;
+    gap: 10px;
     a {
         font-family: 'Poppins', sans-serif;
         font-weight: 300;
         font-size: 16px;
-        color: white;
         transition: 0.2s ease-out;
-        &:hover {
-            color: $main-color;
-        }
     }
     &-item {
         display: flex;
@@ -28,4 +24,22 @@
             padding-left: 26px;
         }
     }
+}
+
+.black {
+    color: black;
+    &:hover {
+        color: $main-color;
+    }
+}
+
+.white {
+    color: white;
+    &:hover {
+        color: $main-color;
+    }
+}
+
+.main {
+    color: $main-color;
 }

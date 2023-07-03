@@ -3,9 +3,10 @@ import { FaAngleUp } from 'react-icons/fa'
 import { Link } from 'react-router-dom'
 import { RouterNames } from 'src/router'
 
-import './Layout.scss'
 import Footer from './Components/Footer/Footer'
 import Header from './Components/Header/Header'
+
+import './Layout.scss'
 
 function Layout({ children }: PropsWithChildren) {
     const [prev, setPrev] = useState<number>(0)

@@ -1,11 +1,12 @@
-import './Home.scss'
-import axios from 'axios'
 import { SwiperSlide } from 'swiper/react'
 import { ButtonType } from 'src/components/Button/ButtonInterface'
 import { useEffect, useState } from 'react'
 import { CardInterface } from 'src/components/Card/CardInterface'
 import { ReviewInterface } from 'src/components/Review/ReviewInterface'
 import { IoCheckmarkSharp } from 'react-icons/io5'
+import { useNavigate } from 'react-router-dom'
+import { RouterNames } from 'src/router'
+
 import Button from 'src/components/Button'
 import Courses from 'src/components/Courses'
 import Card from 'src/components/Card'
@@ -13,10 +14,19 @@ import Slider from 'src/components/Slider'
 import Review from 'src/components/Review'
 import Form from 'src/components/Form'
 import FormTrial from './Components/FormTrial/FormTrial'
+import axios from 'axios'
+
+import './Home.scss'
 
 const Home = () => {
     const [teachers, setTeachers] = useState<CardInterface[]>([])
     const [reviews, setReviews] = useState<ReviewInterface[]>([])
+
+    const navigate = useNavigate()
+
+    const goToTeam = () => {
+        navigate(RouterNames.TEAM)
+    }
 
     useEffect(() => {
         const getData = async () => {
@@ -105,7 +115,7 @@ const Home = () => {
                     })}
                 </div>
                 <div className='teachers-button'>
-                    <Button type={ButtonType.arrow} text='Vezi toți profesorii de engleză' />
+                    <Button type={ButtonType.arrow} text='Vezi toți profesorii de engleză' onClick={goToTeam} />
                 </div>
             </div>
 
