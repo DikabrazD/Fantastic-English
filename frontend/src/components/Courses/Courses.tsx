@@ -1,11 +1,14 @@
-import './Courses.scss'
-import axios from 'axios'
 import { CourseInterface, CategoryInterface } from './CoursesInterface'
 import { useEffect, useState } from 'react'
 import { HiOutlineArrowNarrowRight, HiOutlineClock } from 'react-icons/hi'
 import { useTransition, animated } from '@react-spring/web'
 import { Link, generatePath } from 'react-router-dom'
 import { RouterNames } from 'src/router'
+
+import CourseService from 'src/API/CourseService'
+import CategoryService from 'src/API/CategoryService'
+
+import './Courses.scss'
 
 const Courses = () => {
     const [category, setCategory] = useState<CategoryInterface[]>([])
@@ -21,24 +24,18 @@ const Courses = () => {
 
     useEffect(() => {
         const getData = async () => {
-            await axios
-                .get<CategoryInterface[]>('http://localhost:4000/api/categories')
-                .then((res) => {
-                    setActiveCategory(res.data[0]._id)
-                    setCategory(res.data)
-                })
-                .catch((error) => {
-                    console.log(error)
-                })
-            await axios
-                .get<CourseInterface[]>(`http://localhost:4000/api/courses`)
-                .then((res) => {
-                    console.log(res.data)
-                    setCourses(res.data)
-                })
-                .catch((error) => {
-                    console.log(error)
-                })
+            const categories = await CategoryService.getAll()
+
+            if (categories) {
+                setActiveCategory(categories[0]._id)
+                setCategory(categories)
+            }
+
+            const courses = await CourseService.getAll()
+
+            if (courses) {
+                setCourses(courses)
+            }
         }
 
         getData()

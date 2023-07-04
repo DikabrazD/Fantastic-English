@@ -4,6 +4,9 @@ import cors from 'cors'
 
 import courseRouter from './routers/CourseRouter.js'
 import categoryRouter from './routers/CategoryRouter.js'
+import teacherRouter from './routers/TeacherRouter.js'
+import managerRouter from './routers/ManagerRouter.js'
+import customerRouter from './routers/CustomerRouter.js'
 
 const PORT = 4000
 const DB_URL = 'mongodb+srv://user:user@cluster0.7kgaaac.mongodb.net/?retryWrites=true&w=majority'
@@ -14,6 +17,9 @@ app.use(express.json())
 app.use(cors())
 app.use('/api', courseRouter)
 app.use('/api', categoryRouter)
+app.use('/api', teacherRouter)
+app.use('/api', managerRouter)
+app.use('/api', customerRouter)
 
 const startApp = async () => {
     try {

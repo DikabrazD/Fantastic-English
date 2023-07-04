@@ -10,7 +10,7 @@ const List = ({ data, name, id }: ListInterface) => {
             <ul className='list-wrapper'>
                 {data.map((item) => {
                     return (
-                        <li key={item.id} className='list-wrapper-item'>
+                        <li key={item._id} className='list-wrapper-item'>
                             <Card data={item} descriptionStatus={true} />
                         </li>
                     )

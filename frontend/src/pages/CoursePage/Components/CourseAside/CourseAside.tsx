@@ -41,7 +41,7 @@ const CourseAside = ({ courseID, teachers, allCourses }: CourseAsideInterface) =
                         .map((item, index) => {
                             if (index < 2)
                                 return (
-                                    <li key={item.id} className='course-aside-teachers-list-item'>
+                                    <li key={item._id} className='course-aside-teachers-list-item'>
                                         <div className='course-aside-teachers-list-item-image'>
                                             <img src={item.img} alt='Teacher' className='image' />
                                         </div>

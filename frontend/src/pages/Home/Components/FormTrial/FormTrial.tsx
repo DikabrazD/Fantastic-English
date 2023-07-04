@@ -55,7 +55,7 @@ const FormTrial = () => {
 
     const postDate = () => {
         axios
-            .post('http://localhost:3000/customers', { name, number, social })
+            .post('http://localhost:4000/api/customers', { name, number, social })
             .then(() => {
                 setName('')
                 setNumber('')

@@ -37,7 +37,7 @@ function Form({ privacyType, checkboxColor, buttonType = ButtonType.changeToMain
 
     const postDate = () => {
         axios
-            .post('http://localhost:3000/customers', { name, number, email })
+            .post('http://localhost:4000/api/customers', { name, number, email })
             .then(() => {
                 setName('')
                 setEmail('')

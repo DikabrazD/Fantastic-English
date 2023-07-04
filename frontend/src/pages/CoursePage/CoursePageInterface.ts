@@ -34,8 +34,3 @@ export interface CourseDetailInterface extends CourseInterface {
 export type CourseItemParam = {
     id?: string
 }
-
-export interface FaqInterface {
-    title: string
-    text: string
-}

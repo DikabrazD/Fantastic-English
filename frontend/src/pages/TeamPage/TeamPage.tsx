@@ -42,7 +42,7 @@ const TeamPage = () => {
     useEffect(() => {
         const fetchData = async () => {
             await axios
-                .get<TeacherInterface[]>('http://localhost:3000/teachers')
+                .get<TeacherInterface[]>('http://localhost:4000/api/teachers')
                 .then((res) => {
                     setTeachers(res.data)
                 })
@@ -50,7 +50,7 @@ const TeamPage = () => {
                     console.log(error)
                 })
             await axios
-                .get<ManagerInterface[]>('http://localhost:3000/managers')
+                .get<ManagerInterface[]>('http://localhost:4000/api/managers')
                 .then((res) => {
                     setManagers(res.data)
                 })

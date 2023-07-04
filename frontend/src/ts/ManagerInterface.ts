@@ -1,5 +1,5 @@
 export interface ManagerInterface {
-    id: number
+    _id: number
     name: string
     position: string
     description: string

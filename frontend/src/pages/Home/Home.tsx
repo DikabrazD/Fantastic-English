@@ -31,7 +31,7 @@ const Home = () => {
     useEffect(() => {
         const getData = async () => {
             await axios
-                .get('http://localhost:3000/teachers')
+                .get('http://localhost:4000/api/teachers')
                 .then((res) => {
                     setTeachers(res.data)
                 })
@@ -108,7 +108,7 @@ const Home = () => {
                 <div className='teachers-list'>
                     {teachers.map((item) => {
                         return (
-                            <div key={item.id} className='teachers-list-card'>
+                            <div key={item._id} className='teachers-list-card'>
                                 <Card data={item} descriptionStatus={false} />
                             </div>
                         )

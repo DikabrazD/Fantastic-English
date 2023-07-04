@@ -1,6 +1,6 @@
 import { useEffect, useState } from 'react'
 import { useParams } from 'react-router-dom'
-import { CourseDetailInterface, CourseItemParam, FaqInterface } from './CoursePageInterface'
+import { CourseDetailInterface, CourseItemParam } from './CoursePageInterface'
 import { ButtonType } from 'src/components/Button/ButtonInterface'
 import { TeacherInterface } from 'src/ts/TeacherInterface'
 import { CourseInterface } from 'src/components/Courses/CoursesInterface'
@@ -19,17 +19,36 @@ import axios from 'axios'
 
 import './CoursePage.scss'
 import InfoBar from './Components/InforBar/InfoBar'
+import CourseService from 'src/API/CourseService'
 
 const CoursePage = () => {
     const [course, setCourse] = useState<CourseDetailInterface>()
     const [allCourses, setAllCourse] = useState<CourseInterface[]>([])
     const [reviews, setReviews] = useState<ReviewInterface[]>([])
     const [teachers, setTeachers] = useState<TeacherInterface[]>([])
-    const [faq, setFaq] = useState<FaqInterface[]>([])
+
     const [activeIndexs, setActiveIndexs] = useState<number[]>([])
 
     const params = useParams<CourseItemParam>()
 
+    const faq = [
+        {
+            title: 'Ce înseamnă ”o oră astronomică”?',
+            text: 'O oră astronomică reprezintă o unitate de timp folosită pentru a măsura durata unei lecții. Ora astronomică are 60 de minute. Acest curs de engleză are o durată totală de 42 de ore astronomice, ceea ce înseamnă că acesta va dura în total 42 de ore. Acest timp permite studenților să aprofundeze subiectele într-un ritm mai lejer și să-și întărească cunoștințele, fără a simți presiunea timpului.'
+        },
+        {
+            title: 'Când au loc lecțiile, în ce zile, la ce ore?',
+            text: 'Lecțiile pot avea loc fie Luni-Miercuri-Vineri fie Marți-Joi-Sâmbătă Orele la care se pot desfășura lecțiile sunt: 09:00, 11:10, 14:20, 16:30 sau 18:40 Lecțiile de sâmbătă se fac în prima parte a zilei, la 09:00 sau 11:10.'
+        },
+        {
+            title: 'Care este graficul de lucru a școlii?',
+            text: 'Școala activează de Luni-Vineri de la 10:00 până la 19:00. Sâmbăta au loc doar lecții, din administrație nu este nimeni.'
+        },
+        {
+            title: 'Cum se face rezervarea unui loc in grupă?',
+            text: 'Persoana care dorește să-și rezerveze un loc în grupă, trebuie să semneze un contract de prestări servicii, iar pentru aceasta este nevoie să aibă cu sine buletinul de identitate și 500 lei pentru achitarea primei rate.'
+        }
+    ]
     const breakpointsReview = {
         640: {
             slidesPerView: 1,
@@ -69,25 +88,19 @@ const CoursePage = () => {
 
     useEffect(() => {
         const fetchData = async () => {
-            await axios
-                .get<CourseDetailInterface>('http://localhost:4000/api/courses/' + params.id)
-                .then((res) => {
-                    setCourse(res.data)
-                })
-                .catch((error) => {
-                    console.log(error)
-                })
-            await axios
-                .get<CourseInterface[]>('http://localhost:3000/courses')
-                .then((res) => {
-                    setAllCourse(res.data)
-                })
-                .catch((error) => {
-                    console.log(error)
-                })
+            const course = await CourseService.getOne(params.id)
+
+            if (course) {
+                setCourse(course)
+            }
+            const courses = await CourseService.getAll()
+
+            if (courses) {
+                setAllCourse(courses)
+            }
 
             await axios
-                .get<TeacherInterface[]>('http://localhost:3000/teachers')
+                .get<TeacherInterface[]>('http://localhost:4000/api/teachers')
                 .then((res) => {
                     setTeachers(res.data)
                 })
@@ -99,15 +112,6 @@ const CoursePage = () => {
                 .get<ReviewInterface[]>('http://localhost:3000/reviews')
                 .then((res) => {
                     setReviews(res.data)
-                })
-                .catch((error) => {
-                    console.log(error)
-                })
-
-            await axios
-                .get<FaqInterface[]>('http://localhost:3000/faq')
-                .then((res) => {
-                    setFaq(res.data)
                 })
                 .catch((error) => {
                     console.log(error)
@@ -177,7 +181,7 @@ const CoursePage = () => {
                     <Slider breakpoints={breakpointsTeachers}>
                         {teachers.map((item) => {
                             return (
-                                <SwiperSlide key={item.id}>
+                                <SwiperSlide key={item._id}>
                                     <Card data={item} descriptionStatus={true} />
                                 </SwiperSlide>
                             )
