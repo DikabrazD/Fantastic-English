@@ -51,7 +51,7 @@ const CourseInfo = ({ data }: { data: CourseDetailInterface }) => {
                             <div key={item.id} className='info-details-item'>
                                 <h3 className='info-details-item-name'>{item.name}</h3>
                                 <div className='info-details-item-wrapper'>
-                                    {item.section.map((item) => {
+                                    {item.sections.map((item) => {
                                         if (item.type === 'text')
                                             return (
                                                 <p className='info-details-item-wrapper-text' key={item.id}>

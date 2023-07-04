@@ -67,8 +67,8 @@ const CourseAside = ({ courseID, teachers, allCourses }: CourseAsideInterface) =
                     {allCourses?.map((item, index) => {
                         if (index < 3)
                             return (
-                                <Link key={item.id} to={generatePath(RouterNames.COURSE, { id: String(item.id) })}>
-                                    <li key={item.id} className='course-aside-course-list-item'>
+                                <Link key={index} to={generatePath(RouterNames.COURSE, { id: String(item._id) })}>
+                                    <li className='course-aside-course-list-item'>
                                         <div className='course-aside-course-list-item-image'>
                                             <img src={item.img} alt='Courses' className='image' />
                                         </div>

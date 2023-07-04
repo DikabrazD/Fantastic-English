@@ -79,7 +79,7 @@
             "img": "https://fantastic-english.md/wp-content/uploads/2021/04/Curs-de-engleza-pentru-Adolescenti_result.webp"
         }
     ],
-    "course_detail": [
+    "course_details": [
         {
             "id": 0,
             "name": "Curs de Engleză: Beginner (A1)",
@@ -96,7 +96,7 @@
                     {
                         "id": 0,
                         "name": "Ce vei învăța la Cursul de Engleză - Beginner (A1)?",
-                        "section": [
+                        "sections": [
                             {
                                 "id": 0,
                                 "type": "text",

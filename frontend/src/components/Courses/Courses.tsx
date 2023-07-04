@@ -10,9 +10,9 @@ import { RouterNames } from 'src/router'
 const Courses = () => {
     const [category, setCategory] = useState<CategoryInterface[]>([])
     const [courses, setCourses] = useState<CourseInterface[]>([])
-    const [isActive, setActive] = useState<number>(0)
+    const [coursesActive, setCoursesActive] = useState<CourseInterface[]>([])
 
-    const coursesActive = courses.filter((item) => category[isActive].courses.includes(item.id))
+    const [activeCategory, setActiveCategory] = useState<string>('')
 
     const transition = useTransition(coursesActive, {
         from: { transform: 'scale(0)', opacity: 0 },
@@ -22,16 +22,18 @@ const Courses = () => {
     useEffect(() => {
         const getData = async () => {
             await axios
-                .get('http://localhost:3000/courses_category')
+                .get<CategoryInterface[]>('http://localhost:4000/api/categories')
                 .then((res) => {
+                    setActiveCategory(res.data[0]._id)
                     setCategory(res.data)
                 })
                 .catch((error) => {
                     console.log(error)
                 })
             await axios
-                .get<CourseInterface[]>('http://localhost:3000/courses')
+                .get<CourseInterface[]>(`http://localhost:4000/api/courses`)
                 .then((res) => {
+                    console.log(res.data)
                     setCourses(res.data)
                 })
                 .catch((error) => {
@@ -42,8 +44,16 @@ const Courses = () => {
         getData()
     }, [])
 
-    const setActiveCategory = (id: number) => {
-        setActive(id)
+    useEffect(() => {
+        //Filtrez categoria dupa id
+        const categoryFinded = category.find((item) => item._id === activeCategory)
+
+        //Filtrez doar cursurile care se afla in categoria aleasa
+        setCoursesActive(courses.filter((item) => categoryFinded?.courses.includes(item._id)))
+    }, [courses, category, activeCategory])
+
+    const changeActiveCategory = (id: string) => {
+        setActiveCategory(id)
     }
 
     return (
@@ -56,14 +66,14 @@ const Courses = () => {
                     pentru tine!
                 </span>
             </p>
-            {category.length > 0 && (
+            {category.length && (
                 <ul className='courses-category-name'>
                     {category.map((item) => {
                         return (
                             <li
-                                key={item.id}
-                                onClick={() => setActiveCategory(item.id)}
-                                className={`${isActive === item.id && 'active-item'} courses-category-name-item`}
+                                key={item._id}
+                                onClick={() => changeActiveCategory(item._id)}
+                                className={`${activeCategory === item._id && 'active-item'} courses-category-name-item`}
                             >
                                 <HiOutlineArrowNarrowRight className='courses-category-name-item-icon' />
                                 {item.name}
@@ -75,11 +85,11 @@ const Courses = () => {
 
             <div className='courses-list'>
                 {transition((style, item) => (
-                    <Link to={generatePath(RouterNames.COURSE, { id: String(item.id) })}>
-                        <animated.div key={item.id} style={style} className='courses-list-item'>
+                    <Link to={generatePath(RouterNames.COURSE, { id: String(item._id) })}>
+                        <animated.div key={item._id} style={style} className='courses-list-item'>
                             <div className='courses-list-item-image'>
                                 <img src={`${item.img}`} alt='Img of course' />
-                                <div className='courses-list-item-image-price'>85 MDL / 60 Min</div>
+                                <div className='courses-list-item-image-price'>{item.price} MDL / 60 Min</div>
                             </div>
                             <h3>{item.name}</h3>
                             <div className='courses-list-item-description'>

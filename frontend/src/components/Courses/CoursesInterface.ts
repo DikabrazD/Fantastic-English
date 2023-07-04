@@ -1,11 +1,11 @@
 export interface CategoryInterface {
-    id: number
+    _id: string
     name: string
-    courses: number[]
+    courses: string[]
 }
 
 export interface CourseInterface {
-    id: number
+    _id: string
     name: string
     price: number
     number_lectures: number

@@ -70,7 +70,7 @@ const CoursePage = () => {
     useEffect(() => {
         const fetchData = async () => {
             await axios
-                .get<CourseDetailInterface>('http://localhost:3000/course_detail/' + params.id)
+                .get<CourseDetailInterface>('http://localhost:4000/api/courses/' + params.id)
                 .then((res) => {
                     setCourse(res.data)
                 })
@@ -200,7 +200,7 @@ const CoursePage = () => {
                     </ul>
                 </div>
             </div>
-            {course && <CourseAside courseID={course.id} teachers={teachers} allCourses={allCourses} />}
+            {course && <CourseAside courseID={course._id} teachers={teachers} allCourses={allCourses} />}
             {course && <InfoBar name={course.name} price={course.price} />}
         </div>
     )

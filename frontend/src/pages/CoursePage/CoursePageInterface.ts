@@ -25,7 +25,7 @@ export interface CourseDetailInterface extends CourseInterface {
             {
                 id: number
                 name: string
-                section: Section[]
+                sections: Section[]
             }
         ]
     }

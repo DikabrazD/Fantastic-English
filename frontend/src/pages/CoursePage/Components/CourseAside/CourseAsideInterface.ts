@@ -2,7 +2,7 @@ import { CourseInterface } from 'src/components/Courses/CoursesInterface'
 import { TeacherInterface } from 'src/ts/TeacherInterface'
 
 export interface CourseAsideInterface {
-    courseID: number
+    courseID: string
     teachers: TeacherInterface[]
     allCourses: CourseInterface[]
 }
