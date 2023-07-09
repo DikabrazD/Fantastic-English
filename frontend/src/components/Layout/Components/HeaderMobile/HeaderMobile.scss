@@ -1,0 +1,89 @@
+@import '../../../../assets/styles/variables.scss';
+
+.headerMobile {
+    position: relative;
+    display: flex;
+    flex-direction: column;
+    width: 100%;
+    &-contacts {
+        display: flex;
+        flex-direction: column;
+        align-items: center;
+        gap: 10px;
+        width: 100%;
+        padding: 5px 0;
+        font-family: 'Ubuntu';
+        font-size: 16px;
+        color: white;
+        background-color: $main-color;
+        &-item {
+            display: flex;
+            &-icon {
+                margin-right: 7px;
+                width: 16px;
+                height: 16px;
+            }
+            &-country {
+                margin-right: 5px;
+                font-weight: 500;
+            }
+            &-number {
+                font-weight: 300;
+            }
+        }
+    }
+    &-holder {
+        position: relative;
+        display: flex;
+        align-items: center;
+        padding: 25px 0;
+        width: 100%;
+        &-hamburger {
+            width: 20px;
+            height: 20px;
+        }
+        &-icon {
+            position: absolute;
+            transform: translateX(50%);
+            right: 50%;
+            width: 100px;
+            height: 50px;
+        }
+    }
+    &-nav {
+        position: absolute;
+        left: 50%;
+        transform: translateX(-50%);
+        top: 100%;
+        width: 100%;
+        z-index: 101;
+        background-color: white;
+        &-wrapper {
+            width: 100%;
+            display: flex;
+            flex-direction: column;
+            font-family: 'Poppins';
+            font-size: 17px;
+            font-weight: 400;
+            & a {
+                padding-bottom: 10px;
+                border-bottom: 1px dashed rgb(225, 225, 225);
+                &.active {
+                    color: $main-color;
+                }
+            }
+        }
+    }
+}
+
+@media (min-width: $mobileS-width) {
+    .headerMobile {
+        display: flex;
+    }
+}
+
+@media (min-width: $laptop-width) {
+    .headerMobile {
+        display: none;
+    }
+}

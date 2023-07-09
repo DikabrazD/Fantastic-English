@@ -19,9 +19,14 @@
         flex-wrap: wrap;
         gap: 30px;
         &-item {
-            padding-right: 30px;
             width: calc(33% - 30px);
             height: 300px;
+            @media (min-width: $laptop-width) {
+                height: 150px;
+            }
+            @media (min-width: $desktop-width) {
+                height: 150px;
+            }
         }
     }
 }

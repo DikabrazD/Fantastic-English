@@ -1,5 +1,5 @@
 export interface ReviewInterface {
-    id: number
+    _id: number
     name: string
     img: string
     comment: string

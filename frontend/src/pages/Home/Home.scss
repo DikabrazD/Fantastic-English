@@ -2,81 +2,110 @@
 
 .header-home {
     position: relative;
-    display: flex;
-    justify-content: center;
-    align-items: center;
     background: $main-color;
-    margin-bottom: 150px;
-    h1 {
-        color: white;
-        text-align: center;
-        font-family: 'Core Sans';
-        font-size: 36px;
-    }
-    &-image {
-        height: 450px;
-        width: 450px;
-    }
-    &-form {
+    &-wrapper {
         display: flex;
-        flex-direction: column;
-        gap: 15px;
-        position: absolute;
-        transform: translateY(-50%);
-        top: 100%;
-        padding: 20px;
-        background-color: white;
-        &-inner {
-            display: flex;
-            gap: 15px;
-            &-input {
-                width: auto;
+        justify-content: center;
+        align-items: center;
+        h1 {
+            color: white;
+            text-align: center;
+            font-family: 'Core Sans';
+            font-size: 36px;
+        }
+        &-image {
+            height: 450px;
+            width: 450px;
+        }
+
+        @media (min-width: $mobileS-width) {
+            flex-direction: column-reverse;
+            padding: 20px 0;
+            & > h1 {
+                font-size: 24px;
+            }
+            &-image {
+                height: 200px;
+                width: 200px;
             }
         }
-        &-checkbox {
-            align-self: flex-end;
-            display: flex;
-            align-content: center;
-            justify-content: center;
-            gap: 15px;
+        @media (min-width: $laptop-width) {
+            flex-direction: row;
+            padding: 0;
+
+            & > h1 {
+                font-size: 36px;
+            }
+
+            &-image {
+                height: 450px;
+                width: 450px;
+            }
         }
     }
 }
 
 .test-level {
-    display: flex;
-    align-items: center;
-    justify-content: center;
     background: $main-color;
-    color: white;
     margin-bottom: 80px;
-    & > * {
-        width: 35%;
-    }
-    &-img {
+    padding: 15px 0;
+    &-wrapper {
         display: flex;
-        img {
+        align-items: center;
+        justify-content: center;
+        color: white;
+
+        &-img {
+            display: flex;
+            img {
+                width: 100%;
+            }
+        }
+        &-main {
+            display: flex;
+            align-items: flex-start;
+            flex-direction: column;
+            &-line {
+                background-color: white;
+                margin-bottom: 20px;
+                height: 3px;
+                width: 40px;
+            }
+            &-header {
+                font-size: 32px;
+                font-family: 'Core Sans';
+                margin-bottom: 20px;
+            }
+            &-description {
+                font-family: 'Ubuntu';
+                font-size: 18px;
+                font-weight: 300;
+                margin-bottom: 20px;
+            }
+        }
+
+        @media (min-width: $mobileS-width) {
             width: 100%;
+            flex-direction: column;
+            & > * {
+                width: 100%;
+            }
+            &-main {
+                align-items: center;
+                gap: 10px;
+                text-align: center;
+            }
         }
-    }
-    &-main {
-        display: flex;
-        align-items: flex-start;
-        flex-direction: column;
-        &-line {
-            background-color: white;
-            margin-bottom: 20px;
-            height: 3px;
-            width: 40px;
-        }
-        &-header {
-            font-size: 32px;
-            font-family: 'Core Sans';
-            margin-bottom: 20px;
-        }
-        &-description {
-            font-family: 'Ubuntu';
-            margin-bottom: 20px;
+
+        @media (min-width: $tablet-width) {
+            flex-direction: row;
+            & > * {
+                width: 50%;
+            }
+            &-main {
+                align-items: self-start;
+                text-align: start;
+            }
         }
     }
 }
@@ -104,10 +133,29 @@
     &-list {
         display: flex;
         align-items: center;
+        flex-wrap: wrap;
         margin-bottom: 60px;
         &-card {
             width: 25%;
             padding: 0 40px;
+            @media (min-width: $mobileS-width) {
+                width: 100%;
+                & > div {
+                    align-items: center;
+                }
+            }
+            @media (min-width: $tablet-width) {
+                width: 50%;
+            }
+            @media (min-width: $desktop-width) {
+                width: 33%;
+                & > div {
+                    align-items: flex-start;
+                }
+            }
+            @media (min-width: $desktopL-width) {
+                width: 25%;
+            }
         }
     }
     &-button {
@@ -117,40 +165,66 @@
 }
 
 .garantee {
-    display: flex;
-    align-items: center;
-    justify-content: center;
     background: $main-color;
-    color: white;
     margin-bottom: 80px;
-    padding-top: 20px;
-    & > * {
-        width: 35%;
-    }
-    &-main {
+    &-wrapper {
         display: flex;
+        align-items: center;
         justify-content: center;
-        flex-direction: column;
-        &-header {
-            text-align: center;
-            font-size: 32px;
-            font-family: 'Core Sans';
-            margin-bottom: 20px;
+        color: white;
+        padding: 15px 0;
+        & > * {
+            width: 50%;
         }
-        &-description {
-            text-align: center;
-            font-family: 'Ubuntu';
-            font-size: 18px;
-            p {
-                margin: 10px 0;
+        &-main {
+            display: flex;
+            justify-content: center;
+            flex-direction: column;
+            &-header {
+                text-align: center;
+                font-size: 32px;
+                font-family: 'Core Sans';
+                margin-bottom: 20px;
+            }
+            &-description {
+                text-align: center;
+                font-family: 'Ubuntu';
+                font-size: 18px;
+                p {
+                    margin: 10px 0;
+                }
             }
         }
-    }
-    &-img {
-        display: flex;
-        padding: 0 80px;
-        img {
+        &-img {
+            display: flex;
+            padding: 0 80px;
+            img {
+                width: 100%;
+            }
+        }
+
+        @media (min-width: $mobileS-width) {
             width: 100%;
+            flex-direction: column;
+            & > * {
+                width: 100%;
+            }
+            &-img {
+                margin: 0;
+                padding: 0 40px;
+            }
+        }
+
+        @media (min-width: $tablet-width) {
+            flex-direction: row;
+            & > * {
+                width: 50%;
+            }
+        }
+        @media (min-width: $desktop-width) {
+            &-img {
+                padding: 0 80px;
+            }
         }
     }
 }
@@ -225,10 +299,11 @@
 
 .contact-form {
     width: 100%;
-    padding: 100px 0;
+    margin: 100px 0;
     display: flex;
     justify-content: center;
     align-items: center;
+    background-color: $main-color;
     &-wrapper {
         width: 1100px;
         display: flex;
@@ -272,5 +347,63 @@
                 transform: translateY(-50%);
             }
         }
+
+        @media (min-width: $mobileS-width) {
+            &-img {
+                display: none;
+            }
+            &-form {
+                width: 100%;
+                padding: 50px 0;
+                &-header {
+                    text-align: center;
+                }
+                &-triangle {
+                    display: none;
+                }
+            }
+        }
+        @media (min-width: $laptop-width) {
+            &-img {
+                display: inline-block;
+            }
+            &-form {
+                width: 50%;
+                padding: 50px;
+                &-header {
+                    text-align: start;
+                }
+                &-triangle {
+                    display: block;
+                }
+            }
+        }
+    }
+}
+
+@media (min-width: $mobileS-width) {
+    .test-level,
+    .garantee {
+        padding: 20px 0;
+    }
+
+    .advantage {
+        display: none;
+    }
+}
+@media (min-width: $laptop-width) {
+    .contact-form {
+        background-color: transparent;
+    }
+}
+
+@media (min-width: $desktop-width) {
+    .test-level,
+    .garantee {
+        padding: 0 0;
+    }
+
+    .advantage {
+        display: flex;
     }
 }

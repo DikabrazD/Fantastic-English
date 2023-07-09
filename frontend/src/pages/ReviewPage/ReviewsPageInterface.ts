@@ -1,5 +1,10 @@
 export interface VideoReviewInterface {
-    id: number
+    _id: number
     src: string
-    alt: string
+    title: string
+}
+
+export interface VideoReviewAxios {
+    customers: VideoReviewInterface[]
+    totalCount: number
 }

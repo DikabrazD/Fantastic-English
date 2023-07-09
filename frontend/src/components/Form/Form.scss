@@ -4,21 +4,32 @@
     display: flex;
     align-items: flex-start;
     flex-direction: column;
+    gap: 15px;
+    width: 100%;
     &-importantInfo {
         display: flex;
+        gap: 30px;
         width: 100%;
-        height: 50px;
-        margin-bottom: 15px;
         &-name {
             width: 50%;
-            padding-right: 30px;
         }
         &-email {
             width: 50%;
         }
-    }
-    &-phoneInput {
-        margin-bottom: 15px;
+        @media (min-width: $mobileS-width) {
+            flex-direction: column;
+            gap: 15px;
+            & > * {
+                width: 100%;
+            }
+        }
+        @media (min-width: $laptop-width) {
+            flex-direction: row;
+            gap: 30px;
+            & > * {
+                width: 100%;
+            }
+        }
     }
     &-textarea {
         font-family: 'Ubuntu';
@@ -28,7 +39,6 @@
         width: 100%;
         height: 100px;
         resize: vertical;
-        margin-bottom: 15px;
         &::placeholder {
             color: #252525;
         }
@@ -40,6 +50,17 @@
         gap: 10px;
         & > * {
             margin-bottom: 15px;
+        }
+    }
+
+    @media (min-width: $mobileS-width) {
+        & > button {
+            width: 100%;
+        }
+    }
+    @media (min-width: $laptop-width) {
+        & > button {
+            width: auto;
         }
     }
 }

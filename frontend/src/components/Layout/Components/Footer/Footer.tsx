@@ -36,15 +36,16 @@ const Footer = () => {
                     </div>
                     <div className='footer-main-wrapper-social'>
                         <h4>Facebook</h4>
-                        <iframe
-                            title='Facebook page'
-                            src='https://www.facebook.com/plugins/page.php?href=https%3A%2F%2Fwww.facebook.com%2FFantasticEnglishSchool%2F&tabs&width=340&height=130&small_header=false&adapt_container_width=true&hide_cover=false&show_facepile=false&appId'
-                            width='340'
-                            height='130'
-                            style={{ border: 'none', overflow: 'hidden' }}
-                            allowFullScreen
-                            allow='autoplay; clipboard-write; encrypted-media; picture-in-picture; web-share'
-                        />
+                        <div className='footer-main-wrapper-social-facebook'>
+                            <iframe
+                                className='image'
+                                title='Facebook page'
+                                src='https://www.facebook.com/plugins/page.php?href=https%3A%2F%2Fwww.facebook.com%2FFantasticEnglishSchool%2F&tabs&width=340&height=130&small_header=false&adapt_container_width=true&hide_cover=false&show_facepile=false&appId'
+                                style={{ border: 'none', overflow: 'hidden' }}
+                                allowFullScreen
+                                allow='autoplay; clipboard-write; encrypted-media; picture-in-picture; web-share'
+                            />
+                        </div>
                     </div>
                 </div>
             </div>

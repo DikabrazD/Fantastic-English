@@ -58,12 +58,17 @@ const CareerPage = () => {
         {
             id: 0,
             name: 'Cum e să lucrezi la Fantastic English?',
-            href: '#workexpirience'
+            href: '#workexperience'
         },
         {
             id: 1,
-            name: 'Cum e să lucrezi la Fantastic English?',
-            href: '#workexpirience'
+            name: 'Fantastic English Astăzi',
+            href: '#careerAbout'
+        },
+        {
+            id: 2,
+            name: 'Beneficii',
+            href: '#benefits'
         }
     ]
 
@@ -74,7 +79,7 @@ const CareerPage = () => {
                 <AsideNav data={navLinks} />
                 <div className='career-wrapper-main'>
                     <WorkExperience />
-                    <section className='career-wrapper-main-about'>
+                    <section className='career-wrapper-main-about' id='careerAbout'>
                         <h2 className='career-wrapper-main-about-header'>Fantastic English Astăzi</h2>
                         <ul className='career-wrapper-main-about-list'>
                             {about.map((item) => {
@@ -90,7 +95,7 @@ const CareerPage = () => {
                         </ul>
                     </section>
 
-                    <section className='career-wrapper-main-benefits'>
+                    <section className='career-wrapper-main-benefits' id='benefits'>
                         <h2 className='career-wrapper-main-benefits-header'>Beneficii</h2>
                         <ul className='career-wrapper-main-benefits-list'>
                             {benefits.map((item) => {

@@ -1,5 +1,5 @@
 export interface ReviewWork {
-    id: number
+    _id: number
     title: string
     src: string
 }

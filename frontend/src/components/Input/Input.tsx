@@ -1,7 +1,6 @@
-import 'react-phone-input-2/lib/bootstrap.css'
-import './Input.scss'
 import { InputInterface } from './InputInterface'
-import React from 'react'
+
+import './Input.scss'
 
 const Input = ({ placeholder, value, onChange }: InputInterface) => {
     const handleChange = (e: React.FormEvent<HTMLInputElement>) => {

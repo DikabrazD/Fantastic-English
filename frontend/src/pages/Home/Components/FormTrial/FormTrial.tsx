@@ -1,13 +1,14 @@
 import Input from 'src/components/Input/Input'
-import PhoneInput from 'react-phone-input-2'
 import Combobox from 'src/components/Combobox/Combobox'
 import Button from 'src/components/Button/Button'
+import CustomerService from 'src/API/CustomerService'
 import Checkbox from 'src/components/Checkbox/Checkbox'
+
 import { useState } from 'react'
 import { ButtonType } from 'src/components/Button/ButtonInterface'
 import { ComboboxItemInterface } from 'src/components/Combobox/ComboboxInterface'
+
 import './FormTrial.scss'
-import axios from 'axios'
 
 const FormTrial = () => {
     const socialList = [
@@ -54,41 +55,39 @@ const FormTrial = () => {
     }
 
     const postDate = () => {
-        axios
-            .post('http://localhost:4000/api/customers', { name, number, social })
-            .then(() => {
-                setName('')
-                setNumber('')
-            })
-            .catch(() => {
-                console.log(Error)
-            })
+        CustomerService.create({ name, number, social })
+
+        setName('')
+        setNumber('')
     }
 
     return (
-        <form className='formTrial'>
-            <div className='formTrial-inner'>
-                <div className='formTrial-inner-input'>
-                    <Input placeholder='Nume/Prenume*' value={name} onChange={changeName} />
+        <form className='formTrial container'>
+            <div className='formTrial-wrapper'>
+                <h2 className='formTrial-wrapper-header'>FACEȚI CUNOȘTINȚĂ CU ȘCOALA NOASTRĂ</h2>
+                <div className='formTrial-wrapper-inner'>
+                    <div className='formTrial-wrapper-inner-input'>
+                        <Input placeholder='Nume/Prenume*' value={name} onChange={changeName} />
+                    </div>
+                    <div className='formTrial-wrapper-inner-input'>
+                        <Input placeholder='Numarul' value={number} onChange={changeNumber} />
+                    </div>
+                    <Combobox list={socialList} value={social} onChange={changeSocial} />
+                    <Button
+                        onClick={postDate}
+                        isDisabled={isDisabled}
+                        type={ButtonType.static}
+                        text='Lecția de probă gratuită'
+                    />
                 </div>
-                <div>
-                    <PhoneInput country={'md'} value={number} onChange={changeNumber} />
+                <div className='formTrial-wrapper-checkbox'>
+                    <Checkbox
+                        text='Sunt de acord cu politica de confidențialitate'
+                        link='#'
+                        onChecked={changePrivacyCheck}
+                    />
+                    <Checkbox text='Sunt de acord sa primesc SMS si apeluri' onChecked={changeSmsCheck} />
                 </div>
-                <Combobox list={socialList} value={social} onChange={changeSocial} />
-                <Button
-                    onClick={postDate}
-                    isDisabled={isDisabled}
-                    type={ButtonType.static}
-                    text='Lecția de probă gratuită'
-                />
-            </div>
-            <div className='formTrial-checkbox'>
-                <Checkbox
-                    text='Sunt de acord cu politica de confidențialitate'
-                    link='#'
-                    onChecked={changePrivacyCheck}
-                />
-                <Checkbox text='Sunt de acord sa primesc SMS si apeluri' onChecked={changeSmsCheck} />
             </div>
         </form>
     )

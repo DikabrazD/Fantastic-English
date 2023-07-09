@@ -26,6 +26,7 @@
             a {
                 position: relative;
                 color: $textColor;
+                padding-bottom: 2px;
                 &::before {
                     content: '';
                     position: absolute;
@@ -48,6 +49,17 @@
                     bottom: 0;
                     background-color: $beforColor;
                 }
+            }
+        }
+
+        @media (min-width: $laptop-width) {
+            &-links {
+                width: 70%;
+            }
+        }
+        @media (min-width: $desktop-width) {
+            &-links {
+                width: 60%;
             }
         }
     }
@@ -87,5 +99,44 @@
     }
     &-navWhite {
         @include headerTheme(white, black, $main-color);
+    }
+}
+
+.dropHeader {
+    position: fixed;
+    width: 100%;
+    height: 90px;
+    background-color: white;
+    left: 0;
+    top: -90px;
+    z-index: 1000;
+    box-shadow: 0 4px 8px 0 rgba(0, 0, 0, 0.13);
+    transition: transform 1s ease-in-out;
+
+    @include headerTheme(white, black, $main-color);
+}
+
+.show-header {
+    transform: translateY(90px);
+}
+
+.hide-header {
+    transform: translateY(-90px);
+}
+
+@media (min-width: $mobileS-width) {
+    .header {
+        display: none;
+    }
+    .dropHeader {
+        display: none;
+    }
+}
+@media (min-width: $laptop-width) {
+    .header {
+        display: flex;
+    }
+    .dropHeader {
+        display: block;
     }
 }

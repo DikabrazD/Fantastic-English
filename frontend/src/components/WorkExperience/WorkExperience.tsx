@@ -1,7 +1,7 @@
 import { useEffect, useState } from 'react'
 import { ReviewWork } from './WorkExperienceInterface'
 
-import axios from 'axios'
+import VideoReviewService from 'src/API/VideoReviewsService'
 
 import './WorkExperience.scss'
 
@@ -10,14 +10,8 @@ const WorkExperience = () => {
 
     useEffect(() => {
         const fetchData = async () => {
-            await axios
-                .get<ReviewWork[]>('http://localhost:3000/work_experience')
-                .then((res) => {
-                    setReviews(res.data)
-                })
-                .catch((error) => {
-                    console.log(error)
-                })
+            const reviewsData = await VideoReviewService.getWorkers()
+            if (reviewsData) setReviews(reviewsData)
         }
         fetchData()
     }, [])
@@ -28,7 +22,7 @@ const WorkExperience = () => {
             <ul className='workexperience-list'>
                 {reviews.map((item) => {
                     return (
-                        <li key={item.id} className='workexperience-list-item'>
+                        <li key={item._id} className='workexperience-list-item'>
                             <iframe
                                 className='image'
                                 src='https://www.youtube.com/embed/cJ3NzL6jAGk'

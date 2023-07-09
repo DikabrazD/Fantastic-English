@@ -14,12 +14,12 @@ import Card from 'src/components/Card/Card'
 import CourseAside from './Components/CourseAside/CourseAside'
 import CourseInfo from './Components/CourseInfo/CourseInfo'
 import Button from 'src/components/Button/Button'
-
-import axios from 'axios'
-
-import './CoursePage.scss'
 import InfoBar from './Components/InforBar/InfoBar'
 import CourseService from 'src/API/CourseService'
+import ReviewService from 'src/API/ReviewService'
+import TeacherService from 'src/API/TeacherService'
+
+import './CoursePage.scss'
 
 const CoursePage = () => {
     const [course, setCourse] = useState<CourseDetailInterface>()
@@ -88,34 +88,17 @@ const CoursePage = () => {
 
     useEffect(() => {
         const fetchData = async () => {
-            const course = await CourseService.getOne(params.id)
+            const courseData = await CourseService.getOne(params.id)
+            if (courseData) setCourse(courseData)
 
-            if (course) {
-                setCourse(course)
-            }
-            const courses = await CourseService.getAll()
+            const coursesData = await CourseService.getAll()
+            if (coursesData) setAllCourse(coursesData)
 
-            if (courses) {
-                setAllCourse(courses)
-            }
+            const reviewsData = await ReviewService.getAll()
+            if (reviewsData) setReviews(reviewsData)
 
-            await axios
-                .get<TeacherInterface[]>('http://localhost:4000/api/teachers')
-                .then((res) => {
-                    setTeachers(res.data)
-                })
-                .catch((error) => {
-                    console.log(error)
-                })
-
-            await axios
-                .get<ReviewInterface[]>('http://localhost:3000/reviews')
-                .then((res) => {
-                    setReviews(res.data)
-                })
-                .catch((error) => {
-                    console.log(error)
-                })
+            const teachersData = await TeacherService.getAll()
+            if (teachersData) setTeachers(teachersData)
         }
 
         fetchData()
@@ -169,7 +152,7 @@ const CoursePage = () => {
                     <Slider breakpoints={breakpointsReview}>
                         {reviews.map((item) => {
                             return (
-                                <SwiperSlide key={item.id}>
+                                <SwiperSlide key={item._id}>
                                     <Review item={item} />
                                 </SwiperSlide>
                             )

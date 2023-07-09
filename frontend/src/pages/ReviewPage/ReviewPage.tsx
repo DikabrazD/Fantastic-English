@@ -1,9 +1,10 @@
-import Breadcrumbs from 'src/components/Breadcrumbs/Breadcrumbs'
 import { useState, useEffect } from 'react'
 import { VideoReviewInterface } from './ReviewsPageInterface'
 
+import Breadcrumbs from 'src/components/Breadcrumbs/Breadcrumbs'
+import VideoReviewService from 'src/API/VideoReviewsService'
+
 import './ReviewsPage.scss'
-import axios from 'axios'
 
 const ReviewPage = () => {
     const [reviews, setReviews] = useState<VideoReviewInterface[]>([])
@@ -12,16 +13,19 @@ const ReviewPage = () => {
     const [totalCount, setTotalCount] = useState<number>(0)
 
     useEffect(() => {
-        if (fetching) {
-            axios
-                .get(`http://localhost:3000/video_reviews?_page=${page}&_limit=9`)
-                .then((res) => {
-                    setTotalCount(Number(res.headers['x-total-count']))
-                    setReviews([...reviews, ...res.data])
+        const fetchData = async () => {
+            if (fetching) {
+                const videoReviewsData = await VideoReviewService.getCustomers(page)
+                if (videoReviewsData) {
+                    setTotalCount(videoReviewsData.totalCount)
+                    setReviews([...reviews, ...videoReviewsData.customers])
                     setPage((prevState) => prevState + 1)
-                })
-                .finally(() => setFetching(false))
+                }
+                setFetching(false)
+            }
         }
+
+        fetchData()
         // eslint-disable-next-line react-hooks/exhaustive-deps
     }, [fetching])
 
@@ -50,11 +54,11 @@ const ReviewPage = () => {
             <div className='reviewsList container'>
                 {reviews.map((item) => {
                     return (
-                        <div className='reviewsList-item' key={item.id}>
+                        <div className='reviewsList-item' key={item._id}>
                             <iframe
                                 className='image'
                                 src={item.src}
-                                title='YouTube video player'
+                                title={item.title}
                                 allow='accelerometer; autoplay; clipboard-write; encrypted-media; gyroscope; picture-in-picture; web-share'
                             ></iframe>
                         </div>

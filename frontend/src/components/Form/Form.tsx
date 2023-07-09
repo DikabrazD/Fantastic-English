@@ -2,11 +2,10 @@ import { useState } from 'react'
 import { ButtonType } from '../Button/ButtonInterface'
 import { FormInterface } from './FormInterface'
 
-import PhoneInput from 'react-phone-input-2'
 import Button from '../Button'
 import Checkbox from '../Checkbox'
 import Input from '../Input'
-import axios from 'axios'
+import CustomerService from 'src/API/CustomerService'
 
 import './Form.scss'
 
@@ -14,6 +13,7 @@ function Form({ privacyType, checkboxColor, buttonType = ButtonType.changeToMain
     const [name, setName] = useState<string>('')
     const [email, setEmail] = useState<string>('')
     const [number, setNumber] = useState<string>('')
+    const [text, setText] = useState<string>('')
     const [privacyCheck, setPrivacyCheck] = useState<boolean>(false)
     const [smsCheck, setSmsCheck] = useState<boolean>(false)
 
@@ -34,18 +34,16 @@ function Form({ privacyType, checkboxColor, buttonType = ButtonType.changeToMain
     const changeNumber = (x: string) => {
         setNumber(x)
     }
+    const changeText = (e: React.FormEvent<HTMLTextAreaElement>) => {
+        setText(e.currentTarget.value)
+    }
 
     const postDate = () => {
-        axios
-            .post('http://localhost:4000/api/customers', { name, number, email })
-            .then(() => {
-                setName('')
-                setEmail('')
-                setNumber('')
-            })
-            .catch(() => {
-                console.log(Error)
-            })
+        CustomerService.create({ name, number, email, text })
+
+        setName('')
+        setEmail('')
+        setNumber('')
     }
 
     return (
@@ -59,9 +57,9 @@ function Form({ privacyType, checkboxColor, buttonType = ButtonType.changeToMain
                 </div>
             </div>
             <div className='form-phoneInput'>
-                <PhoneInput country='md' value={number} onChange={changeNumber} />
+                <Input placeholder='Numarul' value={number} onChange={changeNumber} />
             </div>
-            <textarea placeholder='Mesajul' className='form-textarea'></textarea>
+            <textarea value={text} placeholder='Mesajul' className='form-textarea' onChange={changeText} />
             <div className='form-checkbox'>
                 <Checkbox
                     text='Sunt de acord cu politica de confidențialitate'

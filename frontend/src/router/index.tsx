@@ -21,7 +21,7 @@ export enum RouterNames {
     REVIEW = '/video-recenzii',
     TEAM = '/team',
     CAREER = '/cariera',
-    CONTACTE = '/contacte'
+    CONTACTS = '/contacte'
 }
 
 export const publicRoutes: InterfaceRoute[] = [
@@ -33,5 +33,5 @@ export const publicRoutes: InterfaceRoute[] = [
     { path: RouterNames.REVIEW, component: <ReviewPage /> },
     { path: RouterNames.TEAM, component: <TeamPage /> },
     { path: RouterNames.CAREER, component: <CareerPage /> },
-    { path: RouterNames.CONTACTE, component: <ContactePage /> }
+    { path: RouterNames.CONTACTS, component: <ContactePage /> }
 ]

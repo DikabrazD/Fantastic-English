@@ -1,0 +1,29 @@
+@import '../../../../assets/styles/variables.scss';
+
+.toTop {
+    position: fixed;
+    width: 41px;
+    height: 41px;
+    left: 25px;
+    bottom: 25px;
+    z-index: 101;
+    display: flex;
+    justify-content: center;
+    align-items: center;
+    background-color: $main-color;
+    transition: opacity 0.3s ease;
+    cursor: pointer;
+    &-icon {
+        width: 13px;
+        height: 17px;
+        color: white;
+    }
+}
+
+.show-toTop {
+    opacity: 1;
+}
+
+.hide-toTop {
+    opacity: 0;
+}

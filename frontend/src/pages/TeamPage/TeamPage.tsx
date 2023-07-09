@@ -1,16 +1,17 @@
-import Breadcrumbs from 'src/components/Breadcrumbs/Breadcrumbs'
-import List from './Components/List/List'
-import axios from 'axios'
-
 import { useEffect, useState } from 'react'
 import { TeacherInterface } from 'src/ts/TeacherInterface'
 import { ManagerInterface } from 'src/ts/ManagerInterface'
-
-import './TeamPage.scss'
-import Button from 'src/components/Button/Button'
 import { ButtonType } from 'src/components/Button/ButtonInterface'
+
+import Breadcrumbs from 'src/components/Breadcrumbs/Breadcrumbs'
+import List from './Components/List/List'
+import Button from 'src/components/Button/Button'
 import AsideNav from 'src/components/AsideNav/AsideNav'
 import WorkExperience from 'src/components/WorkExperience/WorkExperience'
+import TeacherService from 'src/API/TeacherService'
+import ManagerService from 'src/API/ManagerService'
+
+import './TeamPage.scss'
 
 const TeamPage = () => {
     const [teachers, setTeachers] = useState<TeacherInterface[]>([])
@@ -41,22 +42,11 @@ const TeamPage = () => {
 
     useEffect(() => {
         const fetchData = async () => {
-            await axios
-                .get<TeacherInterface[]>('http://localhost:4000/api/teachers')
-                .then((res) => {
-                    setTeachers(res.data)
-                })
-                .catch((error) => {
-                    console.log(error)
-                })
-            await axios
-                .get<ManagerInterface[]>('http://localhost:4000/api/managers')
-                .then((res) => {
-                    setManagers(res.data)
-                })
-                .catch((error) => {
-                    console.log(error)
-                })
+            const teachersData = await TeacherService.getAll()
+            if (teachersData) setTeachers(teachersData)
+
+            const managersData = await ManagerService.getAll()
+            if (managersData) setManagers(managersData)
         }
         fetchData()
     }, [])

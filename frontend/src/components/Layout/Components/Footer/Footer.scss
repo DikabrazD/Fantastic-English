@@ -8,6 +8,7 @@
         &-wrapper {
             display: flex;
             justify-content: space-between;
+            width: 100%;
             gap: 100px;
             padding: 25px 0;
             color: white;
@@ -49,6 +50,44 @@
                 flex-direction: column;
                 width: 33%;
             }
+
+            @media (min-width: $mobileS-width) {
+                flex-direction: column;
+                align-items: center;
+                &-about {
+                    text-align: center;
+                }
+
+                &-contacts,
+                &-social {
+                    align-items: center;
+                }
+
+                &-about,
+                &-contacts,
+                &-social {
+                    width: 100%;
+                }
+            }
+
+            @media (min-width: $laptop-width) {
+                flex-direction: row;
+                align-items: baseline;
+
+                &-about {
+                    text-align: start;
+                }
+
+                &-contacts,
+                &-social {
+                    align-items: start;
+                }
+                &-about,
+                &-contacts,
+                &-social {
+                    width: 33%;
+                }
+            }
         }
     }
     &-copyright {
@@ -74,52 +113,5 @@
                 }
             }
         }
-    }
-}
-
-.footer-top {
-    display: flex;
-    justify-content: space-between;
-    gap: 100px;
-    padding: 25px 0;
-    color: white;
-    h4 {
-        font-size: 20px;
-        font-family: 'Core Sans';
-    }
-    &-bg {
-        background-color: #252525;
-    }
-    &-about {
-        display: flex;
-        flex-direction: column;
-        gap: 20px;
-        width: 33%;
-        a {
-            align-self: flex-start;
-            position: relative;
-            color: white;
-            padding-bottom: 3px;
-            &::before {
-                content: '';
-                position: absolute;
-                z-index: 20;
-                bottom: 0%;
-                height: 1px;
-                width: 100%;
-                background-color: white;
-            }
-        }
-    }
-    &-contacts {
-        display: flex;
-        flex-direction: column;
-        width: 33%;
-    }
-    &-social {
-        display: flex;
-        flex-direction: column;
-        gap: 20px;
-        width: 33%;
     }
 }

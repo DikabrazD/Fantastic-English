@@ -6,3 +6,10 @@ export interface FormInterface {
     privacyType: Checkbox
     buttonType?: ButtonType
 }
+
+export interface DataFormInterface {
+    name: string
+    number: string
+    email: string
+    text: string
+}
