@@ -21,11 +21,14 @@
         &-item {
             width: calc(33% - 30px);
             height: 300px;
-            @media (min-width: $laptop-width) {
-                height: 150px;
+            @media (min-width: $mobileS-width) {
+                width: 100%;
+            }
+            @media (min-width: $tablet-width) {
+                width: calc(50% - 30px);
             }
             @media (min-width: $desktop-width) {
-                height: 150px;
+                width: calc(33% - 30px);
             }
         }
     }

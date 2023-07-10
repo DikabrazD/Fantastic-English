@@ -59,9 +59,11 @@
                     gap: 20px;
                     &-item {
                         display: flex;
+                        align-items: center;
                         gap: 5px;
-                        width: calc(50% - 50px);
+                        width: calc(50% - 25px);
                         &-image {
+                            flex-shrink: 0;
                             width: 25px;
                             height: 25px;
                         }
@@ -70,6 +72,44 @@
                             font-size: 17px;
                             font-weight: 300;
                         }
+                    }
+                }
+            }
+        }
+        @media (min-width: $mobileS-width) {
+            flex-direction: column;
+            &-main {
+                width: 100%;
+                &-about-list {
+                    justify-content: center;
+                    &-item {
+                        align-items: center;
+                        width: 100%;
+                    }
+                }
+                &-benefits-list {
+                    justify-content: center;
+                    &-item {
+                        width: 100%;
+                    }
+                }
+            }
+        }
+
+        @media (min-width: $laptop-width) {
+            flex-direction: row;
+            &-main {
+                width: 80%;
+                &-about-list {
+                    justify-content: center;
+                    &-item {
+                        width: calc(50% - 50px);
+                    }
+                }
+                &-benefits-list {
+                    justify-content: center;
+                    &-item {
+                        width: calc(50% - 20px);
                     }
                 }
             }

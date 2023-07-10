@@ -15,13 +15,40 @@
     }
     &-wrapper {
         display: flex;
-        flex-direction: row;
         flex-wrap: wrap;
-        gap: 30px;
         &-item {
-            padding-right: 30px;
-            width: calc(33% - 30px);
+            padding: 30px;
+            width: 33%;
             max-height: 700px;
+        }
+        @media (min-width: $mobileS-width) {
+            &-item {
+                width: 100%;
+                & img {
+                    height: 550px;
+                }
+            }
+        }
+
+        @media (min-width: $tablet-width) {
+            &-item {
+                width: 50%;
+            }
+        }
+
+        @media (min-width: $laptop-width) {
+            &-item {
+                max-height: 700px;
+            }
+            & img {
+                height: auto;
+            }
+        }
+
+        @media (min-width: $desktop-width) {
+            &-item {
+                width: 33%;
+            }
         }
     }
 }

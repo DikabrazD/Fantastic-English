@@ -39,4 +39,20 @@
             }
         }
     }
+
+    @media (min-width: $mobileS-width) {
+        width: 100%;
+        &-list {
+            position: relative;
+            width: 100%;
+        }
+    }
+
+    @media (min-width: $laptop-width) {
+        width: 20%;
+        &-list {
+            position: fixed;
+            width: 20%;
+        }
+    }
 }

@@ -37,5 +37,25 @@
         &-form {
             width: 50%;
         }
+        @media (min-width: $mobileS-width) {
+            flex-direction: column;
+            gap: 50px;
+            &-contacts {
+                width: 100%;
+            }
+            &-form {
+                width: 100%;
+            }
+        }
+
+        @media (min-width: $laptop-width) {
+            flex-direction: row;
+            &-contacts {
+                width: 50%;
+            }
+            &-form {
+                width: 50%;
+            }
+        }
     }
 }
