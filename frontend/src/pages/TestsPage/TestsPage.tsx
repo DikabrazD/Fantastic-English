@@ -62,7 +62,7 @@ const TestsPage = () => {
                     <div className='tests-wrapper-book-image'>
                         <img
                             className='image'
-                            src='	https://fantastic-english.md/wp-content/uploads/2021/12/65-lectii-image-1-450x450.png'
+                            src='https://fantastic-english.md/wp-content/uploads/2021/12/65-lectii-image-1-450x450.png'
                             alt=''
                         />
                     </div>
