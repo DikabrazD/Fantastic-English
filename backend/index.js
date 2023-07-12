@@ -7,6 +7,8 @@ import categoryRouter from './routers/CategoryRouter.js'
 import teacherRouter from './routers/TeacherRouter.js'
 import managerRouter from './routers/ManagerRouter.js'
 import customerRouter from './routers/CustomerRouter.js'
+import reviewRouter from './routers/ReviewRouter.js'
+import videoReviewsRouter from './routers/VideoReviewRouter.js'
 
 const PORT = 4000
 const DB_URL = 'mongodb+srv://user:user@cluster0.7kgaaac.mongodb.net/?retryWrites=true&w=majority'
@@ -20,6 +22,8 @@ app.use('/api', categoryRouter)
 app.use('/api', teacherRouter)
 app.use('/api', managerRouter)
 app.use('/api', customerRouter)
+app.use('/api', reviewRouter)
+app.use('/api', videoReviewsRouter)
 
 const startApp = async () => {
     try {
