@@ -37,7 +37,7 @@ const HeaderMobile = () => {
             <div className='headerMobile-contacts'>
                 {contacts.map((item) => {
                     return (
-                        <div className='headerMobile-contacts-item'>
+                        <div key={item.country} className='headerMobile-contacts-item'>
                             <div className='headerMobile-contacts-item-icon'>
                                 <FaPhoneAlt className='image' />
                             </div>

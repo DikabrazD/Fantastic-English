@@ -9,6 +9,7 @@ import './InfoBar.scss'
 
 const InfoBar = ({ name, price }: InfoBarInterface) => {
     const [showBar, setShowBar] = useState<boolean>(false)
+    const [isContainer, setIsContainer] = useState<boolean>(true)
     const dropBarClass = showBar ? 'show-bar' : 'hide-bar'
 
     useEffect(() => {
@@ -20,24 +21,31 @@ const InfoBar = ({ name, price }: InfoBarInterface) => {
             }
         }
 
+        const handleResize = () => {
+            if (window.innerWidth < 1024) {
+                setIsContainer(false)
+            } else {
+                setIsContainer(true)
+            }
+        }
+
+        window.addEventListener('resize', handleResize)
         window.addEventListener('scroll', handleScroll)
 
         return () => {
+            window.removeEventListener('resize', handleResize)
             window.removeEventListener('scroll', handleScroll)
         }
     }, [])
 
     return (
         <div className={`bar ${dropBarClass}`}>
-            <div className='bar-wrapper container'>
+            <div className={`bar-wrapper ${isContainer ? 'container' : ''}`}>
                 <div className='bar-wrapper-info'>
                     <h4 className='bar-wrapper-info-name'>{name}</h4>
                     <p className='bar-wrapper-info-price'>{price} MDL / 60 min</p>
                 </div>
                 <div className='bar-wrapper-actions'>
-                    <div className='bar-wrapper-actions-arrow'>
-                        <Button type={ButtonType.arrow} text='Rezervă un loc (300 MDL)' />
-                    </div>
                     <Button type={ButtonType.changeToWhite} text='Vreau La Curs' />
                 </div>
             </div>

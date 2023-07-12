@@ -115,4 +115,39 @@
             }
         }
     }
+
+    @media (min-width: $mobileS-width) {
+        flex-direction: column;
+        &-content {
+            width: 100%;
+            &-header {
+                align-items: flex-start;
+                flex-direction: column;
+                gap: 20px;
+            }
+            &-basicInfo {
+                align-items: flex-start;
+                flex-direction: column;
+                gap: 20px;
+            }
+        }
+    }
+
+    @media (min-width: $laptop-width) {
+        flex-direction: row;
+        &-content {
+            width: 67%;
+
+            &-header {
+                align-items: center;
+                flex-direction: row;
+                gap: 0px;
+            }
+            &-basicInfo {
+                align-items: center;
+                flex-direction: row;
+                gap: 0px;
+            }
+        }
+    }
 }

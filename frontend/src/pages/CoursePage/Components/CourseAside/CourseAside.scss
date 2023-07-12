@@ -117,4 +117,12 @@ $aside-bg: #f9f9f9;
             }
         }
     }
+
+    @media (min-width: $mobileS-width) {
+        width: 100%;
+    }
+
+    @media (min-width: $laptop-width) {
+        width: 100%;
+    }
 }

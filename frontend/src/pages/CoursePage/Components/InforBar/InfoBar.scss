@@ -8,7 +8,7 @@
     width: 100%;
     background: white;
     border-top: 1px solid #f4f4f4;
-    padding: 15px 0;
+    padding: 15px 15px;
     transition: transform 1s ease-in-out;
     &-wrapper {
         display: flex;
@@ -31,9 +31,15 @@
         }
         &-actions {
             display: flex;
-            &-arrow > button {
-                border-width: 0px;
-                color: $main-color;
+            @media (min-width: $mobileS-width) {
+                & > button {
+                    padding: 15px;
+                }
+            }
+            @media (min-width: $mobile-width) {
+                & > button {
+                    padding: 15px 30px;
+                }
             }
         }
     }
