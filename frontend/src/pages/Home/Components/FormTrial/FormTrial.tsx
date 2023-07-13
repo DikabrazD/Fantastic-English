@@ -9,6 +9,7 @@ import { ButtonType } from 'src/components/Button/ButtonInterface'
 import { ComboboxItemInterface } from 'src/components/Combobox/ComboboxInterface'
 
 import './FormTrial.scss'
+import CountryListBox from '../../../../components/CountryListBox'
 
 const FormTrial = () => {
     const socialList = [
@@ -70,7 +71,7 @@ const FormTrial = () => {
                         <Input placeholder='Nume/Prenume*' value={name} onChange={changeName} />
                     </div>
                     <div className='formTrial-wrapper-inner-input'>
-                        <Input placeholder='Numarul' value={number} onChange={changeNumber} />
+                        <CountryListBox onChange={changeNumber} placeholder='Numărul' value={number} />
                     </div>
                     <Combobox list={socialList} value={social} onChange={changeSocial} />
                     <Button

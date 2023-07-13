@@ -22,6 +22,7 @@ import './Home.scss'
 const Home = () => {
     const [teachers, setTeachers] = useState<CardInterface[]>([])
     const [reviews, setReviews] = useState<ReviewInterface[]>([])
+
     const reviewsBreakpoints = {
         640: {
             slidesPerView: 1,

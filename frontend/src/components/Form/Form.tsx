@@ -6,6 +6,7 @@ import Button from '../Button'
 import Checkbox from '../Checkbox'
 import Input from '../Input'
 import CustomerService from 'src/API/CustomerService'
+import CountryListBox from '../CountryListBox/CountryListBox'
 
 import './Form.scss'
 
@@ -57,7 +58,7 @@ function Form({ privacyType, checkboxColor, buttonType = ButtonType.changeToMain
                 </div>
             </div>
             <div className='form-phoneInput'>
-                <Input placeholder='Numarul' value={number} onChange={changeNumber} />
+                <CountryListBox placeholder='Numarul' value={number} onChange={changeNumber} />
             </div>
             <textarea value={text} placeholder='Mesajul' className='form-textarea' onChange={changeText} />
             <div className='form-checkbox'>

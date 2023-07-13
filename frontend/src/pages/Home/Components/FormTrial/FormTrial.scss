@@ -55,7 +55,6 @@
         @media (min-width: $tablet-width) {
             width: calc(100% - 100px);
             &-inner {
-                flex-wrap: wrap;
                 & > * {
                     width: calc(50% - 7.5px);
                 }
@@ -66,20 +65,7 @@
             }
         }
 
-        @media (min-width: $tablet-width) {
-            &-inner {
-                flex-wrap: wrap;
-                & > * {
-                    width: calc(50% - 7.5px);
-                }
-            }
-            &-checkbox {
-                align-self: start;
-                justify-content: start;
-            }
-        }
-
-        @media (min-width: $laptop-width) {
+        @media (min-width: $desktop-width) {
             &-inner {
                 flex-wrap: nowrap;
                 & > * {
